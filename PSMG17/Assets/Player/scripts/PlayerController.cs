@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 4f;
+    public int playerNumber = 1;
 
     private Rigidbody2D playerBody;
 
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+        movementInput = new Vector3(Input.GetAxis("Horizontal" + playerNumber), Input.GetAxis("Vertical" + playerNumber), 0f);
         movementVelocity = movementInput * moveSpeed;
 	}
 
