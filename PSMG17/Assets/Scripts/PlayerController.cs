@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Attack" + playerNumber))
         {
-            Debug.Log("Test");
+            //Debug.Log("Test");
             Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger("attackTrigger");
         }
