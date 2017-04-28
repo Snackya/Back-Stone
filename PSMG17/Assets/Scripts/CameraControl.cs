@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public float dampTime = 0.2f;
-    public float screenEdgeBuffer = 1f;
-    public float minSize = 2f;
+    public float screenEdgeBuffer = 4f;
+    public float minSize = 6.5f;
     public Transform[] targets;
 
 

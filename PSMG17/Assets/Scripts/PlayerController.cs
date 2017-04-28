@@ -36,9 +36,11 @@ public class PlayerController : MonoBehaviour {
 	void Update()
     {
         // storing the user movement input in a variable
-        movementInput = new Vector2(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY));  //keyboard control
-        //movementInput = new Vector2(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY));      //gamepad control
+        movementInput = new Vector3(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY), 0f);  //keyboard control
+        //movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
+        movementVelocity = movementInput * moveSpeed;
         Attack();
+        Sprint();
 	}
 
     void FixedUpdate()
@@ -62,9 +64,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Move()
     {
-        Sprint();
-        Vector3 movement = (movementInput * moveSpeed);
-        playerBody.MovePosition(transform.position + movement * Time.deltaTime);
+        //Vector3 movement = (movementInput * moveSpeed);
+        playerBody.velocity = movementVelocity;
     }
 
     private void Attack()
