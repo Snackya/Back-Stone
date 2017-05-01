@@ -80,17 +80,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     //player gets hit by an enemy
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Bepis");
-            Vector3 knockback = (transform.position - other.transform.position);
+            Vector3 knockback = (transform.position - collision.transform.position);
 
             float enemyKnockbackPower = 300f;
             //knock both characters back
             playerBody.AddForce(knockback * knockbackPower);
-            other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
+            collision.gameObject.GetComponentInChildren<Rigidbody2D>().AddForce(-knockback * enemyKnockbackPower);
+            //other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
         }
     }
 }
