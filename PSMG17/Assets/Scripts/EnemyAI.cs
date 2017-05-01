@@ -7,7 +7,8 @@ using Pathfinding;
 [RequireComponent(typeof(Seeker))]
 public class EnemyAI : MonoBehaviour {
 
-    public Transform target;                    // target to be chased, e.g. player
+    public Transform[] targets;
+    private Transform target;                    // target to be chased, e.g. player
     public float updateRate = 2f;               // determines how often per second the path is updated
     public float speed = 300f;                  // enemy speed
     public ForceMode2D fMode;                   // force, that moves the enemy
@@ -25,6 +26,8 @@ public class EnemyAI : MonoBehaviour {
 
     void Start()
     {
+        // initializing target as first target at Start()
+        target = targets[0];
         seeker = GetComponent<Seeker>();
         enemy = GetComponent<Rigidbody2D>();
 
@@ -39,6 +42,8 @@ public class EnemyAI : MonoBehaviour {
 
     IEnumerator UpdatePath()
     {
+        SelectNearestTarget();
+
         if (target == null)
         {
             yield return false;
@@ -50,6 +55,19 @@ public class EnemyAI : MonoBehaviour {
         // call self after updateRate time expired
         yield return new WaitForSeconds(1f / updateRate);
         StartCoroutine(UpdatePath());
+    }
+
+    private void SelectNearestTarget()
+    {
+        float distanceToCurrentTarget = Vector2.Distance(enemy.position, target.position);
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            if (distanceToCurrentTarget > Vector2.Distance(enemy.position, targets[i].position))
+            {
+                target = targets[i];
+            }
+        }
     }
 
     public void OnPathComplete(Path p)
