@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 5f;                // player movement speed
     public int playerNumber;                    // used to assign players to different controls
+    public float knockbackPower = 1000f;
     
     private Rigidbody2D playerBody;
     private Vector3 movementInput;
@@ -76,5 +77,20 @@ public class PlayerController : MonoBehaviour {
             animator.SetTrigger("attackTrigger");
         }
         
+    }
+
+    //player gets hit by an enemy
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Bepis");
+            Vector3 knockback = (transform.position - other.transform.position);
+
+            float enemyKnockbackPower = 300f;
+            //knock both characters back
+            playerBody.AddForce(knockback * knockbackPower);
+            other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
+        }
     }
 }
