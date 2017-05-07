@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour {
     private string m_movementAxisGamepadX;
     private string m_movementAxisGamepadY;
 
+    // Testing
+    [SerializeField]
+    private Stat health;
+
+    void Awake()
+    {
+        health.Initialize();
+    }
 
     void Start()
     {
@@ -75,6 +83,9 @@ public class PlayerController : MonoBehaviour {
         {
             Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger("attackTrigger");
+
+            // Testing
+            health.CurrentVal -= 10;
         }
         
     }
