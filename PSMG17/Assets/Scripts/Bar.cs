@@ -8,6 +8,8 @@ public class Bar : MonoBehaviour {
     // [SerializeField]
     private float fillAmount;
 
+    private float lerpSpeed = 3;
+
     [SerializeField]
     private Image content;
 
@@ -21,12 +23,9 @@ public class Bar : MonoBehaviour {
         }
     }
 
-	// Use this for initialization
 	void Start () {
-        Value = 2;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         UpdateBar();
 	}
@@ -35,7 +34,7 @@ public class Bar : MonoBehaviour {
     {
         if (fillAmount != content.fillAmount)
         {
-            content.fillAmount = fillAmount;
+            content.fillAmount = Mathf.Lerp(content.fillAmount, fillAmount, Time.deltaTime * lerpSpeed);
         }
     }
 
