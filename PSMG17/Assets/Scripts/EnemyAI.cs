@@ -9,15 +9,16 @@ public class EnemyAI : MonoBehaviour {
 
     public Transform[] targets;
     private Transform target;                    // target to be chased, e.g. player
-    public float updateRate = 2f;               // determines how often per second the path is updated
     public float speed = 300f;                  // enemy speed
     public ForceMode2D fMode;                   // force, that moves the enemy
     public float nextWaypointDistance = 1f;     // max distance from enemy to waypoint, before selecting next waypoint
+    public float aggroTime = 4f;
 
     public Path path;                           // stores the calculated path
     [HideInInspector]
     public bool pathHasEnded = false;
 
+    private float updateRate = 2f;               // determines how often per second the path is updated
     private Seeker seeker;                      
     private Rigidbody2D enemy; 
     private int currentWayPoint = 0;            // currently selected waypoint
@@ -38,12 +39,11 @@ public class EnemyAI : MonoBehaviour {
     
         //seeker.StartPath(transform.position, target.position, OnPathComplete);
         StartCoroutine(UpdatePath());
+        StartCoroutine(SelectNearestTarget());
     }
 
     IEnumerator UpdatePath()
     {
-        SelectNearestTarget();
-
         if (target == null)
         {
             yield return false;
@@ -57,7 +57,7 @@ public class EnemyAI : MonoBehaviour {
         StartCoroutine(UpdatePath());
     }
 
-    private void SelectNearestTarget()
+    IEnumerator SelectNearestTarget()
     {
         float distanceToCurrentTarget = Vector2.Distance(enemy.position, target.position);
 
@@ -68,6 +68,8 @@ public class EnemyAI : MonoBehaviour {
                 target = targets[i];
             }
         }
+        yield return new WaitForSeconds(aggroTime);
+        StartCoroutine(SelectNearestTarget());
     }
 
     public void OnPathComplete(Path p)
