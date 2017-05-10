@@ -184,6 +184,7 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Room1Script.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,53 @@
 fileFormatVersion: 2
 guid: 0a5cb32db030bf04ea1c9e64ae25bbb4
-timeCreated: 1494433224
+timeCreated: 1494436753
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: player2SwordAttack_0
+    21300002: player2SwordAttack_1
+    21300004: player2SwordAttack_2
+    21300006: player2SwordAttack_3
+    21300008: player2SwordAttack_4
+    21300010: player2SwordAttack_5
+    21300012: player2SwordAttack_6
+    21300014: player2SwordAttack_7
+    21300016: player2SwordAttack_8
+    21300018: player2SwordAttack_9
+    21300020: player2SwordAttack_10
+    21300022: player2SwordAttack_11
+    21300024: player2SwordAttack_12
+    21300026: player2SwordAttack_13
+    21300028: player2SwordAttack_14
+    21300030: player2SwordAttack_15
+    21300032: player2SwordAttack_16
+    21300034: player2SwordAttack_17
+    21300036: player2SwordAttack_18
+    21300038: player2SwordAttack_19
+    21300040: player2SwordAttack_20
+    21300042: player2SwordAttack_21
+    21300044: player2SwordAttack_22
+    21300046: player2SwordAttack_23
+    21300048: player2SwordAttack_24
+    21300050: player2SwordAttack_25
+    21300052: player2SwordAttack_26
+    21300054: player2SwordAttack_27
+    21300056: player2SwordAttack_28
+    21300058: player2SwordAttack_29
+    21300060: player2SwordAttack_30
+    21300062: player2SwordAttack_31
+    21300064: player2SwordAttack_32
+    21300066: player2SwordAttack_33
+    21300068: player2SwordAttack_34
+    21300070: player2SwordAttack_35
+    21300072: player2SwordAttack_36
+    21300074: player2SwordAttack_37
+    21300076: player2SwordAttack_38
+    21300078: player2SwordAttack_39
+    21300080: player2SwordAttack_40
+    21300082: player2SwordAttack_41
+    21300084: player2SwordAttack_42
+    21300086: player2SwordAttack_43
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +78,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +102,277 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: player2SwordAttack_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 2800
+        width: 542
+        height: 705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_4
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 2803
+        width: 297
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_6
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 2821
+        width: 305
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_7
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 2801
+        width: 363
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_8
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 2803
+        width: 410
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_14
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1953
+        width: 605
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_15
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 2550
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_16
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1953
+        width: 641
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_18
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1953
+        width: 606
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_20
+      rect:
+        serializedVersion: 2
+        x: 2837
+        y: 1953
+        width: 478
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_25
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 2110
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1171
+        width: 349
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_28
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1171
+        width: 384
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_29
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1135
+        width: 351
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_30
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 1171
+        width: 327
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_32
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 1171
+        width: 286
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_36
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 319
+        width: 355
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_37
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 318
+        width: 357
+        height: 705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_39
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 319
+        width: 407
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player2SwordAttack_40
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 321
+        width: 287
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
