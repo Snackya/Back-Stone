@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,14 @@ public class PlayerController : MonoBehaviour {
     private string m_movementAxisGamepadX;
     private string m_movementAxisGamepadY;
 
+    // Testing
+    [SerializeField]
+    private Stat health;
+
+    void Awake()
+    {
+        health.Initialize();
+    }
 
     void Start()
     {
@@ -42,7 +51,17 @@ public class PlayerController : MonoBehaviour {
         movementVelocity = movementInput * moveSpeed;
         Attack();
         Sprint();
+        // Testing
+        // CheckIfDead();
 	}
+
+    private void CheckIfDead()
+    {
+        if (health.CurrentVal == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     void FixedUpdate()
     {
@@ -86,6 +105,9 @@ public class PlayerController : MonoBehaviour {
         {
             Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
+
+            // Testing
+            health.CurrentVal -= 10;
 
             float enemyKnockbackPower = 300f;
             //knock both characters back

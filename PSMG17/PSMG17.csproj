@@ -180,9 +180,11 @@
     <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
     <Compile Include="Assets\AxeController.cs" />
     <Compile Include="Assets\Scripts\AxeAttack.cs" />
+    <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Stat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
