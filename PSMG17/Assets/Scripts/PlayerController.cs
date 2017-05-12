@@ -2,13 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 5f;                // player movement speed
     public int playerNumber;                    // used to assign players to different controls
     public float knockbackPower = 1000f;
-    
+
+    public Slider HealthSlider;
+    private float currentHealth;
+    public float maxHealth = 100f;
+
     private Rigidbody2D playerBody;
     private Vector3 movementInput;
     private Vector3 movementVelocity;
@@ -20,14 +25,11 @@ public class PlayerController : MonoBehaviour {
     private string m_movementAxisGamepadX;
     private string m_movementAxisGamepadY;
 
-    // Testing
+    /**
+    Testing
     [SerializeField]
     private Stat health;
-
-    void Awake()
-    {
-        health.Initialize();
-    }
+    **/
 
     void Start()
     {
@@ -40,7 +42,6 @@ public class PlayerController : MonoBehaviour {
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
         m_movementAxisGamepadX = "GamepadHorizontal" + playerNumber;
         m_movementAxisGamepadY = "GamepadVertical" + playerNumber;
-
     }
 
 	void Update()
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour {
         // CheckIfDead();
 	}
 
+    /**
     private void CheckIfDead()
     {
         if (health.CurrentVal == 0)
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+    **/
 
     void FixedUpdate()
     {
@@ -107,7 +110,12 @@ public class PlayerController : MonoBehaviour {
             Vector3 knockback = (transform.position - collision.transform.position);
 
             // Testing
-            health.CurrentVal -= 10;
+            //health.CurrentVal -= 10;
+
+            HealthbarController hc = GetComponent<HealthbarController>();
+            float dmg = 20f;
+            hc.ReceiveDamage(dmg);
+            
 
             float enemyKnockbackPower = 300f;
             //knock both characters back
