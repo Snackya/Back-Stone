@@ -15,19 +15,19 @@ public class Room1Script : MonoBehaviour {
     private bool playersInside = true;
 
 
-	// Use this for initialization
 	void Start () {
         room = GetComponent<BoxCollider2D>();
         roomBounds = room.bounds;
         gate = transform.Find("Gate").gameObject;
 	}
 	
-	// Update is called once per frame
 	void Update () {
+        // only execute the following code, if the players are located in this room currently
         if (playersInside)
         {
-            if (!roomBounds.Contains(player1.position) &&
-            !roomBounds.Contains(player2.position))
+            // check if the players are currently inside the room and closing the gate, when they
+            // are leaving
+            if (!roomBounds.Contains(player1.position) && !roomBounds.Contains(player2.position))
             {
                 gate.SetActive(true);
                 playersInside = false;

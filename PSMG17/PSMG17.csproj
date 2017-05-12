@@ -185,7 +185,10 @@
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\HealthbarController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PressurePlate.cs" />
     <Compile Include="Assets\Scripts\Room1Script.cs" />
+    <Compile Include="Assets\Scripts\Room2Script.cs" />
+    <Compile Include="Assets\Scripts\RoomOpener.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
   </ItemGroup>
   <ItemGroup>

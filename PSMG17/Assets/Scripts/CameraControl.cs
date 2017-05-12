@@ -9,7 +9,6 @@ public class CameraControl : MonoBehaviour
     public float minSize = 6.5f;
     public Transform[] targets;
 
-
     private Camera gameCamera;
     private float zoomSpeed;
     private Vector3 moveVelocity;
@@ -21,13 +20,11 @@ public class CameraControl : MonoBehaviour
         gameCamera = GetComponentInChildren<Camera>();
     }
 
-
     private void Update()
     {
         Move();
         Zoom();
     }
-
 
     private void Move()
     {
@@ -35,7 +32,6 @@ public class CameraControl : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref moveVelocity, dampTime);
     }
-
 
     private void FindAveragePosition()
     {
@@ -59,13 +55,11 @@ public class CameraControl : MonoBehaviour
         desiredPosition = averagePos;
     }
 
-
     private void Zoom()
     {
         float requiredSize = FindRequiredSize();
         gameCamera.orthographicSize = Mathf.SmoothDamp(gameCamera.orthographicSize, requiredSize, ref zoomSpeed, dampTime);
     }
-
 
     private float FindRequiredSize()
     {
@@ -93,7 +87,6 @@ public class CameraControl : MonoBehaviour
 
         return size;
     }
-
 
     public void SetStartPositionAndSize()
     {
