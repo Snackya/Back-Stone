@@ -24,7 +24,7 @@ public class Room1Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*if (playersInside)
+        if (playersInside)
         {
             if (!roomBounds.Contains(player1.position) &&
             !roomBounds.Contains(player2.position))
@@ -32,6 +32,6 @@ public class Room1Script : MonoBehaviour {
                 gate.SetActive(true);
                 playersInside = false;
             }
-        }*/
+        }
 	}
 }

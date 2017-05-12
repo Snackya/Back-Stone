@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour {
     public Transform[] targets;
     private Transform target;                    // target to be chased, e.g. player
     public float speed = 300f;                  // enemy speed
+    private float attackSpeed;
     public ForceMode2D fMode;                   // force, that moves the enemy
     public float nextWaypointDistance = 1f;     // max distance from enemy to waypoint, before selecting next waypoint
     public float aggroTime = 4f;
@@ -31,6 +32,8 @@ public class EnemyAI : MonoBehaviour {
         target = targets[0];
         seeker = GetComponent<Seeker>();
         enemy = GetComponent<Rigidbody2D>();
+
+        attackSpeed = speed + 500f;
 
         if (target == null)
         {
@@ -63,11 +66,20 @@ public class EnemyAI : MonoBehaviour {
 
         for (int i = 0; i < targets.Length; i++)
         {
-            if (distanceToCurrentTarget > Vector2.Distance(enemy.position, targets[i].position))
+            if (!targets[0].gameObject.activeSelf)
+            {
+                target = targets[1];
+            }
+            else if (!targets[1].gameObject.activeSelf)
+            {
+                target = targets[0];
+            }
+            else if (distanceToCurrentTarget > Vector2.Distance(enemy.position, targets[i].position))
             {
                 target = targets[i];
             }
         }
+            
         yield return new WaitForSeconds(aggroTime);
         StartCoroutine(SelectNearestTarget());
     }
@@ -97,7 +109,15 @@ public class EnemyAI : MonoBehaviour {
         pathHasEnded = false;
 
         waypointDirection = (path.vectorPath[currentWayPoint] - transform.position).normalized;
-        waypointDirection *= speed * Time.fixedDeltaTime;
+
+        if (Vector2.Distance(enemy.position, target.position) > 2)
+        {
+            waypointDirection *= speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            waypointDirection *= attackSpeed * Time.fixedDeltaTime;
+        }
 
         // move the enemy
         enemy.AddForce(waypointDirection, fMode);

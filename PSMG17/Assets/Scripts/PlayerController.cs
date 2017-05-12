@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour {
             Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger("attackTrigger");
         }
-        Debug.Log(invulnerable);
+        //Debug.Log(invulnerable);
         
     }
 
