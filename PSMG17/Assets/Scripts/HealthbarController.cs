@@ -29,7 +29,8 @@ public class HealthbarController : MonoBehaviour {
 
         if (currentHealth <= 0)
         {
-            GameObject.Destroy(this);
+            HealthSlider.value = 0;
+            Destroy(gameObject);
         }
     }
 }

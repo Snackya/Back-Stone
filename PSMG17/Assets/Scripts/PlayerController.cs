@@ -109,12 +109,11 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
 
-            // Testing
-            //health.CurrentVal -= 10;
+            HealthbarController hpControl = GetComponent<HealthbarController>();
 
-            HealthbarController hc = GetComponent<HealthbarController>();
             float dmg = 20f;
-            hc.ReceiveDamage(dmg);
+
+            hpControl.ReceiveDamage(dmg);
             
 
             float enemyKnockbackPower = 300f;
