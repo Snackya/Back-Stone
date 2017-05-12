@@ -14,7 +14,13 @@ public class PlayerController : MonoBehaviour {
     private float currentHealth;
     public float maxHealth = 100f;
 
+    private bool invulnerable;
+    private float maxInvTime = 1.6f;
+    private float currentInvTime;
+
     private Rigidbody2D playerBody;
+    private Collider2D playerCollider;
+    private SpriteRenderer sprRenderer;
     private Vector3 movementInput;
     private Vector3 movementVelocity;
 
@@ -35,6 +41,8 @@ public class PlayerController : MonoBehaviour {
     {
         // initializing playerBody with the player character
         playerBody = GetComponent<Rigidbody2D>();
+
+        playerCollider = GetComponent<Collider2D>();
         // setting orginalMoveSpeed to the movement speed given in unity
         originalMoveSpeed = moveSpeed;
 
@@ -42,6 +50,9 @@ public class PlayerController : MonoBehaviour {
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
         m_movementAxisGamepadX = "GamepadHorizontal" + playerNumber;
         m_movementAxisGamepadY = "GamepadVertical" + playerNumber;
+
+        invulnerable = false;
+        currentInvTime = maxInvTime;
     }
 
 	void Update()
@@ -54,6 +65,8 @@ public class PlayerController : MonoBehaviour {
         Sprint();
         // Testing
         // CheckIfDead();
+
+        CheckForInv();  //check if player should currently be invulnerable
 	}
 
     /**
@@ -98,13 +111,14 @@ public class PlayerController : MonoBehaviour {
             Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger("attackTrigger");
         }
+        Debug.Log(invulnerable);
         
     }
 
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && !invulnerable)
         {
             Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
@@ -114,13 +128,45 @@ public class PlayerController : MonoBehaviour {
             float dmg = 20f;
 
             hpControl.ReceiveDamage(dmg);
-            
 
             float enemyKnockbackPower = 300f;
             //knock both characters back
             playerBody.AddForce(knockback * knockbackPower);
             collision.gameObject.GetComponentInChildren<Rigidbody2D>().AddForce(-knockback * enemyKnockbackPower);
             //other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
+
+            invulnerable = true;
+            StartCoroutine(InvFrames());
+        }
+    }
+
+    private void CheckForInv()
+    {
+        if (invulnerable)
+        {
+            playerCollider.enabled = false;
+            currentInvTime -= Time.deltaTime;
+
+            if (currentInvTime <= 0)
+            {
+                invulnerable = false;
+                playerCollider.enabled = true;
+                currentInvTime = maxInvTime;
+            }
+        }
+    }
+
+    private IEnumerator InvFrames()
+    {
+        sprRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        //loop to add a flashing effect to the player, showing invulnerability
+        while (invulnerable)
+        {
+            sprRenderer.enabled = false;
+            yield return new WaitForSeconds(0.2f);
+            sprRenderer.enabled = true;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
