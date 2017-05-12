@@ -10,10 +10,6 @@ public class PlayerController : MonoBehaviour {
     public int playerNumber;                    // used to assign players to different controls
     public float knockbackPower = 1000f;
 
-    public Slider HealthSlider;
-    private float currentHealth;
-    public float maxHealth = 100f;
-
     private bool invulnerable;
     private float maxInvTime = 1.6f;
     private float currentInvTime;
@@ -136,7 +132,10 @@ public class PlayerController : MonoBehaviour {
             //other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
 
             invulnerable = true;
-            StartCoroutine(InvFrames());
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(InvFrames());
+            }
         }
     }
 

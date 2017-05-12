@@ -32,7 +32,7 @@ public class HealthbarController : MonoBehaviour {
         {
             HealthSlider.value = 0;
             HealthSlider.gameObject.SetActive(false);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
