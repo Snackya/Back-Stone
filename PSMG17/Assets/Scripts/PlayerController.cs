@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer sprRenderer;
     private Vector3 movementInput;
     private Vector3 movementVelocity;
+    private Animator animator;
 
     private float originalMoveSpeed;
     private float sprintSpeedIncrease = 4f;   // amount of speed increase, when player is sprinting
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour {
         playerCollider = GetComponent<Collider2D>();
         // setting orginalMoveSpeed to the movement speed given in unity
         originalMoveSpeed = moveSpeed;
+
+        animator = GetComponent<Animator>();
 
         m_movementAxisKeyboardX = "Horizontal" + playerNumber;
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
@@ -78,6 +81,21 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         Move();
+        AnimationController();
+    }
+
+    private void AnimationController()
+    {
+        animator.SetFloat("Speed", movementVelocity.x);
+        animator.SetFloat("vSpeed", Math.Abs(movementVelocity.y));
+        if (movementVelocity.x > 0)
+        {
+            animator.SetBool("FacingLeft", false);
+        }
+        if (movementVelocity.x < 0)
+        {
+            animator.SetBool("FacingLeft", true);
+        }
     }
 
     private void Sprint()
