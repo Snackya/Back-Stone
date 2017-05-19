@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour {
     private Vector3 movementInput;
     private Vector3 movementVelocity;
     private Animator animator;
+    private Transform playerSprite;             // To change the players current direction
+    private bool facingLeft = true;
+    private CapsuleCollider2D attackCollider;
 
     private float originalMoveSpeed;
     private float sprintSpeedIncrease = 4f;   // amount of speed increase, when player is sprinting
@@ -38,6 +41,9 @@ public class PlayerController : MonoBehaviour {
     {
         // initializing playerBody with the player character
         playerBody = GetComponent<Rigidbody2D>();
+
+        playerSprite = transform.FindChild("sprite");
+        attackCollider = GetComponentInChildren<CapsuleCollider2D>();
 
         playerCollider = GetComponent<Collider2D>();
         // setting orginalMoveSpeed to the movement speed given in unity
@@ -80,21 +86,32 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        FreezePlayer();
         Move();
         AnimationController();
     }
 
+    private void FreezePlayer()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "AttackLeft"))
+        {
+            movementVelocity = new Vector3(0, 0, 0);
+        }
+    }
+
     private void AnimationController()
     {
-        animator.SetFloat("Speed", movementVelocity.x);
+        animator.SetFloat("Speed", Math.Abs(movementVelocity.x));
         animator.SetFloat("vSpeed", Math.Abs(movementVelocity.y));
-        if (movementVelocity.x > 0)
+        if (movementVelocity.x > 0 && facingLeft)
         {
-            animator.SetBool("FacingLeft", false);
+            Debug.Log("rechts");
+            Flip();
         }
-        if (movementVelocity.x < 0)
+        if (movementVelocity.x < 0 && !facingLeft)
         {
-            animator.SetBool("FacingLeft", true);
+            Debug.Log("links");
+            Flip();
         }
     }
 
@@ -122,11 +139,9 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Attack" + playerNumber))
         {
-            Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger("attackTrigger");
         }
         //Debug.Log(invulnerable);
-        
     }
 
     //player gets hit by an enemy
@@ -185,5 +200,16 @@ public class PlayerController : MonoBehaviour {
             sprRenderer.enabled = true;
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    private void Flip()
+    {
+        facingLeft = !facingLeft;
+
+        attackCollider.offset = new Vector2(attackCollider.offset.x * (-1), attackCollider.offset.y);
+
+        Vector3 playerScale = playerSprite.localScale;
+        playerScale.x *= -1;
+        playerSprite.localScale = playerScale;
     }
 }

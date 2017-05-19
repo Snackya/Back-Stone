@@ -190,6 +190,7 @@
     <Compile Include="Assets\Scripts\Room2Script.cs" />
     <Compile Include="Assets\Scripts\RoomOpener.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
+    <Compile Include="Assets\Scripts\SwordAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />

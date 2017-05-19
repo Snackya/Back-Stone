@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0a5cb32db030bf04ea1c9e64ae25bbb4
-timeCreated: 1494436753
+timeCreated: 1495202585
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,23 +8,23 @@ TextureImporter:
     21300002: player2SwordAttack_1
     21300004: player2SwordAttack_2
     21300006: player2SwordAttack_3
-    21300008: player2SwordAttack_4
+    21300008: left01
     21300010: player2SwordAttack_5
-    21300012: player2SwordAttack_6
-    21300014: player2SwordAttack_7
-    21300016: player2SwordAttack_8
+    21300012: left02
+    21300014: left03
+    21300016: left04
     21300018: player2SwordAttack_9
     21300020: player2SwordAttack_10
     21300022: player2SwordAttack_11
     21300024: player2SwordAttack_12
     21300026: player2SwordAttack_13
-    21300028: player2SwordAttack_14
+    21300028: left05
     21300030: player2SwordAttack_15
-    21300032: player2SwordAttack_16
+    21300032: left06
     21300034: player2SwordAttack_17
-    21300036: player2SwordAttack_18
+    21300036: left07
     21300038: player2SwordAttack_19
-    21300040: player2SwordAttack_20
+    21300040: left08
     21300042: player2SwordAttack_21
     21300044: player2SwordAttack_22
     21300046: player2SwordAttack_23
@@ -121,39 +121,39 @@ TextureImporter:
         y: 2800
         width: 542
         height: 705
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6767591, y: 0.5063698}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_4
+      name: left01
       rect:
         serializedVersion: 2
         x: 1020
         y: 2803
         width: 297
         height: 702
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.40098003, y: 0.49650866}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_6
+      name: left02
       rect:
         serializedVersion: 2
         x: 1614
         y: 2821
         width: 305
         height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.43571818, y: 0.49302757}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_7
+      name: left03
       rect:
         serializedVersion: 2
         x: 2199
@@ -161,33 +161,33 @@ TextureImporter:
         width: 363
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_8
+      name: left04
       rect:
         serializedVersion: 2
         x: 2856
         y: 2803
         width: 410
         height: 702
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5777064, y: 0.49301764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_14
+      name: left05
       rect:
         serializedVersion: 2
         x: 403
         y: 1953
         width: 605
         height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7106425, y: 0.48954153}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -200,46 +200,46 @@ TextureImporter:
         width: 11
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_16
+      name: left06
       rect:
         serializedVersion: 2
         x: 1216
         y: 1953
         width: 641
         height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7179288, y: 0.49302757}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_18
+      name: left07
       rect:
         serializedVersion: 2
         x: 1971
         y: 1953
         width: 606
         height: 702
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7102949, y: 0.49301764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2SwordAttack_20
+      name: left08
       rect:
         serializedVersion: 2
         x: 2837
         y: 1953
         width: 478
         height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.62817687, y: 0.4965136}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -252,7 +252,7 @@ TextureImporter:
         width: 14
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -265,7 +265,7 @@ TextureImporter:
         width: 349
         height: 703
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -278,7 +278,7 @@ TextureImporter:
         width: 384
         height: 703
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -291,7 +291,7 @@ TextureImporter:
         width: 351
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -304,7 +304,7 @@ TextureImporter:
         width: 327
         height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -317,7 +317,7 @@ TextureImporter:
         width: 286
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -330,7 +330,7 @@ TextureImporter:
         width: 355
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -343,7 +343,7 @@ TextureImporter:
         width: 357
         height: 705
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -356,7 +356,7 @@ TextureImporter:
         width: 407
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -369,7 +369,7 @@ TextureImporter:
         width: 287
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

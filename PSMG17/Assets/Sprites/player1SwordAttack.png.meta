@@ -1,47 +1,47 @@
 fileFormatVersion: 2
 guid: c423605d687b11c4e96e0496f15bc7f4
-timeCreated: 1494436200
+timeCreated: 1495198027
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: player1SwordAttack_0
     21300002: player1SwordAttack_1
     21300004: player1SwordAttack_2
-    21300006: player1SwordAttack_3
+    21300006: left01
     21300008: player1SwordAttack_4
-    21300010: player1SwordAttack_5
-    21300012: player1SwordAttack_6
-    21300014: player1SwordAttack_7
+    21300010: left02
+    21300012: left03
+    21300014: left04
     21300016: player1SwordAttack_8
     21300018: player1SwordAttack_9
     21300020: player1SwordAttack_10
     21300022: player1SwordAttack_11
     21300024: player1SwordAttack_12
-    21300026: player1SwordAttack_13
-    21300028: player1SwordAttack_14
+    21300026: left05
+    21300028: left06
     21300030: player1SwordAttack_15
-    21300032: player1SwordAttack_16
+    21300032: left07
     21300034: player1SwordAttack_17
-    21300036: player1SwordAttack_18
+    21300036: left08
     21300038: player1SwordAttack_19
     21300040: player1SwordAttack_20
     21300042: player1SwordAttack_21
     21300044: player1SwordAttack_22
     21300046: player1SwordAttack_23
     21300048: player1SwordAttack_24
-    21300050: player1SwordAttack_25
-    21300052: player1SwordAttack_26
-    21300054: player1SwordAttack_27
+    21300050: right01
+    21300052: right02
+    21300054: right03
     21300056: player1SwordAttack_28
-    21300058: player1SwordAttack_29
+    21300058: right04
     21300060: player1SwordAttack_30
     21300062: player1SwordAttack_31
     21300064: player1SwordAttack_32
-    21300066: player1SwordAttack_33
-    21300068: player1SwordAttack_34
+    21300066: right05
+    21300068: right06
     21300070: player1SwordAttack_35
-    21300072: player1SwordAttack_36
-    21300074: player1SwordAttack_37
+    21300072: right07
+    21300074: right08
     21300076: player1SwordAttack_38
     21300078: player1SwordAttack_39
     21300080: player1SwordAttack_40
@@ -77,7 +77,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -118,78 +118,78 @@ TextureImporter:
         y: 2851
         width: 543
         height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.67850524, y: 0.49724257}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_3
+      name: left01
       rect:
         serializedVersion: 2
-        x: 1135
+        x: 790
         y: 2851
-        width: 293
+        width: 638
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_5
+      name: left02
       rect:
         serializedVersion: 2
-        x: 1700
+        x: 1427
         y: 2870
-        width: 302
+        width: 573
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_6
+      name: left03
       rect:
         serializedVersion: 2
-        x: 2221
+        x: 2000
         y: 2870
-        width: 362
+        width: 578
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_7
+      name: left04
       rect:
         serializedVersion: 2
-        x: 2812
+        x: 2587
         y: 2870
-        width: 411
+        width: 636
         height: 705
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_13
+      name: left05
       rect:
         serializedVersion: 2
-        x: 333
+        x: 302
         y: 2016
-        width: 608
+        width: 637
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_14
+      name: left06
       rect:
         serializedVersion: 2
         x: 1052
@@ -197,46 +197,33 @@ TextureImporter:
         width: 637
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_16
+      name: left07
       rect:
         serializedVersion: 2
-        x: 1815
+        x: 1787
         y: 2038
-        width: 606
+        width: 637
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_18
+      name: left08
       rect:
         serializedVersion: 2
-        x: 2662
+        x: 2504
         y: 2038
-        width: 479
+        width: 637
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player1SwordAttack_23
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 2172
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -249,46 +236,46 @@ TextureImporter:
         width: 349
         height: 703
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_25
+      name: right01
       rect:
         serializedVersion: 2
         x: 1035
         y: 1171
-        width: 384
+        width: 407
         height: 703
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_26
+      name: right02
       rect:
         serializedVersion: 2
         x: 1595
         y: 1135
-        width: 351
+        width: 407
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_27
+      name: right03
       rect:
         serializedVersion: 2
         x: 2170
         y: 1171
-        width: 327
+        width: 407
         height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -301,51 +288,51 @@ TextureImporter:
         width: 8
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_29
+      name: right04
       rect:
         serializedVersion: 2
         x: 2691
         y: 1171
-        width: 286
+        width: 407
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_33
+      name: right05
       rect:
         serializedVersion: 2
         x: 532
         y: 319
-        width: 355
+        width: 407
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_34
+      name: right06
       rect:
         serializedVersion: 2
         x: 1288
         y: 318
-        width: 357
+        width: 407
         height: 705
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_36
+      name: right07
       rect:
         serializedVersion: 2
         x: 1917
@@ -353,20 +340,20 @@ TextureImporter:
         width: 407
         height: 704
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player1SwordAttack_37
+      name: right08
       rect:
         serializedVersion: 2
         x: 2523
         y: 321
-        width: 287
+        width: 407
         height: 702
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
