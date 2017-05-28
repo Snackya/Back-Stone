@@ -176,13 +176,11 @@ public class PlayerController : MonoBehaviour {
     {
         if (invulnerable)
         {
-            playerCollider.enabled = false;
             currentInvTime -= Time.deltaTime;
 
             if (currentInvTime <= 0)
             {
                 invulnerable = false;
-                playerCollider.enabled = true;
                 currentInvTime = maxInvTime;
             }
         }

@@ -6,6 +6,7 @@ public class GameOverManager : MonoBehaviour {
 
     public Transform[] players;
     public Transform[] healthBars;
+    public Transform[] enemies;
 
     private Button resumeButton;
     private Text gameOverText;
@@ -84,12 +85,20 @@ public class GameOverManager : MonoBehaviour {
                 player.gameObject.GetComponent<HealthbarController>().maxHealth;
 
             // TODO: set players to last saferoom
-            player.SetPositionAndRotation(new Vector3(0, 0, 0), new Quaternion());
+            player.SetPositionAndRotation(new Vector3(0, -2, 0), new Quaternion());
         }
+
         foreach (Transform healthBar in healthBars)
         {   
             // reactivates healthbars
             healthBar.gameObject.SetActive(true);
+        }
+
+        foreach(Transform enemy in enemies)
+        {
+            // reset enemy position and active status
+            enemy.gameObject.SetActive(true);
+            enemy.SetPositionAndRotation(new Vector3(0, 2, 0), new Quaternion());
         }
     }
 }
