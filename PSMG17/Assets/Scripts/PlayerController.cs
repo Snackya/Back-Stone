@@ -9,9 +9,11 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed = 5f;                // player movement speed
     public int playerNumber;                    // used to assign players to different controls
     public float knockbackPower = 1000f;
+    public float maxInvTime = 1.6f;
+    [HideInInspector] public bool isDodging = false;
 
     private bool invulnerable;
-    private float maxInvTime = 1.6f;
+    private bool dodgeOnCooldown = false;
     private float currentInvTime;
 
     private Rigidbody2D playerBody;
@@ -67,7 +69,7 @@ public class PlayerController : MonoBehaviour {
         //movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
         movementVelocity = movementInput * moveSpeed;
         Attack();
-        Sprint();
+        Dodge();
         // Testing
         // CheckIfDead();
 
@@ -115,18 +117,22 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void Sprint()
+    //Dodge-roll with invulnerability
+    private void Dodge()
     {
-        /* increasing the movement speed by small amount when player holds down sprint button
-         * and resetting it to the original value, when player releases the sprint button */
-        if (Input.GetButtonDown("Sprint" + playerNumber))
+        if (Input.GetButtonDown("Dodge" + playerNumber) && !isDodging && !dodgeOnCooldown)
         {
-            moveSpeed += sprintSpeedIncrease;
+            animator.SetTrigger("dodgeTrigger");
+            dodgeOnCooldown = true;
+            StartCoroutine(DodgeCooldownCounter());
         }
-        else if (Input.GetButtonUp("Sprint" + playerNumber))
-        {
-            moveSpeed = originalMoveSpeed;
-        }
+    }
+
+    //disable dodging for x seconds
+    private IEnumerator DodgeCooldownCounter()
+    {
+        yield return new WaitForSeconds(1.0f);
+        dodgeOnCooldown = false;
     }
 
     private void Move()
@@ -147,7 +153,7 @@ public class PlayerController : MonoBehaviour {
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && !invulnerable)
+        if (collision.gameObject.tag == "Enemy" && !invulnerable && !isDodging)
         {
             Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
@@ -181,6 +187,7 @@ public class PlayerController : MonoBehaviour {
             if (currentInvTime <= 0)
             {
                 invulnerable = false;
+                Debug.Log("blech");
                 currentInvTime = maxInvTime;
             }
         }
