@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour {
     private string m_movementAxisGamepadX;
     private string m_movementAxisGamepadY;
 
+    [HideInInspector]
+    public bool swordEquipped = true;
+
     /**
     Testing
     [SerializeField]
@@ -68,13 +71,19 @@ public class PlayerController : MonoBehaviour {
         movementInput = new Vector3(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY), 0f);  //keyboard control
         //movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
         movementVelocity = movementInput * moveSpeed;
-        Attack();
+        
         Dodge();
         // Testing
         // CheckIfDead();
 
         CheckForInv();  //check if player should currently be invulnerable
-	}
+
+        if (swordEquipped)
+        {
+            SwordAttack();
+            SweepAttack();
+        }
+    }
 
     /**
     private void CheckIfDead()
@@ -131,7 +140,7 @@ public class PlayerController : MonoBehaviour {
     //disable dodging for x seconds
     private IEnumerator DodgeCooldownCounter()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(5.0f);
         dodgeOnCooldown = false;
     }
 
@@ -141,21 +150,13 @@ public class PlayerController : MonoBehaviour {
         playerBody.velocity = movementVelocity;
     }
 
-    private void Attack()
-    {
-        if (Input.GetButtonDown("Attack" + playerNumber))
-        {
-            animator.SetTrigger("attackTrigger");
-        }
-        //Debug.Log(invulnerable);
-    }
 
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && !invulnerable && !isDodging)
         {
-            Debug.Log("Bepis");
+            //Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
 
             HealthbarController hpControl = GetComponent<HealthbarController>();
@@ -164,10 +165,10 @@ public class PlayerController : MonoBehaviour {
 
             hpControl.ReceiveDamage(dmg);
 
-            float enemyKnockbackPower = 300f;
+            float enemyKnockbackPower = 600f;
             //knock both characters back
             playerBody.AddForce(knockback * knockbackPower);
-            collision.gameObject.GetComponentInChildren<Rigidbody2D>().AddForce(-knockback * enemyKnockbackPower);
+            //collision.gameObject.GetComponentInChildren<Rigidbody2D>().AddForce(-knockback * enemyKnockbackPower);
             //other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
 
             invulnerable = true;
@@ -216,5 +217,19 @@ public class PlayerController : MonoBehaviour {
         Vector3 playerScale = playerSprite.localScale;
         playerScale.x *= -1;
         playerSprite.localScale = playerScale;
+    }
+
+    private void SwordAttack()
+    {
+        if (Input.GetButtonDown("Attack" + playerNumber))
+        {
+            animator.SetTrigger("attackTrigger");
+        }
+        //Debug.Log(invulnerable);
+    }
+
+    private void SweepAttack()
+    {
+
     }
 }
