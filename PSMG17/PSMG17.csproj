@@ -183,6 +183,7 @@
     <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\HealthbarController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

@@ -168,8 +168,8 @@ public class EnemyAI : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            enemy.AddForce(waypointDirection * (-800), fMode);
-            StartCoroutine(DecreaseVelocity());
+            //enemy.AddForce(waypointDirection * (-800), fMode);
+            //StartCoroutine(DecreaseVelocity());
             //playerHitted = true;
         }
     }

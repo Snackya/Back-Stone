@@ -8,7 +8,8 @@ public class SwordAttack : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
         }
     }
 }

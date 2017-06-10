@@ -24,7 +24,7 @@ public class Stat
         set
         {
             currentVal = Mathf.Clamp(value, 0, MaxVal);
-            bar.Value = currentVal;
+            //bar.Value = currentVal;
         }
     }
 
@@ -38,7 +38,7 @@ public class Stat
         set
         {
             maxVal = value;
-            bar.MaxValue = maxVal;
+            //bar.MaxValue = maxVal;
         }
     }
 
