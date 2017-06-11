@@ -10,6 +10,7 @@ public class SwordAttack : MonoBehaviour {
         {
             //Destroy(other.gameObject);
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
+            other.gameObject.GetComponent<EnemyAI>().Knockback();
         }
     }
 }

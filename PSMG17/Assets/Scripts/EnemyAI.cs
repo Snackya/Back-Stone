@@ -168,10 +168,15 @@ public class EnemyAI : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            //enemy.AddForce(waypointDirection * (-800), fMode);
-            //StartCoroutine(DecreaseVelocity());
+            Knockback();
             //playerHitted = true;
         }
+    }
+
+    public void Knockback()
+    {
+        enemy.AddForce(waypointDirection * (-800), fMode);
+        StartCoroutine(DecreaseVelocity());
     }
 
     // TODO: Magic numbers ändern
