@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour {
 
-    // [SerializeField]
+    //[SerializeField]
     private float fillAmount;
 
-    private float lerpSpeed = 3;
+    private float lerpSpeed = 6;
 
     [SerializeField]
     private Image content;
