@@ -5,36 +5,36 @@ using UnityEngine;
 public class BasiliskController : MonoBehaviour {
 
     public Transform[] targets;
-    public Transform target;
 
+    private Transform target;
     private Rigidbody2D enemy;
     private Animator animator;
-    private bool facingRight = true;
     private Renderer enemySprite;
     private float aggroTime = 4f;
-    private float timeBetweenAttackChecks = 1f;
-    private float headbuttRange = 1f;
+    private float timeBetweenAttackChecks = 2f;
+    private float headbuttRange = 2.3f;
+    private float rngRange = 2f;
 
     void Start()
     {
         enemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySprite = GetComponent<Renderer>();
+
+        StartCoroutine(Attack());
+        StartCoroutine(SelectNearestTarget());
+    }
+
+    void Awake()
+    {
+        // initializing target as first target at Awake()
+        target = targets[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        SelectNearestTarget();
 
-        if (Vector3.Distance(enemy.position, target.position) < 1.5f)
-        {
-            animator.SetTrigger("Attack");
-        }
-        else
-        {
-            animator.SetTrigger("Idle");
-        }
     }
 
     IEnumerator SelectNearestTarget()
@@ -61,15 +61,20 @@ public class BasiliskController : MonoBehaviour {
         StartCoroutine(SelectNearestTarget());
     }
 
-    void CheckDistanceToTarget()
-    {
-
-    }
-
     IEnumerator Attack()
     {
-        float attackDie = Random.Range(0, 10);
+        float attackDie = Random.Range(0, rngRange);
+        Debug.Log(Vector2.Distance(enemy.position, target.position));
+        Debug.Log("rolled: " + attackDie);
 
+        if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1f)
+        {
+            animator.SetTrigger("headbuttTrigger");
+        }
+        else if(attackDie < 1f)
+        {
+            animator.SetTrigger("rangedAttackTrigger");
+        }
 
         yield return new WaitForSeconds(timeBetweenAttackChecks);
         StartCoroutine(Attack());
