@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 5c1ca239610f4994993d44598eb87b8d
 timeCreated: 1497778267
+=======
+guid: 37565e33aa6f1e44d83cea55b853a4e1
+timeCreated: 1497831972
+>>>>>>> basilisk
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
