@@ -181,6 +181,7 @@
     <Compile Include="Assets\Scripts\AxeAttack.cs" />
     <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
     <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
     <Compile Include="Assets\Scripts\PressurePlate.cs" />
+    <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />

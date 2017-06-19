@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour {
 
     public Transform[] targets;
     public Transform target;                    // target to be chased, e.g. player
-    public float speed = 100f;                  // enemy speed
+    public float speed = 50f;                   // enemy speed
     private float attackSpeed;
     public ForceMode2D fMode;                   // force, that moves the enemy
     public float nextWaypointDistance = 1f;     // max distance from enemy to waypoint, before selecting next waypoint
@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
         seeker = GetComponent<Seeker>();
         enemy = GetComponent<Rigidbody2D>();
 
-        attackSpeed = speed + 50f;
+        attackSpeed = speed * 1.25f;
 
         if (target == null)
         {
