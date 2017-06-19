@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: bb699cbdcef6b594db4dbc77385a1f09
+timeCreated: 1497819383
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Player1_Spin01
+    21300002: Player1_Spin02
+    21300004: Player1_Spin03
+    21300006: Player1_Spin04
+    21300008: Player1_Spin05
+    21300010: Player1_Spin06
+    21300012: Player1_Spin07
+    21300014: Player1_Spin08
+    21300016: Player1_Spin09
+    21300018: Player1_Spin10
+    21300020: Player1_Spin11
+    21300022: Player1_Spin12
+    21300024: Player1_Spin13
+    21300026: Player1_Spin14
+    21300028: Player1_Spin15
+    21300030: Player1_Spin16
+    21300032: Player1_Spin17
+    21300034: Player1_Spin18
+    21300036: Player1_Spin19
+    21300038: Player1_Spin20
+    21300040: Player1_Spin21
+    21300042: Player1_Spin22
+    21300044: Player1_Spin23
+    21300046: Player1_Spin24
+    21300048: Player1_Spin25
+    21300050: player1_spin_attack_25
+    21300052: player1_spin_attack_26
+    21300054: Player1_Spin26
+    21300056: Player1_Spin27
+    21300058: Player1_Spin28
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player1_Spin01
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 6040
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.74778855, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin02
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 6082
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.7604954, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin03
+      rect:
+        serializedVersion: 2
+        x: 2511
+        y: 6086
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.7795561, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin04
+      rect:
+        serializedVersion: 2
+        x: 3606
+        y: 6082
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.78908634, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin05
+      rect:
+        serializedVersion: 2
+        x: 4630
+        y: 6035
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.83038473, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin06
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 4871
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.86063963, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin07
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 4853
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8970346, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin08
+      rect:
+        serializedVersion: 2
+        x: 2417
+        y: 4898
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.93342924, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin09
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 4867
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8937259, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin10
+      rect:
+        serializedVersion: 2
+        x: 4613
+        y: 4833
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8639484, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 3691
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.76239705, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin12
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 3691
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.72129875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin13
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 3684
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.62329525, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin14
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 3704
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.39251217, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin15
+      rect:
+        serializedVersion: 2
+        x: 5053
+        y: 3732
+        width: 696
+        height: 820
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin16
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2597
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.24927776, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin17
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 2597
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.2643815, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin18
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 2597
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.30063042, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin19
+      rect:
+        serializedVersion: 2
+        x: 3980
+        y: 2597
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.34292075, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin20
+      rect:
+        serializedVersion: 2
+        x: 4956
+        y: 2597
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.46677163, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin21
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1490
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.60696816, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin22
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1490
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.6856211, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin23
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1490
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8271965, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin24
+      rect:
+        serializedVersion: 2
+        x: 3633
+        y: 1538
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8492193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin25
+      rect:
+        serializedVersion: 2
+        x: 4737
+        y: 1587
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.8051737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player1_spin_attack_25
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1505
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player1_spin_attack_26
+      rect:
+        serializedVersion: 2
+        x: 2846
+        y: 1505
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin26
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 342
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.76922905, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin27
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 342
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.74570423, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player1_Spin28
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 342
+        width: 696
+        height: 820
+      alignment: 9
+      pivot: {x: 0.748318, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

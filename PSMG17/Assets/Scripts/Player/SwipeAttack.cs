@@ -9,30 +9,25 @@ public class SwipeAttack : MonoBehaviour
     private Stat cooldown;
     [SerializeField]
     private float cooldownTime;
-    
-    // TODO: Durch Funktion ersetzen, die playerNumber aus der Elternklasse holt
-    [SerializeField]
+
     private int playerNumber;
+    private PlayerController player;
 
     void Awake()
     {
         cooldown.Initialize();
+        player = GetComponentInParent<PlayerController>();
+        playerNumber = player.playerNumber;
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Swipe" + playerNumber) && cooldown.CurrentVal == cooldown.MaxVal)
         {
+            player.SwipeAttack();
             cooldown.CurrentVal = 0f;
-            Attack();
         }
         ResetCooldown();
-    }
-
-    // TODO: Animation ausführen
-    private void Attack()
-    {
-        print("SPIN TO WIN!");
     }
 
     private void ResetCooldown()

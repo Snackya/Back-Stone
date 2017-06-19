@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public bool swordEquipped = true;
-
+    private SwipeAttack swipeAttack;
     /**
     Testing
     [SerializeField]
@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour {
 
         invulnerable = false;
         currentInvTime = maxInvTime;
+
+        // Testing
+        swipeAttack = GetComponentInChildren<SwipeAttack>();
     }
 
 	void Update()
@@ -81,7 +84,6 @@ public class PlayerController : MonoBehaviour {
         if (swordEquipped)
         {
             SwordAttack();
-            SweepAttack();
         }
     }
 
@@ -228,8 +230,9 @@ public class PlayerController : MonoBehaviour {
         //Debug.Log(invulnerable);
     }
 
-    private void SweepAttack()
+    public void SwipeAttack()
     {
-
+        Debug.Log("SPIN TO WIN");
+        animator.SetTrigger("swipeTrigger");
     }
 }
