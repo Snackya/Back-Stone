@@ -10,6 +10,8 @@ public class BasiliskController : MonoBehaviour {
     private Rigidbody2D enemy;
     private Animator animator;
     private Renderer enemySprite;
+    private HealthbarController hpControl;
+
     private float aggroTime = 4f;
     private float timeBetweenAttackChecks = 2f;
     private float headbuttRange = 2.3f;
@@ -20,6 +22,7 @@ public class BasiliskController : MonoBehaviour {
         enemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySprite = GetComponent<Renderer>();
+        hpControl = GetComponent<HealthbarController>();
 
         StartCoroutine(Attack());
         StartCoroutine(SelectNearestTarget());
@@ -64,8 +67,8 @@ public class BasiliskController : MonoBehaviour {
     IEnumerator Attack()
     {
         float attackDie = Random.Range(0, rngRange);
-        Debug.Log(Vector2.Distance(enemy.position, target.position));
-        Debug.Log("rolled: " + attackDie);
+        //Debug.Log(Vector2.Distance(enemy.position, target.position));
+        //Debug.Log("rolled: " + attackDie);
 
         if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1f)
         {

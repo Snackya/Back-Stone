@@ -156,8 +156,10 @@
      <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
      <Compile Include="Assets\Scripts\PressurePlate.cs" />
+     <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
+     <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
      <Compile Include="Assets\Scripts\Stat.cs" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />

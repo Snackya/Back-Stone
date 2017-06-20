@@ -165,6 +165,8 @@ public class PlayerController : MonoBehaviour {
 
             float dmg = 20f;
 
+            if (collision.gameObject.name == "Basilisk") dmg = 40f;
+
             hpControl.ReceiveDamage(dmg);
 
             float enemyKnockbackPower = 600f;
