@@ -10,7 +10,6 @@ public class BasiliskController : MonoBehaviour {
     private Rigidbody2D enemy;
     private Animator animator;
     private Renderer enemySprite;
-    private HealthbarController hpControl;
 
     private float aggroTime = 4f;
     private float timeBetweenAttackChecks = 2f;
@@ -22,7 +21,6 @@ public class BasiliskController : MonoBehaviour {
         enemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySprite = GetComponent<Renderer>();
-        hpControl = GetComponent<HealthbarController>();
 
         StartCoroutine(Attack());
         StartCoroutine(SelectNearestTarget());
