@@ -181,12 +181,12 @@
     <Compile Include="Assets\Scripts\AxeAttack.cs" />
     <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
-    <Compile Include="Assets\Scripts\CameraTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\Player\HealthbarController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
@@ -198,6 +198,7 @@
     <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
+    <Compile Include="Assets\Scripts\Tiling.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
