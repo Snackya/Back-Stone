@@ -4,9 +4,12 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour {
 
-    public Transform[] players;
-    public Transform[] healthBars;
-    public Transform[] enemies;
+    [SerializeField]
+    private Transform[] players;
+    [SerializeField]
+    private Transform[] enemies;
+
+    private Vector3[] playerRespawnPositions = new Vector3[2] { new Vector3(-3, -2, 0), new Vector3(3, -2, 0)};
 
     private Button resumeButton;
     private Text gameOverText;
@@ -14,9 +17,22 @@ public class GameOverManager : MonoBehaviour {
 
     private bool gameOver = false;
 
+    // all rooms that need to reset after death
+    [SerializeField]
+    private Room03Script room3;
+    [SerializeField]
+    private Room2Script room2;
+
     void Awake()
     {
         initGameOverScreen();
+    }
+
+    // use this function, whenever players reach a new saferoom
+    public void setNewRespawnPosition(Vector3 player1Pos, Vector3 player2Pos)
+    {
+        playerRespawnPositions[0] = player1Pos;
+        playerRespawnPositions[1] = player2Pos;
     }
 
     private void initGameOverScreen()
@@ -72,33 +88,28 @@ public class GameOverManager : MonoBehaviour {
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
 
+        room2.resetRoom();
+        room3.resetRoom();
         reactivatePlayers();
     }
 
     private void reactivatePlayers()
     {
-        foreach (Transform player in players)
+        for (int i = 0; i < players.Length; i++)
         {
             // reactivates players and sets their current health back to max health
-            player.gameObject.SetActive(true);
-            player.gameObject.GetComponent<HealthbarController>().currentHealth = 
-                player.gameObject.GetComponent<HealthbarController>().maxHealth;
+            players[i].gameObject.SetActive(true);
+            players[i].gameObject.GetComponent<HealthbarController>().currentHealth =
+                players[i].gameObject.GetComponent<HealthbarController>().maxHealth;
 
-            // TODO: set players to last saferoom
-            player.SetPositionAndRotation(new Vector3(0, -2, 0), new Quaternion());
+            players[i].SetPositionAndRotation(playerRespawnPositions[i], new Quaternion());
         }
-
-        foreach (Transform healthBar in healthBars)
-        {   
-            // reactivates healthbars
-            healthBar.gameObject.SetActive(true);
-        }
-
+        /*
         foreach(Transform enemy in enemies)
         {
             // reset enemy position and active status
             enemy.gameObject.SetActive(true);
             enemy.SetPositionAndRotation(new Vector3(0, 2, 0), new Quaternion());
-        }
+        }*/
     }
 }

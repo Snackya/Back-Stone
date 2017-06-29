@@ -11,7 +11,7 @@ public class Room2Script : MonoBehaviour {
 
 	void Start () {
         gate = transform.Find("Gate").gameObject;
-	}
+    }
 	
 	void Update () {
 		if (firstPlate.isActive && secondPlate.isActive)
@@ -19,4 +19,9 @@ public class Room2Script : MonoBehaviour {
             gate.SetActive(false);
         }
 	}
+
+    public void resetRoom()
+    {
+        gate.SetActive(true);
+    }
 }

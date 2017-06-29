@@ -17,6 +17,7 @@ public class Room03Script : MonoBehaviour {
     private bool playersInside = false;
 
     private GameObject enemies;
+    private Vector3[] enemyPositions;
     private bool enemiesActive = false;
 
     void Start ()
@@ -25,9 +26,21 @@ public class Room03Script : MonoBehaviour {
         roomBounds = room.bounds;
         enemies = transform.Find("Enemies").gameObject;
         gate = transform.Find("Gate").gameObject;
+        InitializeEnemyPositions();
     }
-	
-	void Update ()
+
+    private void InitializeEnemyPositions()
+    {
+        enemyPositions = new Vector3[enemies.transform.childCount];
+        int i = 0;
+        foreach (Transform enemy in enemies.transform)
+        {
+            enemyPositions[i] = enemy.transform.position;
+            i++;
+        }
+    }
+
+    void Update ()
     {
         ActivateEnemies();
         CheckIfEnemiesAreDead();
@@ -64,5 +77,22 @@ public class Room03Script : MonoBehaviour {
             enemies.SetActive(true);
             enemiesActive = true;
         }
+    }
+
+    public void resetRoom()
+    {
+        int i = 0;
+        foreach (Transform enemy in enemies.transform)
+        {
+            enemy.transform.SetPositionAndRotation(enemyPositions[i], new Quaternion());
+            enemy.gameObject.GetComponent<EnemyHealth>().health.CurrentVal = 
+                enemy.gameObject.GetComponent<EnemyHealth>().health.MaxVal;
+            enemy.gameObject.SetActive(true);
+            i++;
+        }
+        enemies.SetActive(false);
+        enemiesActive = false;
+        playersInside = false;
+        gate.SetActive(true);
     }
 }

@@ -31,7 +31,7 @@ public class HealthbarController : MonoBehaviour {
         if (currentHealth <= 0)
         {
             HealthSlider.value = 0;
-            HealthSlider.gameObject.SetActive(false);
+            //HealthSlider.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }

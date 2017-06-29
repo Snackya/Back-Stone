@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour {
 
+    // TODO: Focus camera on one player, if the other one dies
+
     [SerializeField]
     private Transform[] players;
     [SerializeField]
