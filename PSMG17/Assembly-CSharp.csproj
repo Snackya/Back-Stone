@@ -158,6 +158,7 @@
      <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
      <Compile Include="Assets\Scripts\PressurePlate.cs" />
+     <Compile Include="Assets\Scripts\ProjectileController.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />

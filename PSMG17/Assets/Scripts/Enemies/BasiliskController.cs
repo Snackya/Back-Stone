@@ -5,7 +5,11 @@ using UnityEngine;
 public class BasiliskController : MonoBehaviour {
 
     public Transform[] targets;
+    public GameObject[] screams;
+    public Transform screamPosition;
+    public float screamSpeed;
 
+    private GameObject scream;
     private Transform target;
     private Rigidbody2D enemy;
     private Animator animator;
@@ -16,20 +20,25 @@ public class BasiliskController : MonoBehaviour {
     private float headbuttRange = 2.3f;
     private float rngRange = 2f;
 
-    void Start()
-    {
-        enemy = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        enemySprite = GetComponent<Renderer>();
-
-        StartCoroutine(Attack());
-        StartCoroutine(SelectNearestTarget());
-    }
 
     void Awake()
     {
         // initializing target as first target at Awake()
         target = targets[0];
+        enemy = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        enemySprite = GetComponent<Renderer>();
+    }
+
+    void Start()
+    {
+        screamSpeed = 0.01f;
+    }
+
+    void OnEnable()
+    {
+        StartCoroutine(Attack());
+        StartCoroutine(SelectNearestTarget());
     }
 
     // Update is called once per frame
@@ -75,9 +84,20 @@ public class BasiliskController : MonoBehaviour {
         else if(attackDie < 1f)
         {
             animator.SetTrigger("rangedAttackTrigger");
+            yield return new WaitForSeconds(0.75f);
+            SpawnScream();
         }
 
         yield return new WaitForSeconds(timeBetweenAttackChecks);
         StartCoroutine(Attack());
+    }
+
+    void SpawnScream()
+    {
+        int random = Random.Range(0, 2);
+        scream = screams[random];
+
+        //rotation missing
+        GameObject newScream = Instantiate(scream, screamPosition);      
     }
 }

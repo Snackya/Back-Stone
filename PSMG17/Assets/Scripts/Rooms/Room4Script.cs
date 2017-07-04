@@ -32,6 +32,7 @@ public class Room4Script : MonoBehaviour
         boss = enemy.transform.FindChild("Basilisk").gameObject;
 
         enemy.SetActive(false);
+        boss.SetActive(false);
         basiliskHealthBar.gameObject.SetActive(false);
     }
 
@@ -59,6 +60,7 @@ public class Room4Script : MonoBehaviour
             {
                 playersInside = true;
                 enemy.SetActive(true);
+                boss.SetActive(true);
                 basiliskHealthBar.gameObject.SetActive(true);
             }
         }

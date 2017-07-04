@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour {
             float dmg = 20f;
 
             if (collision.gameObject.name == "Basilisk") dmg = 40f;
+            else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
 
             hpControl.ReceiveDamage(dmg);
 
