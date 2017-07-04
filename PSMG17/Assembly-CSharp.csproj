@@ -150,7 +150,9 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyParticleControl.cs" />
      <Compile Include="Assets\Scripts\GameOverManager.cs" />
+     <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\Player\HealthbarController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
@@ -162,6 +164,7 @@
      <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
      <Compile Include="Assets\Scripts\Stat.cs" />
+     <Compile Include="Assets\Scripts\Tiling.cs" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.shader" />
      <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
