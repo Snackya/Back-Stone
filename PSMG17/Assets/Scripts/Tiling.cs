@@ -6,16 +6,20 @@ using UnityEngine;
 
 public class Tiling : MonoBehaviour
 {
+    [SerializeField]
     public int offsetX = 2;                 // the offset -> no weird errors
+    [SerializeField]
     public int offsetY = 2;
+    [SerializeField]
+    private bool reverseScaleX = false;      // used if the object is not tilable
+    [SerializeField]
+    private bool reverseScaleY = false;      // used if the object is not tilable
 
     // used for checking if there is stuff to be instantiated
     public bool hasARightBuddy = false;
     public bool hasALeftBuddy = false;
     public bool hasATopBuddy = false;
     public bool hasABottomBuddy = false;
-
-    public bool reverseScale = false;       // used if the object is not tilable
 
     private float spriteWidth = 0f;         // the width of the element
     private float spriteHeight = 0f;        // the height of the element
@@ -84,7 +88,7 @@ public class Tiling : MonoBehaviour
         Vector3 newPosition = new Vector3(myTransform.position.x, myTransform.position.y + spriteHeight * topOrBottom, myTransform.position.z);
         Transform newBuddy = Instantiate(myTransform, newPosition, myTransform.rotation) as Transform;
 
-        if (reverseScale == true)
+        if (reverseScaleY == true)
         {
             newBuddy.localScale = new Vector3(newBuddy.localScale.x, newBuddy.localScale.y * -1, newBuddy.localScale.z);
         }
@@ -109,7 +113,7 @@ public class Tiling : MonoBehaviour
         Transform newBuddy = Instantiate(myTransform, newPosition, myTransform.rotation) as Transform;
 
         // if not tilable,  the x size of the object is reversed, to get rid of ugly scenes
-        if (reverseScale == true)
+        if (reverseScaleX == true)
         {
             newBuddy.localScale = new Vector3(newBuddy.localScale.x * -1, newBuddy.localScale.y, newBuddy.localScale.z);
         }

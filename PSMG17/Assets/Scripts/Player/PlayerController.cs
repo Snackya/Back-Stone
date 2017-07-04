@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
         playerBody = GetComponent<Rigidbody2D>();
 
         playerSprite = transform.FindChild("sprite");
-        attackCollider = GetComponentInChildren<CapsuleCollider2D>();
+        attackCollider = transform.FindChild("Sword").GetComponent<CapsuleCollider2D>();
 
         playerCollider = GetComponent<Collider2D>();
         // setting orginalMoveSpeed to the movement speed given in unity

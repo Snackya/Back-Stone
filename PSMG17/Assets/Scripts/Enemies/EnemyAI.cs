@@ -8,26 +8,29 @@ using System;
 [RequireComponent(typeof(Seeker))]
 public class EnemyAI : MonoBehaviour {
 
+    [SerializeField]
     public Transform[] targets;
-    public Transform target;                    // target to be chased, e.g. player
-    public float speed = 50f;                   // enemy speed
-    private float attackSpeed;
-    public ForceMode2D fMode;                   // force, that moves the enemy
-    public float nextWaypointDistance = 1f;     // max distance from enemy to waypoint, before selecting next waypoint
+    [SerializeField]
+    public float speed = 4f;                        // enemy speed
+    [SerializeField]
+    public float nextWaypointDistance = 1f;         // max distance from enemy to waypoint, before selecting next waypoint
+    [SerializeField]
     public float aggroTime = 4f;
-    private float maxVelocity = 3f;
 
-    public Path path;                           // stores the calculated path
+    private Transform target;                       // target to be chased, e.g. player
+    private float attackSpeed;
+    private float maxVelocity = 3f;
+    private ForceMode2D fMode = ForceMode2D.Force;  // force, that moves the enemy
+
+    public Path path;                               // stores the calculated path
     [HideInInspector]
     public bool pathHasEnded = false;
 
-    private float updateRate = 2f;               // determines how often per second the path is updated
+    private float updateRate = 2f;                  // determines how often per second the path is updated
     private Seeker seeker;                      
     private Rigidbody2D enemy; 
-    private int currentWayPoint = 0;            // currently selected waypoint
-    private Vector3 waypointDirection;          // direction to next waypoint
-
-    //private bool playerHitted = false;          // checks if the player was currently hitted
+    private int currentWayPoint = 0;                // currently selected waypoint
+    private Vector3 waypointDirection;              // direction to next waypoint
 
     void Awake() {
 
@@ -39,8 +42,6 @@ public class EnemyAI : MonoBehaviour {
     {
         seeker = GetComponent<Seeker>();
         enemy = GetComponent<Rigidbody2D>();
-
-        attackSpeed = speed * 1.25f;
 
         if (target == null)
         {
@@ -112,33 +113,6 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    /*
-    void Update()
-    {
-        // CapVelocity();
-    }
-
-    private void CapVelocity()
-    {
-        if (enemy.velocity.x > 3)
-        {
-            enemy.velocity = new Vector2(3, enemy.velocity.y);
-        }
-        if (enemy.velocity.y > 3)
-        {
-            enemy.velocity = new Vector2(enemy.velocity.x, 3);
-        }
-        if (enemy.velocity.x < -3)
-        {
-            enemy.velocity = new Vector2(-3, enemy.velocity.y);
-        }
-        if (enemy.velocity.y < -3)
-        {
-            enemy.velocity = new Vector2(enemy.velocity.x, -3);
-        }
-    }
-    */
-
     void FixedUpdate()
     {
         if (target == null) return;
@@ -154,12 +128,8 @@ public class EnemyAI : MonoBehaviour {
         pathHasEnded = false;
 
         waypointDirection = (path.vectorPath[currentWayPoint] - transform.position).normalized;
-        StartCoroutine(CalculateAttackSpeed());
-        //StartCoroutine(BackUp());
 
-        // move the enemy
-        //enemy.AddForce(waypointDirection, fMode);
-        enemy.velocity = waypointDirection;
+        enemy.AddForce(waypointDirection * speed, fMode);
 
         if (Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]) < nextWaypointDistance)
         {
@@ -167,70 +137,17 @@ public class EnemyAI : MonoBehaviour {
             return;
         }
     }
-
-    /*private IEnumerator BackUp()
-    {
-        if (Vector2.Distance(enemy.position, target.position) < 0.6f && playerHitted)
-        {
-            waypointDirection *= attackSpeed * Time.fixedDeltaTime * (-1);
-            //enemy.velocity = waypointDirection * (-1) * Time.fixedDeltaTime;
-            playerHitted = false;
-        }
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(BackUp());
-    }*/
-
-    private IEnumerator CalculateAttackSpeed()
-    {
-        if (Vector2.Distance(enemy.position, target.position) > 2)
-        {
-            waypointDirection *= speed * Time.fixedDeltaTime;
-        }
-        else
-        {
-            waypointDirection *= attackSpeed * Time.fixedDeltaTime;
-        }
-
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(CalculateAttackSpeed());
-    }
-
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Knockback();
-            //playerHitted = true;
         }
     }
 
     public void Knockback()
     {
-        enemy.AddForce(waypointDirection * (-800), fMode);
-        StartCoroutine(DecreaseVelocity());
+        enemy.AddForce(waypointDirection * (-150), fMode);
     }
-
-    // TODO: Magic numbers ändern
-    private IEnumerator DecreaseVelocity()
-    {
-        enemy.AddForce(-waypointDirection, fMode);
-        speed = 10;
-        attackSpeed = 15;
-        for (int i = 0; i < 8; i++)
-        {
-            yield return new WaitForSeconds(0.15f);
-            speed += 10;
-            attackSpeed += 15;
-        }
-    }
-
-    /*private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && playerHitted)
-        {
-            Debug.Log("Penis");
-            //enemy.AddForce(waypointDirection * (-500), fMode);
-            playerHitted = false;
-        }
-    }*/
 }
