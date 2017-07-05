@@ -10,46 +10,68 @@ public class CameraControl : MonoBehaviour {
     [SerializeField]
     private Transform[] players;
     [SerializeField]
-    private GameObject area;
+    private GameObject[] areas;
     [SerializeField]
     private float maxOrthographicSize = 20f;
 
-    private List<Transform> rooms;
+    private List<List<Transform>> rooms;
     private BoxCollider2D curRoomCollider;
     private Bounds curRoomBounds;
-    private List<Bounds> roomsBounds;
+    private List<List<Bounds>> roomsBounds;
 
     private Camera gameCamera;
     private float zoomSpeed;
     private float dampTime = 0.5f;
     private Vector3 moveVelocity;
-    private float[] area01CamSizes = new float[] { 5.5f, 7f, 6.5f, 8f };
+    private float[][] areaCamSizes = new float[][] {
+        // Area 1
+        new float[] { 5.5f, 7f, 6.5f, 8f },
+        // Test Area
+        new float[] { 5.5f, 8f, 10.5f}
+    };
+
+
+    private float[] testAreaCamSizes;
 
 
     private void Awake()
     {
         gameCamera = GetComponentInChildren<Camera>();
-        rooms = new List<Transform>();
+        rooms = new List<List<Transform>>();
+        for (int i = 0; i < areas.Length; i++)
+        {
+            rooms.Add(new List<Transform>());
+        }
         GetRooms();
         SetCameraToFirstRoom();
-        GetCurrentAreaBounds(rooms);
+        GetAreaBounds(rooms);
     }
 
-    private void GetCurrentAreaBounds(List<Transform> rooms)
+    private void GetAreaBounds(List<List<Transform>> rooms)
     {
-        roomsBounds = new List<Bounds>();
+        roomsBounds = new List<List<Bounds>>();
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            roomsBounds.Add(new List<Bounds>());
+        }
 
         for (int i = 0; i < rooms.Count; i++)
         {
-            roomsBounds.Add(rooms[i].GetComponent<BoxCollider2D>().bounds);
+            for (int j = 0; j < rooms[i].Count; j++)
+            {
+                roomsBounds[i].Add(rooms[i][j].GetComponent<BoxCollider2D>().bounds);
+            }
         }
     }
 
     private void GetRooms()
     {
-        foreach (Transform room in area.transform)
+        for (int i = 0; i < rooms.Count; i++)
         {
-            rooms.Add(room);
+            foreach (Transform room in areas[i].transform)
+            {
+                rooms[i].Add(room);
+            }
         }
     }
 
@@ -61,11 +83,11 @@ public class CameraControl : MonoBehaviour {
     private void SetCameraToFirstRoom()
     {
         // initially places the camera on the first room
-        curRoomCollider = rooms[0].GetComponent<BoxCollider2D>();
+        curRoomCollider = rooms[0][0].GetComponent<BoxCollider2D>();
         curRoomBounds = curRoomCollider.bounds;
 
         transform.position = curRoomBounds.center;
-        gameCamera.orthographicSize = area01CamSizes[0];
+        gameCamera.orthographicSize = areaCamSizes[0][0];
     }
 
     private void SetCameraPosition()
@@ -73,22 +95,25 @@ public class CameraControl : MonoBehaviour {
         Vector3 player1Pos = players[0].position;
         Vector3 player2Pos = players[1].position;
 
-        for (int i = 0; i < roomsBounds.Count; i++)
+        for (int k = 0; k < roomsBounds.Count; k++)
         {
-            for (int j = 0; j < roomsBounds.Count; j++)
+            for (int i = 0; i < roomsBounds[k].Count; i++)
             {
-                if (roomsBounds[j].Contains(player1Pos) && roomsBounds[i].Contains(player2Pos) ||
-                roomsBounds[j].Contains(player2Pos) && roomsBounds[i].Contains(player1Pos))
+                for (int j = 0; j < roomsBounds[k].Count; j++)
                 {
-                    transform.position = Vector3.SmoothDamp(transform.position,
-                        (roomsBounds[i].center + roomsBounds[j].center) / 2,
-                        ref moveVelocity,
-                        dampTime);
-                    gameCamera.orthographicSize = Mathf.SmoothDamp(gameCamera.orthographicSize,
-                        Math.Min(area01CamSizes[i] + area01CamSizes[j] * Math.Abs(j - i),
-                        maxOrthographicSize),
-                        ref zoomSpeed,
-                        dampTime);
+                    if (roomsBounds[k][j].Contains(player1Pos) && roomsBounds[k][i].Contains(player2Pos) ||
+                    roomsBounds[k][j].Contains(player2Pos) && roomsBounds[k][i].Contains(player1Pos))
+                    {
+                        transform.position = Vector3.SmoothDamp(transform.position,
+                            (roomsBounds[k][i].center + roomsBounds[k][j].center) / 2,
+                            ref moveVelocity,
+                            dampTime);
+                        gameCamera.orthographicSize = Mathf.SmoothDamp(gameCamera.orthographicSize,
+                            Math.Min(areaCamSizes[k][i] + areaCamSizes[k][j] * Math.Abs(j - i),
+                            maxOrthographicSize),
+                            ref zoomSpeed,
+                            dampTime);
+                    }
                 }
             }
         }
