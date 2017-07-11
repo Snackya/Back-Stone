@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour {
 
-    //[SerializeField]
     private float fillAmount;
 
     private float lerpSpeed = 6;

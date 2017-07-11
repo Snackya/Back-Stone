@@ -35,12 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public bool swordEquipped = true;
-    private SwipeAttack swipeAttack;
-    /**
-    Testing
-    [SerializeField]
-    private Stat health;
-    **/
+    
 
     void Start()
     {
@@ -63,9 +58,6 @@ public class PlayerController : MonoBehaviour {
 
         invulnerable = false;
         currentInvTime = maxInvTime;
-
-        // Testing
-        swipeAttack = GetComponentInChildren<SwipeAttack>();
     }
 
 	void Update()
@@ -76,8 +68,6 @@ public class PlayerController : MonoBehaviour {
         movementVelocity = movementInput * moveSpeed;
         
         Dodge();
-        // Testing
-        // CheckIfDead();
 
         CheckForInv();  //check if player should currently be invulnerable
 
@@ -86,16 +76,6 @@ public class PlayerController : MonoBehaviour {
             SwordAttack();
         }
     }
-
-    /**
-    private void CheckIfDead()
-    {
-        if (health.CurrentVal == 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    **/
 
     void FixedUpdate()
     {
@@ -118,12 +98,10 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat("vSpeed", Math.Abs(movementVelocity.y));
         if (movementVelocity.x > 0 && facingLeft)
         {
-            // Debug.Log("rechts");
             Flip();
         }
         if (movementVelocity.x < 0 && !facingLeft)
         {
-            // Debug.Log("links");
             Flip();
         }
     }
@@ -148,11 +126,11 @@ public class PlayerController : MonoBehaviour {
 
     private void Move()
     {
-        //Vector3 movement = (movementInput * moveSpeed);
         playerBody.velocity = movementVelocity;
     }
 
 
+    // TODO: AUSLAGERN!
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -165,16 +143,34 @@ public class PlayerController : MonoBehaviour {
 
             float dmg = 20f;
 
-            if (collision.gameObject.name == "Basilisk") dmg = 40f;
+            hpControl.ReceiveDamage(dmg);
+
+            //knock both characters back
+            playerBody.AddForce(knockback * knockbackPower);
+
+            invulnerable = true;
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(InvFrames());
+            }
+        }
+
+        if (collision.gameObject.tag == "Boss" && !invulnerable && !isDodging)
+        {
+            //Debug.Log("Bepis");
+            Vector3 knockback = (transform.position - collision.transform.position);
+
+            HealthbarController hpControl = GetComponent<HealthbarController>();
+
+            float dmg = 10;
+
+            if (collision.gameObject.name == "Basilisk") dmg = 10f;
             else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
 
             hpControl.ReceiveDamage(dmg);
 
-            float enemyKnockbackPower = 600f;
             //knock both characters back
             playerBody.AddForce(knockback * knockbackPower);
-            //collision.gameObject.GetComponentInChildren<Rigidbody2D>().AddForce(-knockback * enemyKnockbackPower);
-            //other.attachedRigidbody.AddForce(-knockback * enemyKnockbackPower);
 
             invulnerable = true;
             if (gameObject.activeSelf)

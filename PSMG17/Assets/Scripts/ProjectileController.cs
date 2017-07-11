@@ -14,7 +14,7 @@ public class ProjectileController : MonoBehaviour
         Debug.Log(lifetime);
         lifetime -= Time.deltaTime;
 
-        if (lifetime <= 0) GameObject.Destroy(gameObject);
+        if (lifetime <= 0) Destroy(gameObject);
 
         //move projectile forward according to the current rotation
         else GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
@@ -31,7 +31,7 @@ public class ProjectileController : MonoBehaviour
         if (collision.gameObject.tag != "Enemy")
         {
             Debug.Log("scream destroyed by collision");
-            GameObject.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

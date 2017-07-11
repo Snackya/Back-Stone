@@ -16,7 +16,7 @@ public class BasiliskController : MonoBehaviour {
     private Renderer enemySprite;
 
     private float aggroTime = 4f;
-    private float timeBetweenAttackChecks = 2f;
+    private float timeBetweenAttackChecks = 1f;
     private float headbuttRange = 2.3f;
     private float rngRange = 2f;
 
@@ -77,7 +77,7 @@ public class BasiliskController : MonoBehaviour {
         //Debug.Log(Vector2.Distance(enemy.position, target.position));
         //Debug.Log("rolled: " + attackDie);
 
-        if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1f)
+        if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1.5f)
         {
             animator.SetTrigger("headbuttTrigger");
         }
