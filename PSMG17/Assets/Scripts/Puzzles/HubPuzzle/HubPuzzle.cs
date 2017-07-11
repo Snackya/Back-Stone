@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HubPuzzle : MonoBehaviour {
 
     private Transform hubs;
 
-    private int totalHubs = 4;
+    [HideInInspector]
+    public bool puzzleCompleted = false;
+
+    private int totalHubs;
 
 	void Awake ()
     {
         hubs = GameObject.Find("Hub").transform;
-        Debug.Log(hubs);
-        Debug.Log(hubs.childCount);
+        totalHubs = hubs.childCount;
 	}
 	
 	void Update ()
@@ -27,11 +26,12 @@ public class HubPuzzle : MonoBehaviour {
 
         foreach (Transform hub in hubs)
         {
-            if (hub.rotation.z == 0) counter++;
+            if (hub.rotation.z < 0.1) counter++;
         }
 
         if (counter == totalHubs)
         {
+            puzzleCompleted = true;
             Debug.Log("Puzzle completed. Open gate, etc.");
         }
     }
