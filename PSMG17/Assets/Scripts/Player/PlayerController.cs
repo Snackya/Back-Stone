@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 5f;                // player movement speed
     public int playerNumber;                    // used to assign players to different controls
-    public float knockbackPower = 1000f;
-    public float maxInvTime = 1.6f;
     [HideInInspector] public bool isDodging = false;
 
-    private bool invulnerable;
     private bool dodgeOnCooldown = false;
-    private float currentInvTime;
 
     private Rigidbody2D playerBody;
     private Collider2D playerCollider;
@@ -26,7 +20,6 @@ public class PlayerController : MonoBehaviour {
     private bool facingLeft = true;
     private CapsuleCollider2D attackCollider;
 
-    private float originalMoveSpeed;
     private float sprintSpeedIncrease = 4f;   // amount of speed increase, when player is sprinting
     private string m_movementAxisKeyboardX;
     private string m_movementAxisKeyboardY;
@@ -46,8 +39,6 @@ public class PlayerController : MonoBehaviour {
         attackCollider = transform.FindChild("Sword").GetComponent<CapsuleCollider2D>();
 
         playerCollider = GetComponent<Collider2D>();
-        // setting orginalMoveSpeed to the movement speed given in unity
-        originalMoveSpeed = moveSpeed;
 
         animator = GetComponent<Animator>();
 
@@ -55,9 +46,6 @@ public class PlayerController : MonoBehaviour {
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
         m_movementAxisGamepadX = "GamepadHorizontal" + playerNumber;
         m_movementAxisGamepadY = "GamepadVertical" + playerNumber;
-
-        invulnerable = false;
-        currentInvTime = maxInvTime;
     }
 
 	void Update()
@@ -69,12 +57,11 @@ public class PlayerController : MonoBehaviour {
         
         Dodge();
 
-        CheckForInv();  //check if player should currently be invulnerable
-
         if (swordEquipped)
         {
             SwordAttack();
         }
+        Debug.Log(isDodging);
     }
 
     void FixedUpdate()
@@ -127,88 +114,6 @@ public class PlayerController : MonoBehaviour {
     private void Move()
     {
         playerBody.velocity = movementVelocity;
-    }
-
-
-    // TODO: AUSLAGERN!
-    //player gets hit by an enemy
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy" && !invulnerable && !isDodging)
-        {
-            animator.SetTrigger("getHitTrigger");
-            //Debug.Log("Bepis");
-            Vector3 knockback = (transform.position - collision.transform.position);
-
-            HealthbarController hpControl = GetComponent<HealthbarController>();
-
-            float dmg = 20f;
-
-            hpControl.ReceiveDamage(dmg);
-
-            //knock both characters back
-            playerBody.AddForce(knockback * knockbackPower);
-
-            invulnerable = true;
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(InvFrames());
-            }
-        }
-
-        if (collision.gameObject.tag == "Boss" && !invulnerable && !isDodging)
-        {
-            animator.SetTrigger("getHitTrigger");
-            //Debug.Log("Bepis");
-            Vector3 knockback = (transform.position - collision.transform.position);
-
-            HealthbarController hpControl = GetComponent<HealthbarController>();
-
-            float dmg = 10;
-
-            if (collision.gameObject.name == "Basilisk") dmg = 10f;
-            else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
-
-            hpControl.ReceiveDamage(dmg);
-
-            //knock both characters back
-            playerBody.AddForce(knockback * knockbackPower);
-
-            invulnerable = true;
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(InvFrames());
-            }
-        }
-    }
-
-    private void CheckForInv()
-    {
-        if (invulnerable)
-        {
-            currentInvTime -= Time.deltaTime;
-
-            if (currentInvTime <= 0)
-            {
-                invulnerable = false;
-                // Debug.Log("blech");
-                currentInvTime = maxInvTime;
-            }
-        }
-    }
-
-    private IEnumerator InvFrames()
-    {
-        sprRenderer = GetComponentInChildren<SpriteRenderer>();
-
-        //loop to add a flashing effect to the player, showing invulnerability
-        while (invulnerable)
-        {
-            sprRenderer.enabled = false;
-            yield return new WaitForSeconds(0.2f);
-            sprRenderer.enabled = true;
-            yield return new WaitForSeconds(0.2f);
-        }
     }
 
     private void Flip()
