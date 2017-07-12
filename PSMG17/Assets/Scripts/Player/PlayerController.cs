@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy" && !invulnerable && !isDodging)
         {
+            animator.SetTrigger("getHitTrigger");
             //Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
 
@@ -157,6 +158,7 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.gameObject.tag == "Boss" && !invulnerable && !isDodging)
         {
+            animator.SetTrigger("getHitTrigger");
             //Debug.Log("Bepis");
             Vector3 knockback = (transform.position - collision.transform.position);
 
