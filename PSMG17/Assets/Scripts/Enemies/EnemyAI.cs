@@ -32,14 +32,12 @@ public class EnemyAI : MonoBehaviour {
     private int currentWayPoint = 0;                // currently selected waypoint
     private Vector3 waypointDirection;              // direction to next waypoint
 
-    void Awake() {
 
-        // initializing target as first target at Awake()
-        target = targets[0];
-    }
-
-    void Start()
+    void OnEnable()
     {
+        // initializing target as first target at OnEnable()
+        target = targets[0];
+
         seeker = GetComponent<Seeker>();
         enemy = GetComponent<Rigidbody2D>();
 
@@ -47,7 +45,7 @@ public class EnemyAI : MonoBehaviour {
         {
             return;
         }
-    
+
         //seeker.StartPath(transform.position, target.position, OnPathComplete);
         StartCoroutine(UpdatePath());
         StartCoroutine(SelectNearestTarget());
@@ -82,7 +80,7 @@ public class EnemyAI : MonoBehaviour {
     IEnumerator SelectNearestTarget()
     {
         float distanceToCurrentTarget = Vector2.Distance(enemy.position, target.position);
-
+        
         for (int i = 0; i < targets.Length; i++)
         {
             if (!targets[0].gameObject.activeSelf)

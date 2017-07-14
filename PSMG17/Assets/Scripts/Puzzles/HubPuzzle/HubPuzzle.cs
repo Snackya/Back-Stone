@@ -20,13 +20,13 @@ public class HubPuzzle : MonoBehaviour {
         CheckIfPuzzleIsCompleted();
 	}
 
-    private void CheckIfPuzzleIsCompleted()
+    public void CheckIfPuzzleIsCompleted()
     {
         int counter = 0;
 
         foreach (Transform hub in hubs)
         {
-            if (hub.rotation.z < 0.1) counter++;
+            if (hub.rotation.z < 0.1 && hub.rotation.z > -0.1) counter++;
         }
 
         if (counter == totalHubs)

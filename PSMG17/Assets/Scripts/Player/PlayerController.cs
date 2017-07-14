@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour {
         {
             SwordAttack();
         }
-        Debug.Log(isDodging);
     }
 
     void FixedUpdate()
