@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    public GameObject[] targets;
-    public float speed = 0.5f;
+    private Transform target;
 
-    float lifetime = 4f;
+    private float speed = 2.5f;
+    private float lifetime = 4f;
+    private Vector2 direction;
+
+
+    void Awake()
+    {
+        target = GetComponentInParent<BasiliskController>().target;
+        direction = (transform.position - target.position).normalized;
+
+        float angleRad = Mathf.Atan2(transform.position.y - target.position.y, 
+            transform.position.x - target.position.x);
+        float angleDeg = (180 / Mathf.PI) * angleRad;
+
+        transform.Rotate(0, 0, angleDeg);
+
+        direction *= -speed;
+    }
 
     void Update()
     {
-        Debug.Log(lifetime);
         lifetime -= Time.deltaTime;
 
         if (lifetime <= 0) Destroy(gameObject);
 
         //move projectile forward according to the current rotation
-        else GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+        else GetComponent<Rigidbody2D>().velocity = direction;
     }
 
-    void Awake()
-    {
-
-    }
-
+   
     void OnCollisionEnter2D(Collision2D collision)
     {
         //do not destroy if it collides with the enemy shooting it

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,15 +8,14 @@ public class BasiliskController : MonoBehaviour {
     public Transform[] targets;
     public GameObject[] screams;
     public Transform screamPosition;
-    public float screamSpeed;
 
     private GameObject scream;
-    private Transform target;
+    public Transform target;
     private Rigidbody2D enemy;
     private Animator animator;
     private Renderer enemySprite;
 
-    private float aggroTime = 4f;
+    private float aggroTime = 1f;
     private float timeBetweenAttackChecks = 1f;
     private float headbuttRange = 2.3f;
     private float rngRange = 2f;
@@ -32,19 +32,12 @@ public class BasiliskController : MonoBehaviour {
 
     void Start()
     {
-        screamSpeed = 0.01f;
     }
 
     void OnEnable()
     {
         StartCoroutine(Attack());
         StartCoroutine(SelectNearestTarget());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator SelectNearestTarget()
@@ -73,18 +66,26 @@ public class BasiliskController : MonoBehaviour {
 
     IEnumerator Attack()
     {
-        float attackDie = Random.Range(0, rngRange);
-        //Debug.Log(Vector2.Distance(enemy.position, target.position));
-        //Debug.Log("rolled: " + attackDie);
+        float attackDie = UnityEngine.Random.Range(0, rngRange);
 
-        if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1.5f)
-        {
-            animator.SetTrigger("headbuttTrigger");
-        }
-        else if(attackDie < 1f)
+        // if both players are out of the headbutt range, the basilisk spams its range attack
+        if (Vector2.Distance(enemy.position, targets[0].position) > headbuttRange &&
+            Vector2.Distance(enemy.position, targets[1].position) > headbuttRange)
         {
             animator.SetTrigger("rangedAttackTrigger");
             yield return new WaitForSeconds(0.75f);
+            SelectTarget();
+            SpawnScream();
+        }
+        else if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1f)
+        {
+            animator.SetTrigger("headbuttTrigger");
+        }
+        else if (attackDie > 1f)
+        {
+            animator.SetTrigger("rangedAttackTrigger");
+            yield return new WaitForSeconds(0.75f);
+            SelectTarget();
             SpawnScream();
         }
 
@@ -92,9 +93,21 @@ public class BasiliskController : MonoBehaviour {
         StartCoroutine(Attack());
     }
 
+    private void SelectTarget()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, 2);
+        target = targets[randomIndex];
+
+        // Select other target, if selected target is in headbutt range
+        if (Vector2.Distance(enemy.position, target.position) < headbuttRange)
+        {
+            target = targets[1 - randomIndex];
+        }
+    }
+
     void SpawnScream()
     {
-        int random = Random.Range(0, 2);
+        int random = UnityEngine.Random.Range(0, 2);
         scream = screams[random];
 
         //rotation missing
