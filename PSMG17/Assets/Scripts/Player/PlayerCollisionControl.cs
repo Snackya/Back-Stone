@@ -25,36 +25,43 @@ public class PlayerCollisionControl : MonoBehaviour {
         currentInvTime = maxInvTime;
     }
 	
-	void Update () {
+	void Update ()
+    {
         CheckForInv();
-	}
+    }
 
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
         float dmg = 20f;
-        if (collision.gameObject.tag == "Boss" ||
-            collision.gameObject.tag == "Enemy" &&
-            !invulnerable && !playerScript.isDodging)
+        if (!invulnerable && !playerScript.isDodging)
         {
-            animator.SetTrigger("getHitTrigger");
-
-            Vector3 knockback = (transform.position - collision.transform.position);
-            HealthbarController hpControl = GetComponent<HealthbarController>();
-
-            if (collision.gameObject.name == "Basilisk") dmg = 10f;
-            else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
-
-            hpControl.ReceiveDamage(dmg);
-
-            //knock both characters back
-            playerBody.AddForce(knockback * knockbackPower);
-
-            invulnerable = true;
-
-            if (gameObject.activeSelf)
+            if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Enemy")
             {
-                StartCoroutine(InvFrames());
+                if (playerScript.playerNumber == 1)
+                {
+                    Debug.Log(collision.gameObject.tag);
+                    Debug.Log(invulnerable);
+                }
+                animator.SetTrigger("getHitTrigger");
+
+                Vector3 knockback = (transform.position - collision.transform.position);
+                HealthbarController hpControl = GetComponent<HealthbarController>();
+
+                if (collision.gameObject.name == "Basilisk") dmg = 10f;
+                else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
+
+                hpControl.ReceiveDamage(dmg);
+
+                //knock both characters back
+                playerBody.AddForce(knockback * knockbackPower);
+
+                invulnerable = true;
+
+                if (gameObject.activeSelf)
+                {
+                    StartCoroutine(InvFrames());
+                }
             }
         }
     }
@@ -67,9 +74,9 @@ public class PlayerCollisionControl : MonoBehaviour {
         while (invulnerable)
         {
             sprRenderer.enabled = false;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             sprRenderer.enabled = true;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

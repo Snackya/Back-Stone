@@ -40,12 +40,6 @@ public class BasiliskController : MonoBehaviour {
         StartCoroutine(SelectNearestTarget());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator SelectNearestTarget()
     {
         float distanceToCurrentTarget = Vector2.Distance(enemy.position, target.position);
@@ -69,28 +63,6 @@ public class BasiliskController : MonoBehaviour {
         yield return new WaitForSeconds(aggroTime);
         StartCoroutine(SelectNearestTarget());
     }
-
-    /*
-    IEnumerator Attack()
-    {
-        float attackDie = Random.Range(0, rngRange);
-        //Debug.Log(Vector2.Distance(enemy.position, target.position));
-        //Debug.Log("rolled: " + attackDie);
-
-        if (Vector2.Distance(enemy.position, target.position) < headbuttRange && attackDie < 1.5f)
-        {
-            animator.SetTrigger("headbuttTrigger");
-        }
-        else if(attackDie < 1f)
-        {
-            animator.SetTrigger("rangedAttackTrigger");
-            yield return new WaitForSeconds(0.75f);
-            SpawnScream();
-        }
-
-        yield return new WaitForSeconds(timeBetweenAttackChecks);
-        StartCoroutine(Attack());
-    }*/
 
     IEnumerator Attack()
     {

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5d992d1629e08b74da1fb41476423faf
-timeCreated: 1500298751
+timeCreated: 1500328643
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -132,12 +132,12 @@ TextureImporter:
       name: Druckplatten01
       rect:
         serializedVersion: 2
-        x: 45
-        y: 63
-        width: 477
-        height: 294
+        x: 20
+        y: 25
+        width: 369
+        height: 346
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -145,12 +145,12 @@ TextureImporter:
       name: Druckplatten02
       rect:
         serializedVersion: 2
-        x: 600
-        y: 63
-        width: 477
-        height: 294
+        x: 493
+        y: 25
+        width: 368
+        height: 346
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -158,12 +158,12 @@ TextureImporter:
       name: Druckplatten03
       rect:
         serializedVersion: 2
-        x: 1156
-        y: 63
-        width: 477
-        height: 294
+        x: 943
+        y: 25
+        width: 368
+        height: 346
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
