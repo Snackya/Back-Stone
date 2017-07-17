@@ -6,7 +6,7 @@ public class ProjectileController : MonoBehaviour
 {
     private Transform target;
 
-    private float speed = 2;
+    private float speed = 2.5f;
     private float lifetime = 4f;
     private Vector2 direction;
 
@@ -27,7 +27,6 @@ public class ProjectileController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(direction);
         lifetime -= Time.deltaTime;
 
         if (lifetime <= 0) Destroy(gameObject);
