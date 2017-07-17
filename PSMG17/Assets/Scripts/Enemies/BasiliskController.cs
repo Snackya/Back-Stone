@@ -7,10 +7,9 @@ public class BasiliskController : MonoBehaviour {
     public Transform[] targets;
     public GameObject[] screams;
     public Transform screamPosition;
-    public float screamSpeed;
 
     private GameObject scream;
-    private Transform target;
+    public Transform target;
     private Rigidbody2D enemy;
     private Animator animator;
     private Renderer enemySprite;
@@ -32,7 +31,6 @@ public class BasiliskController : MonoBehaviour {
 
     void Start()
     {
-        screamSpeed = 0.01f;
     }
 
     void OnEnable()
