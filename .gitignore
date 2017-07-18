@@ -1,16 +1,16 @@
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
-Obj/
-UnityGenerated/
-Library/
-Assets/AssetStoreTools*
+PSMG17/Temp/
+PSMG17/Obj/
+PSMG17/UnityGenerated/
+PSMG17/Library/
+PSMG17/Assets/AssetStoreTools*
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
-ExportedObj/
+PSMG17/ExportedObj/
 *.svd
 *.userprefs
 *.csproj
