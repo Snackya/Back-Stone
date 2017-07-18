@@ -143,10 +143,13 @@
      <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
      <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
+     <Compile Include="Assets\DialogTest.cs" />
      <Compile Include="Assets\Scripts\AxeAttack.cs" />
      <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\DialogManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\BlackKnighController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
@@ -154,17 +157,21 @@
      <Compile Include="Assets\Scripts\GameOverManager.cs" />
      <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\Player\HealthbarController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCollisionControl.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
      <Compile Include="Assets\Scripts\PressurePlate.cs" />
      <Compile Include="Assets\Scripts\ProjectileController.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPressurePlates.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPuzzle.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
      <Compile Include="Assets\Scripts\Stat.cs" />
+     <Compile Include="Assets\Scripts\TextboxManagerOld.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.shader" />
@@ -176,6 +183,7 @@
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
      <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
+     <None Include="Assets\Text\player1.txt" />
      <None Include="Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
