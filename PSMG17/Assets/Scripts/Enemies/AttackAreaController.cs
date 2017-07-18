@@ -18,6 +18,16 @@ public class AttackAreaController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
+        if(other.gameObject.tag == "Player")
+        {
+            if(other.gameObject.transform.position.x > parent.transform.position.x)
+            {
+                animator.SetTrigger("attackLeftTrigger");
+            }
+            if (other.gameObject.transform.position.x > parent.transform.position.x)
+            {
+                animator.SetTrigger("attackRightTrigger");
+            }
+        }
     }
 }
