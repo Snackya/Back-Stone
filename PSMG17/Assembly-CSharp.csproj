@@ -143,11 +143,11 @@
      <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
      <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
-     <Compile Include="Assets\DialogTest.cs" />
      <Compile Include="Assets\Scripts\AxeAttack.cs" />
      <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
+     <Compile Include="Assets\Scripts\DialogTest.cs" />
      <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
      <Compile Include="Assets\Scripts\Enemies\BlackKnighController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
