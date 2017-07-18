@@ -148,6 +148,7 @@
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
      <Compile Include="Assets\Scripts\DialogTest.cs" />
+     <Compile Include="Assets\Scripts\Enemies\AttackAreaController.cs" />
      <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
      <Compile Include="Assets\Scripts\Enemies\BlackKnighController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
