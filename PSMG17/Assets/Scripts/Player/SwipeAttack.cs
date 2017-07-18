@@ -54,9 +54,9 @@ public class SwipeAttack : MonoBehaviour
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 30;
             other.gameObject.GetComponent<EnemyAI>().Knockback();
         }
-        if (other.gameObject.tag == "Boss")
+        if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Swipe Attack on Boss.");
+            Debug.Log("Swipe Attack on Basilisk.");
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 7;
         }
     }

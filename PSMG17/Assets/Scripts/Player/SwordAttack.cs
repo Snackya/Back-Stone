@@ -13,9 +13,9 @@ public class SwordAttack : MonoBehaviour {
             other.gameObject.GetComponent<EnemyAI>().Knockback();
         }
 
-        if (other.gameObject.tag == "Boss")
+        if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Standard Attack on Boss.");
+            Debug.Log("Standard Attack on Basilisk.");
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
         }
     }
