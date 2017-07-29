@@ -17,7 +17,8 @@ public class EnemyAI : MonoBehaviour {
     [SerializeField]
     public float aggroTime = 4f;
 
-    private Transform target;                       // target to be chased, e.g. player
+    [HideInInspector]
+    public Transform target;                       // target to be chased, e.g. player
     private float attackSpeed;
     private float maxVelocity = 3f;
     private ForceMode2D fMode = ForceMode2D.Force;  // force, that moves the enemy
