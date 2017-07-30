@@ -6,6 +6,8 @@ public class ArcherArmRotation : MonoBehaviour {
 
     [HideInInspector]
     public int rotationOffset = -30;   //210
+    [HideInInspector]
+    public float rotZ;
     private Transform target;
 
     void Awake()
@@ -24,7 +26,7 @@ public class ArcherArmRotation : MonoBehaviour {
         Vector3 difference = target.position - transform.position;
         difference.Normalize();     // normalizing the vector. meaning that all the sum of the vector will be equal to 1.
 
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;   // find the angle in degrees
+        rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;   // find the angle in degrees
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
     }
 }

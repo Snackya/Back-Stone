@@ -9,6 +9,7 @@ public class ArcherAnimScript : MonoBehaviour {
     private bool facingRight = true;
     private Transform arm;
     private ArcherArmRotation armScript;
+    private EnemyAI enemyAI;
 
     private int armRotationRight = -30;
     private int armRotationLeft = 210;
@@ -18,6 +19,7 @@ public class ArcherAnimScript : MonoBehaviour {
         animator = GetComponent<Animator>();
         arm = transform.FindChild("Arm");
         armScript = GetComponentInChildren<ArcherArmRotation>();
+        enemyAI = GetComponent<EnemyAI>();
     }
 	
 
@@ -25,12 +27,14 @@ public class ArcherAnimScript : MonoBehaviour {
         animator.SetFloat("Speed", Mathf.Abs(enemy.velocity.x));
         animator.SetFloat("vSpeed", Mathf.Abs(enemy.velocity.y));
 
-        if (enemy.velocity.x > 0 && !facingRight)
+        if (transform.position.x < enemyAI.target.position.x 
+            && !facingRight)
         {
             armScript.rotationOffset = armRotationRight;
             Flip();
         }
-        if (enemy.velocity.x < 0 && facingRight)
+        if (transform.position.x > enemyAI.target.position.x 
+            && facingRight)
         {
             armScript.rotationOffset = armRotationLeft;
             Flip();
@@ -45,9 +49,5 @@ public class ArcherAnimScript : MonoBehaviour {
         Vector3 enemyScale = transform.localScale;
         enemyScale.x *= -1;
         transform.localScale = enemyScale;
-
-        //Vector3 armScale = arm.localScale;
-        //armScale.x *= -1;
-        //arm.localScale = armScale;
     }
 }
