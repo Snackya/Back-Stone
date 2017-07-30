@@ -36,7 +36,7 @@ public class PlayerCollisionControl : MonoBehaviour {
         float dmg = 20f;
         if (!invulnerable && !playerScript.isDodging)
         {
-            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk")
             {
                 if (playerScript.playerNumber == 1)
                 {

@@ -5,17 +5,25 @@ using UnityEngine;
 
 public class ArcherAI : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject arrow;
+    [SerializeField]
+    private Transform arrowPos;
+
     private Transform target;
     private Rigidbody2D enemy;
+
+    private float attackRange = 5f;
 
 	// Use this for initialization
 	void OnEnable () {
         target = GetComponent<EnemyAI>().target;
         enemy = GetComponent<Rigidbody2D>();
+        StartCoroutine(ShootArrows());
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         target = GetComponent<EnemyAI>().target;
 
         StopAtShootingRange();
@@ -23,7 +31,7 @@ public class ArcherAI : MonoBehaviour {
 
     private void StopAtShootingRange()
     {
-        if (Vector2.Distance(transform.position, target.position) < 4)
+        if (Vector2.Distance(transform.position, target.position) < attackRange)
         {
             enemy.constraints = RigidbodyConstraints2D.FreezePositionX | 
                 RigidbodyConstraints2D.FreezePositionY |
@@ -34,5 +42,16 @@ public class ArcherAI : MonoBehaviour {
             enemy.constraints = RigidbodyConstraints2D.None;
             enemy.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+    }
+
+
+    private IEnumerator ShootArrows()
+    {
+        if (Vector2.Distance(transform.position, target.position) < attackRange)
+        {
+            GameObject newArrow = Instantiate(arrow, arrowPos);
+        }
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(ShootArrows());
     }
 }

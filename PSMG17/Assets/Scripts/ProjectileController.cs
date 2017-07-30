@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [SerializeField]
+    private string enemyType;
     private Transform target;
+    private Rigidbody2D rb;
 
+    [SerializeField]
     private float speed = 2.5f;
     private float lifetime = 4f;
     private Vector2 direction;
@@ -13,7 +17,16 @@ public class ProjectileController : MonoBehaviour
 
     void Awake()
     {
-        target = GetComponentInParent<BasiliskController>().target;
+        rb = GetComponent<Rigidbody2D>();
+        if (enemyType == "Basilisk")
+        {
+           target = GetComponentInParent<BasiliskController>().target;
+        }
+        else if (enemyType == "Archer")
+        {
+            target = GetComponentInParent<EnemyAI>().target;
+        }
+       
         direction = (transform.position - target.position).normalized;
 
         float angleRad = Mathf.Atan2(transform.position.y - target.position.y, 
@@ -23,6 +36,9 @@ public class ProjectileController : MonoBehaviour
         transform.Rotate(0, 0, angleDeg);
 
         direction *= -speed;
+
+        // prevents the projectile from moving and rotating along with its parent
+        transform.parent = null;
     }
 
     void Update()
@@ -32,10 +48,10 @@ public class ProjectileController : MonoBehaviour
         if (lifetime <= 0) Destroy(gameObject);
 
         //move projectile forward according to the current rotation
-        else GetComponent<Rigidbody2D>().velocity = direction;
+        else rb.velocity = direction;
     }
 
-   
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         //do not destroy if it collides with the enemy shooting it
