@@ -6,7 +6,7 @@ public class ArcherAnimScript : MonoBehaviour {
 
     private Rigidbody2D enemy;
     private Animator animator;
-    private bool facingRight = true;
+    public bool facingRight = true;
     private Transform arm;
     private ArcherArmRotation armScript;
     private EnemyAI enemyAI;

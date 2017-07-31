@@ -14,6 +14,7 @@ public class ProjectileController : MonoBehaviour
     private float lifetime = 4f;
     private Vector2 direction;
 
+    private bool archerFacingRight;
 
     void Awake()
     {
@@ -25,6 +26,10 @@ public class ProjectileController : MonoBehaviour
         else if (enemyType == "Archer")
         {
             target = GetComponentInParent<EnemyAI>().target;
+
+            archerFacingRight = GetComponentInParent<ArcherAnimScript>().facingRight;
+            if (archerFacingRight) transform.rotation = Quaternion.Euler(0, 0, 0);
+            else transform.rotation = Quaternion.Euler(180, 0, 0);
         }
        
         direction = (transform.position - target.position).normalized;
