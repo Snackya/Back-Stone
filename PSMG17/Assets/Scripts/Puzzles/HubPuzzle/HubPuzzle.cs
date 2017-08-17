@@ -9,6 +9,8 @@ public class HubPuzzle : MonoBehaviour {
 
     private int totalHubs;
 
+    private float[] rotationTolerance = new float[] { 0.71f, 0.7f };
+
 	void Awake ()
     {
         hubs = GameObject.Find("Hub").transform;
@@ -26,7 +28,7 @@ public class HubPuzzle : MonoBehaviour {
 
         foreach (Transform hub in hubs)
         {
-            if (hub.rotation.z < 0.1 && hub.rotation.z > -0.1) counter++;
+            if (hub.rotation.z < rotationTolerance[0] && hub.rotation.z > rotationTolerance[1]) counter++;
         }
 
         if (counter == totalHubs)
