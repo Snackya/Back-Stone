@@ -17,11 +17,18 @@ public class GameOverManager : MonoBehaviour {
 
     private bool gameOver = false;
 
-    // all rooms that need to reset after death
+    // ALT
     [SerializeField]
     private Room03Script room3;
     [SerializeField]
     private Room2Script room2;
+
+    // NEU
+    [SerializeField] private Saferoom room01;
+    [SerializeField] private Room02 room02;
+    [SerializeField] private Saferoom room05;
+    [SerializeField] private Saferoom room11;
+
 
     void Awake()
     {
@@ -88,9 +95,22 @@ public class GameOverManager : MonoBehaviour {
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
 
+        reactivatePlayers();
+        // ALT
         room2.resetRoom();
         room3.resetRoom();
-        reactivatePlayers();
+
+        // NEU
+        resetRooms();
+
+    }
+
+    private void resetRooms()
+    {
+        room01.resetRoom();
+        room02.resetRoom();
+        room05.resetRoom();
+        room11.resetRoom();
     }
 
     private void reactivatePlayers()

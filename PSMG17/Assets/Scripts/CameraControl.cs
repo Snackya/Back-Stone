@@ -85,11 +85,11 @@ public class CameraControl : MonoBehaviour {
     private void SetCameraToFirstRoom()
     {
         // initially places the camera on the first room
-        curRoomCollider = rooms[0][0].GetComponent<BoxCollider2D>();
+        curRoomCollider = rooms[2][0].GetComponent<BoxCollider2D>();
         curRoomBounds = curRoomCollider.bounds;
 
         transform.position = curRoomBounds.center;
-        gameCamera.orthographicSize = areaCamSizes[0][0];
+        gameCamera.orthographicSize = areaCamSizes[2][0];
     }
 
     private void SetCameraPosition()

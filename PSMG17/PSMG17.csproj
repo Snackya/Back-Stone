@@ -204,6 +204,8 @@
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPressurePlates.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPuzzle.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Saferoom.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
