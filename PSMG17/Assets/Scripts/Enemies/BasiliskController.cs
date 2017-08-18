@@ -17,7 +17,7 @@ public class BasiliskController : MonoBehaviour {
 
     private float aggroTime = 1f;
     private float timeBetweenAttackChecks = 1f;
-    private float headbuttRange = 2.3f;
+    private float headbuttRange = 5f;
     private float rngRange = 2f;
 
 

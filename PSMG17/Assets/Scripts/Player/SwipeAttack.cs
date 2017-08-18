@@ -56,8 +56,19 @@ public class SwipeAttack : MonoBehaviour
         }
         if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Swipe Attack on Basilisk.");
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 7;
+            if (other.gameObject.name.Contains("BasiliskScream"))
+            {
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.name == "Headbutt")
+            {
+
+            }
+            else
+            {
+                Debug.Log("Swipe Attack on Basilisk.");
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 7;
+            }
         }
     }
 }

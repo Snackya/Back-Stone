@@ -33,34 +33,46 @@ public class PlayerCollisionControl : MonoBehaviour {
     //player gets hit by an enemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        float dmg = 20f;
+        float dmg = 0f;
+        bool knockback = false;
         if (!invulnerable && !playerScript.isDodging)
         {
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk")
             {
-                if (playerScript.playerNumber == 1)
-                {
-                    Debug.Log(collision.gameObject.tag);
-                    Debug.Log(invulnerable);
-                }
-                animator.SetTrigger("getHitTrigger");
-
-                Vector3 knockback = (transform.position - collision.transform.position);
                 HealthbarController hpControl = GetComponent<HealthbarController>();
 
-                if (collision.gameObject.name == "Basilisk") dmg = 10f;
-                else if (collision.gameObject.name.Contains("BasiliskScream")) dmg = 30f;
-
+                Debug.Log(collision.gameObject.name);
+                if (collision.gameObject.name == "Headbutt")
+                {
+                    dmg = 45f;
+                    knockback = true;
+                }
+                else if (collision.gameObject.name.Contains("BasiliskScream"))
+                {
+                    dmg = 30f;
+                    knockback = true;
+                }
+                else if (collision.gameObject.tag == "Enemy")
+                {
+                    dmg = 15f;
+                    knockback = true;
+                }
+                Debug.Log(dmg);
                 hpControl.ReceiveDamage(dmg);
 
                 //knock both characters back
-                playerBody.AddForce(knockback * knockbackPower);
-
-                invulnerable = true;
-
-                if (gameObject.activeSelf)
+                if (knockback)
                 {
-                    StartCoroutine(InvFrames());
+                    animator.SetTrigger("getHitTrigger");
+                    Vector3 knockbackDirection = (transform.position - collision.transform.position);
+
+                    playerBody.AddForce(knockbackDirection * knockbackPower);
+                    invulnerable = true;
+
+                    if (gameObject.activeSelf)
+                    {
+                        StartCoroutine(InvFrames());
+                    }
                 }
             }
         }

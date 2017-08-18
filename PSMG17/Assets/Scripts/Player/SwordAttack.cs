@@ -15,8 +15,19 @@ public class SwordAttack : MonoBehaviour {
 
         if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Standard Attack on Basilisk.");
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            if (other.gameObject.name.Contains("BasiliskScream"))
+            {
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.name == "Headbutt")
+            {
+                
+            }
+            else
+            {
+                Debug.Log("Standard Attack on Basilisk.");
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            }
         }
     }
 }
