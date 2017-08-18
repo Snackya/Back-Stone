@@ -19,12 +19,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1366
     height: 645
   m_MinSize: {x: 683, y: 345}
   m_MaxSize: {x: 12008, y: 8045}
   vertical: 0
   controlID: 4922
+=======
+    width: 1536
+    height: 771
+  m_MinSize: {x: 583, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
+  vertical: 0
+  controlID: 947
+>>>>>>> game-dev
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -47,10 +56,17 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 386
     y: 92
     width: 623
     height: 409
+=======
+    x: 402
+    y: 17
+    width: 806
+    height: 434
+>>>>>>> game-dev
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -59,10 +75,17 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -311.5
     m_HBaseRangeMax: 311.5
     m_VBaseRangeMin: -175.21875
     m_VBaseRangeMax: 175.21875
+=======
+    m_HBaseRangeMin: -403
+    m_HBaseRangeMax: 403
+    m_VBaseRangeMin: -208.5
+    m_VBaseRangeMax: 208.5
+>>>>>>> game-dev
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -79,25 +102,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 623
       height: 392
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 311.5, y: 196}
+=======
+      width: 806
+      height: 417
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 403, y: 208.5}
+>>>>>>> game-dev
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -311.5
       y: -196
       width: 623
       height: 392
+=======
+      x: -403
+      y: -208.5
+      width: 806
+      height: 417
+>>>>>>> game-dev
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 623, y: 409}
+=======
+  m_LastWindowPixelSize: {x: 806, y: 434}
+>>>>>>> game-dev
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -119,12 +160,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 384
     height: 645
   m_MinSize: {x: 202, y: 345}
   m_MaxSize: {x: 4002, y: 8045}
   vertical: 1
   controlID: 4923
+=======
+    width: 1210
+    height: 771
+  m_MinSize: {x: 306, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
+  vertical: 1
+  controlID: 948
+>>>>>>> game-dev
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,6 +183,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 5}
+  - {fileID: 7}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1210
+    height: 455
+  m_MinSize: {x: 306, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 949
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+>>>>>>> game-dev
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -141,11 +218,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 384
     height: 279
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
+=======
+    width: 400
+    height: 455
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 6}
+>>>>>>> game-dev
   m_Panes:
   - {fileID: 5}
   m_Selected: 0
@@ -177,10 +262,17 @@ MonoBehaviour:
     width: 382
     height: 258
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f43b0000
     m_LastClickedID: 0
     m_ExpandedIDs: e2fbffff00000000142f0000
+=======
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: d6faffff
+    m_LastClickedID: -1322
+    m_ExpandedIDs: 82faffffb2faffff5efbffff00000000be300000
+>>>>>>> game-dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -217,6 +309,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 279
     width: 384
@@ -230,6 +323,208 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &7
+=======
+    x: 400
+    y: 0
+    width: 810
+    height: 455
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 2}
+  m_Panes:
+  - {fileID: 8}
+  - {fileID: 2}
+  - {fileID: 9}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 1
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 402
+    y: 92
+    width: 806
+    height: 434
+  m_SceneLighting: 1
+  lastFramingTime: 540.7228378834974
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: -134.63702, y: 55.425163, z: 0}
+    speed: 2
+    m_Value: {x: -134.63702, y: 55.425163, z: 0}
+  m_RenderMode: 0
+  m_ValidateTrueMetals: 0
+  m_SceneViewState:
+    showFog: 1
+    showMaterialUpdate: 0
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+  grid:
+    xGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+    yGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+    zGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
+  m_Rotation:
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 49.571674
+    speed: 2
+    m_Value: 49.571674
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 1
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 209
+    y: 92
+    width: 1048
+    height: 434
+  m_ViewPositions:
+    m_KeySerializationHelper:
+    - {fileID: 1107625503616344384, guid: 926818da58cd8734c8011a2f49e14856, type: 2}
+    - {fileID: 1107625503616344384, guid: c42ed6c8561562349accd2215829b05d, type: 2}
+    - {fileID: 1107935380164833084, guid: 9fecfac57eaebc64eb0ce73dfb95685a, type: 2}
+    - {fileID: 1107247438901772566, guid: 348d7dbc5b286f64a86a9c6298392cf0, type: 2}
+    - {fileID: 1107496784744643614, guid: aa36b448a15b43e4a85445f06d0db7eb, type: 2}
+    m_ValueSerializationHelper:
+    - {x: 643.80005, y: 176.19995}
+    - {x: 615.80005, y: 131}
+    - {x: 698.4, y: 232.00002}
+    - {x: 487.80002, y: 84.20001}
+    - {x: 635.80005, y: 230.80005}
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: c42ed6c8561562349accd2215829b05d,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107625503616344384, guid: c42ed6c8561562349accd2215829b05d,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_LiveLinkFollowTransitions: 0
+  m_MiniTool: 0
+  m_SerializedLocked: 0
+  m_CurrentEditor: 1
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 455
+    width: 1210
+    height: 316
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Selected: 2
+  m_LastSelected: 1
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 547
+    width: 1208
+    height: 295
+  m_AnimEditor: {fileID: 0}
+  m_Locked: 0
+--- !u!114 &12
+>>>>>>> game-dev
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -266,10 +561,15 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts/Player
+=======
+    - Assets/Prefabs
+>>>>>>> game-dev
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Scripts/Player
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Snackya\Documents\Git\Back-Stone\PSMG17
@@ -279,6 +579,17 @@ MonoBehaviour:
     m_SelectedIDs: 0c2c0000
     m_LastClickedID: 11276
     m_ExpandedIDs: 000000001e2600006e260000a62600001c28000042280000e6290000782d0000982d0000da3c0000dc3c0000de3c0000e03c000000ca9a3bffffff7f
+=======
+  - Assets/Prefabs
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\Jannik\Desktop\Uni\Semester\Game Development\Projekt\PSMG17\PSMG17
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 190}
+    m_SelectedIDs: f6270000
+    m_LastClickedID: 10230
+    m_ExpandedIDs: 0000000076260000c6260000fe260000742800009a280000382a0000c82d0000e82d00002e3a0000303a0000323a0000343a000000ca9a3bffffff7f
+>>>>>>> game-dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -306,7 +617,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000001e2600006e260000a62600001c28000042280000e6290000782d0000982d0000da3c0000dc3c0000de3c0000e03c000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 0000000076260000c6260000fe260000742800009a280000382a0000c82d0000e82d00002e3a0000303a0000323a0000343a000000ca9a3bffffff7f
+>>>>>>> game-dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -331,10 +646,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: f43b0000
     m_LastClickedInstanceID: 15348
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300003c37000090340000803000002a2e00000e3b0000a0360000
+=======
+    m_SelectedInstanceIDs: 8af7ffff
+    m_LastClickedInstanceID: -2166
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300006a35000038340000ee2600007629000070310000022a0000a42900006c270000502b000062280000fe2b000000000000e2340000e22a000066270000
+>>>>>>> game-dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -12,6 +12,7 @@ public class SwipeAttack : MonoBehaviour
 
     private int playerNumber;
     private PlayerController player;
+    public bool swipeActive = false;
 
     void Awake()
     {
@@ -51,13 +52,31 @@ public class SwipeAttack : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 30;
-            other.gameObject.GetComponent<EnemyAI>().Knockback();
+            if (other.gameObject.name == "Arrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 20;
+                other.gameObject.GetComponent<EnemyAI>().Knockback();
+            }
         }
         if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Swipe Attack on Basilisk.");
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 7;
+            if (other.gameObject.name.Contains("BasiliskScream"))
+            {
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.name == "Headbutt")
+            {
+
+            }
+            else
+            {
+                Debug.Log("Swipe Attack on Basilisk.");
+                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            }
         }
     }
 }

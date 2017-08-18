@@ -8,15 +8,32 @@ public class SwordAttack : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
-            //Destroy(other.gameObject);
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
-            other.gameObject.GetComponent<EnemyAI>().Knockback();
+            if (other.gameObject.name == "Arrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 45;
+                other.gameObject.GetComponent<EnemyAI>().Knockback();
+            }
         }
 
         if (other.gameObject.tag == "Basilisk")
         {
-            Debug.Log("Standard Attack on Basilisk.");
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            if (other.gameObject.name.Contains("BasiliskScream"))
+            {
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.name == "Headbutt")
+            {
+                
+            }
+            else
+            {
+                Debug.Log("Standard Attack on Basilisk.");
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
+            }
         }
     }
 }
