@@ -51,8 +51,15 @@ public class SwipeAttack : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 30;
-            other.gameObject.GetComponent<EnemyAI>().Knockback();
+            if (other.gameObject.name == "Arrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 30;
+                other.gameObject.GetComponent<EnemyAI>().Knockback();
+            }
         }
         if (other.gameObject.tag == "Basilisk")
         {

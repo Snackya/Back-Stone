@@ -8,9 +8,15 @@ public class SwordAttack : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
-            //Destroy(other.gameObject);
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
-            other.gameObject.GetComponent<EnemyAI>().Knockback();
+            if (other.gameObject.name == "Arrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
+                other.gameObject.GetComponent<EnemyAI>().Knockback();
+            }
         }
 
         if (other.gameObject.tag == "Basilisk")
