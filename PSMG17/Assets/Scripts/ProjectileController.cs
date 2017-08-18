@@ -11,7 +11,7 @@ public class ProjectileController : MonoBehaviour
 
     [SerializeField]
     private float speed = 2.5f;
-    private float lifetime = 4f;
+    private float lifetime = 7f;
     private Vector2 direction;
 
     private bool archerFacingRight;

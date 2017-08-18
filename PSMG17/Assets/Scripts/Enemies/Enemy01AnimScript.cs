@@ -9,12 +9,14 @@ public class Enemy01AnimScript : MonoBehaviour {
     private bool facingRight = true;
     private Transform enemySprite;
     private Transform target;
+    private CapsuleCollider2D capsuleCollider;
 
     void Start () {
         
         enemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySprite = transform.FindChild("sprite");
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
 	}
 	
 	// Update is called once per frame
@@ -51,5 +53,6 @@ public class Enemy01AnimScript : MonoBehaviour {
         Vector3 enemyScale = enemySprite.localScale;
         enemyScale.x *= -1;
         enemySprite.localScale = enemyScale;
+        capsuleCollider.offset = new Vector2(capsuleCollider.offset.x * (-1), capsuleCollider.offset.y);
     }
 }
