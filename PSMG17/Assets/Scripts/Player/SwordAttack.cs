@@ -14,7 +14,7 @@ public class SwordAttack : MonoBehaviour {
             }
             else
             {
-                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 40;
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 45;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
@@ -32,7 +32,7 @@ public class SwordAttack : MonoBehaviour {
             else
             {
                 Debug.Log("Standard Attack on Basilisk.");
-                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
             }
         }
     }
