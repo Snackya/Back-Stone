@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class BlackKnighController : MonoBehaviour {
 
-
     [SerializeField] private Transform[] targets;
     [SerializeField] private float movementSpeed;
 
     private Transform target;
     private Rigidbody2D enemy;
+    private EnemyHealth enemyHealth;
 
     private float aggroTime = 4f;
     private Vector2 moveDirection;
-
 
     void Awake()
     {
         target = targets[0];
         enemy = GetComponent<Rigidbody2D>();
+        enemyHealth = GetComponent<EnemyHealth>();
+        
     }
 
     void OnEnable()
