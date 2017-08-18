@@ -47,7 +47,6 @@ public class Room4Script : MonoBehaviour
         if (!boss.activeSelf && !alreadyDiedOnce)
         {
             basiliskHealthBar.gameObject.SetActive(false);
-            Debug.Log("GG WP");
             alreadyDiedOnce = true;
         }
     }
