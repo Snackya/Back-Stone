@@ -42,7 +42,6 @@ public class PlayerCollisionControl : MonoBehaviour {
             {
                 HealthbarController hpControl = GetComponent<HealthbarController>();
 
-                Debug.Log(collision.gameObject.name);
                 if (collision.gameObject.name == "Headbutt")
                 {
                     dmg = 45f;
@@ -59,7 +58,6 @@ public class PlayerCollisionControl : MonoBehaviour {
                     knockback = true;
                     changeLayer = true;
                 }
-                Debug.Log(dmg);
                 hpControl.ReceiveDamage(dmg);
 
                 //knock both characters back
