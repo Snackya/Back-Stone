@@ -1,18 +1,38 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: c2b68f6d77f56664c9de95b2d8b5ba83
-timeCreated: 1502964751
-=======
-guid: 3b9f301855279eb47bb56ec87c13103e
-timeCreated: 1502958172
->>>>>>> Stashed changes
+timeCreated: 1503058582
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Katapult_0
+    21300002: Katapult_1
+    21300004: Katapult_2
+    21300006: Katapult_3
+    21300008: Katapult_4
+    21300010: Katapult_5
+    21300012: Katapult_6
+    21300014: Katapult_7
+    21300016: Katapult_8
+    21300018: Katapult_9
+    21300020: Katapult_10
+    21300022: Katapult_11
+    21300024: Katapult_12
+    21300026: Katapult_13
+    21300028: Katapult_14
+    21300030: Katapult_15
+    21300032: Katapult_16
+    21300034: Katapult_17
+    21300036: Katapult_18
+    21300038: Katapult_19
+    21300040: Katapult_20
+    21300042: Katapult_21
+    21300044: Katapult_22
+    21300046: Katapult_23
+    21300048: Felsbrocken
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -33,21 +53,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -56,16 +76,349 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Katapult_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2362.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_1
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2362.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_2
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2362.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_3
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2362.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_4
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 2362.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1772.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_6
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1772.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_7
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1772.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_8
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1772.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_9
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1772.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1182.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_11
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1182.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_12
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1182.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_13
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1182.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_14
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1182.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_16
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 592.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_17
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 592.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_18
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 592.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_19
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 592.4
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.4000244
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_21
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2.4000244
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_22
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2.4000244
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Katapult_23
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2.4000244
+        width: 590.6
+        height: 590.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Felsbrocken
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 175
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

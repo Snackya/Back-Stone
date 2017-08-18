@@ -90,6 +90,17 @@ public class PlayerController : MonoBehaviour {
         {
             Flip();
         }
+
+        if (movementInput.y < 0)
+        {
+            Debug.Log(movementInput.y);
+            animator.SetBool("isWalkingDown", true);
+        }
+        else
+        {
+            animator.SetBool("isWalkingDown", false);
+        }
+
     }
 
     //Dodge-roll with invulnerability
