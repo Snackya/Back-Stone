@@ -35,6 +35,7 @@ public class PlayerCollisionControl : MonoBehaviour {
     {
         float dmg = 0f;
         bool knockback = false;
+        bool changeLayer = false;
         if (!invulnerable && !playerScript.isDodging)
         {
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk")
@@ -56,6 +57,7 @@ public class PlayerCollisionControl : MonoBehaviour {
                 {
                     dmg = 15f;
                     knockback = true;
+                    changeLayer = true;
                 }
                 Debug.Log(dmg);
                 hpControl.ReceiveDamage(dmg);
@@ -69,6 +71,7 @@ public class PlayerCollisionControl : MonoBehaviour {
                     playerBody.AddForce(knockbackDirection * knockbackPower);
                     invulnerable = true;
 
+                    if (changeLayer) gameObject.layer = LayerMask.NameToLayer("PlayerHit");
                     if (gameObject.activeSelf)
                     {
                         StartCoroutine(InvFrames());
@@ -90,6 +93,7 @@ public class PlayerCollisionControl : MonoBehaviour {
             sprRenderer.enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     private void CheckForInv()
