@@ -38,7 +38,7 @@ public class PlayerCollisionControl : MonoBehaviour {
         bool changeLayer = false;
         if (!invulnerable && !playerScript.isDodging)
         {
-            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk")
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk" || collision.gameObject.tag == "Bee")
             {
                 HealthbarController hpControl = GetComponent<HealthbarController>();
 
@@ -46,16 +46,25 @@ public class PlayerCollisionControl : MonoBehaviour {
                 {
                     dmg = 45f;
                     knockback = true;
+                    changeLayer = false;
                 }
                 else if (collision.gameObject.name.Contains("BasiliskScream"))
                 {
                     dmg = 30f;
                     knockback = true;
+                    changeLayer = false;
                 }
                 else if (collision.gameObject.tag == "Enemy")
                 {
                     dmg = 15f;
                     knockback = true;
+                    changeLayer = true;
+                } 
+                else if (collision.gameObject.tag == "Bee")
+                {
+                    Debug.Log("Biene");
+                    dmg = 5f;
+                    knockback = false;
                     changeLayer = true;
                 }
                 hpControl.ReceiveDamage(dmg);
@@ -63,17 +72,17 @@ public class PlayerCollisionControl : MonoBehaviour {
                 //knock both characters back
                 if (knockback)
                 {
-                    animator.SetTrigger("getHitTrigger");
                     Vector3 knockbackDirection = (transform.position - collision.transform.position);
-
                     playerBody.AddForce(knockbackDirection * knockbackPower);
-                    invulnerable = true;
+                }
 
-                    if (changeLayer) gameObject.layer = LayerMask.NameToLayer("PlayerHit");
-                    if (gameObject.activeSelf)
-                    {
-                        StartCoroutine(InvFrames());
-                    }
+                animator.SetTrigger("getHitTrigger");
+                invulnerable = true;
+
+                if (changeLayer) gameObject.layer = LayerMask.NameToLayer("PlayerHit");
+                if (gameObject.activeSelf)
+                {
+                    StartCoroutine(InvFrames());
                 }
             }
         }

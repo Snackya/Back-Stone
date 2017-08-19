@@ -78,5 +78,9 @@ public class SwipeAttack : MonoBehaviour
                 if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
             }
         }
+        if (other.gameObject.name == "Beehive")
+        {
+            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+        }
     }
 }
