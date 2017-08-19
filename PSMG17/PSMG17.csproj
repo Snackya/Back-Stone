@@ -212,10 +212,7 @@
     <Compile Include="Assets\Scripts\RevivalFountain.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room06.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room08.cs" />
->>>>>>> game-dev
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room10.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Saferoom.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
