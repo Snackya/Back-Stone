@@ -12,7 +12,7 @@ public class SwordAttack : MonoBehaviour {
             {
                 Destroy(other.gameObject);
             }
-            else
+            else if(other.gameObject.name != "Boulder(Clone)")
             {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 45;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
@@ -34,6 +34,18 @@ public class SwordAttack : MonoBehaviour {
                 Debug.Log("Standard Attack on Basilisk.");
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
             }
+        }
+
+        //knock boulders back and re-define them as player weapons
+        if (other.gameObject.name.Contains("Boulder"))
+        {
+            GameObject boulder = other.gameObject;
+            Transform slingshot = boulder.GetComponentInParent<Transform>().GetComponentInParent<Transform>();
+            ProjectileController projCtrl = other.gameObject.GetComponent<ProjectileController>();
+
+            projCtrl.direction = -(transform.position - boulder.transform.position).normalized * projCtrl.speed;
+            projCtrl.lifetime = projCtrl.maxLifetime;
+            boulder.tag = "PlayerWeapon";
         }
     }
 }

@@ -56,7 +56,7 @@ public class SwipeAttack : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            else
+            else if(other.gameObject.name != "Boulder(Clone)")
             {
                 if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 20;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();

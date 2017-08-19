@@ -9,15 +9,17 @@ public class ProjectileController : MonoBehaviour
     private Transform target;
     private Rigidbody2D rb;
 
-    [SerializeField]
-    private float speed = 2.5f;
-    private float lifetime = 7f;
-    private Vector2 direction;
-
+    public float speed = 2.5f;
+    public float maxLifetime = 7f;
+    [HideInInspector]
+    public Vector2 direction;
+    [HideInInspector]
+    public float lifetime;
     private bool archerFacingRight;
 
     void Awake()
     {
+        lifetime = maxLifetime;
         rb = GetComponent<Rigidbody2D>();
         if (enemyType == "Basilisk")
         {
@@ -65,8 +67,15 @@ public class ProjectileController : MonoBehaviour
         //do not destroy if it collides with the enemy shooting it
         if (collision.gameObject.tag != "Enemy")
         {
-            Debug.Log("scream destroyed by collision");
-            Destroy(gameObject);
+            //do not destroy if it's a boulder that should be knocked back
+            if (!gameObject.name.Contains("Boulder"))
+            {
+                Destroy(gameObject);
+            }
+            else if(collision.gameObject.tag != "PlayerWeapon" && gameObject.name.Contains("Boulder"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour {
 
         if (movementInput.y < 0)
         {
-            Debug.Log(movementInput.y);
             animator.SetBool("isWalkingDown", true);
         }
         else

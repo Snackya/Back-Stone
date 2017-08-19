@@ -5,32 +5,29 @@ using UnityEngine;
 public class SlingshotController : MonoBehaviour
 {
     public Transform[] targets;
-
-    [HideInInspector]
+    public GameObject boulder;
     public Transform target;
 
+    [SerializeField]
     private Transform boulderSpawn;
-    private GameObject boulder;
-    private GameObject scream;
     private Animator animator;
-    private Rigidbody2D enemy;
 
-
-    // Use this for initialization
-
-    private void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
-        boulderSpawn = GetComponentInChildren<Transform>();
-    }
-    private void OnEnable()
-    {
         StartCoroutine(Attack());
     }
-    private IEnumerator Attack()
+    void OnEnable()
+    {
+        target = targets[0];
+    }
+    IEnumerator Attack()
     {
         SelectTarget();
-        yield return new WaitForSeconds(3f);
+        animator.SetTrigger("attack"); 
+        yield return new WaitForSeconds(0.2f);  //wait for the correct frame to spawn
+        SpawnBoulder();
+        yield return new WaitForSeconds(5f);
         StartCoroutine(Attack());
     }
 
@@ -38,7 +35,6 @@ public class SlingshotController : MonoBehaviour
     {
         int randomIndex = Random.Range(0, 2);
         target = targets[randomIndex];
-        target = targets[1 - randomIndex];
     }
 
     private void SpawnBoulder()
