@@ -11,7 +11,6 @@ public class LimitBeeCount : MonoBehaviour {
 	
 	void Update () {
         childCount = transform.childCount;
-        Debug.Log(childCount);
         KillBees();
 	}
 

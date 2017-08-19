@@ -10,14 +10,27 @@ public class Beehive : MonoBehaviour {
     [SerializeField]
     private Transform spawnPos;
 
-	// Use this for initialization
+    private EnemyHealth health;
+    private int grandChildCount;
+
+
 	void Start () {
+        health = GetComponent<EnemyHealth>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
+    public void ResetBeehive()
+    {
+        health.health.CurrentVal = health.health.MaxVal;
+        StopAllCoroutines();
+        grandChildCount = transform.GetChild(0).childCount;
+        Debug.Log(grandChildCount);
+        for (int i = 0; i < grandChildCount; i++)
+        {
+            Destroy(transform.GetChild(0).GetChild(i).gameObject);
+        }
+
+    }
 
     public void SpawnBees()
     {

@@ -41,5 +41,6 @@ public class Room08 : MonoBehaviour {
     public void resetRoom()
     {
         playersInside = false;
+        beehive.ResetBeehive();
     }
 }
