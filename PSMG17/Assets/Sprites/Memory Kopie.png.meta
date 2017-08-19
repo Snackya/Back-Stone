@@ -1,9 +1,48 @@
 fileFormatVersion: 2
 guid: 84e7c3984661efd45ad9f8e3b6841b4a
-timeCreated: 1503067213
+timeCreated: 1503158409
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: 08
+    21300002: Memory Kopie_1
+    21300004: Memory Kopie_2
+    21300006: Memory Kopie_3
+    21300008: Memory Kopie_4
+    21300010: Memory Kopie_5
+    21300012: 01
+    21300014: Memory Kopie_7
+    21300016: Memory Kopie_8
+    21300018: Memory Kopie_9
+    21300020: Memory Kopie_10
+    21300022: Memory Kopie_11
+    21300024: Memory Kopie_12
+    21300026: Memory Kopie_13
+    21300028: Memory Kopie_14
+    21300030: Memory Kopie_15
+    21300032: 06
+    21300034: Memory Kopie_17
+    21300036: Memory Kopie_18
+    21300038: Memory Kopie_19
+    21300040: Memory Kopie_20
+    21300042: 02
+    21300044: Memory Kopie_22
+    21300046: Memory Kopie_23
+    21300048: Memory Kopie_24
+    21300050: 09
+    21300052: Memory Kopie_26
+    21300054: 10
+    21300056: Memory Kopie_28
+    21300058: 05
+    21300060: Memory Kopie_30
+    21300062: 03
+    21300064: Memory Kopie_32
+    21300066: 07
+    21300068: Memory Kopie_34
+    21300070: 04
+    21300072: 0Back01
+    21300074: 0Back02
+    21300076: Memory Kopie_38
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +73,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +97,524 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 08
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 2907
+        width: 359
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 2915
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_2
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2913
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_3
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 2915
+        width: 360
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_4
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 2906
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2504
+        width: 359
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 2513
+        width: 359
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_7
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 2513
+        width: 359
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_8
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 2515
+        width: 358
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_9
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 2515
+        width: 359
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_10
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2087
+        width: 359
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_11
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 2098
+        width: 356
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_12
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 2097
+        width: 358
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_13
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 2103
+        width: 360
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_14
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 2097
+        width: 358
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1640
+        width: 360
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 06
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1659
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_17
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1666
+        width: 359
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_18
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1674
+        width: 360
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_19
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 1671
+        width: 357
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_20
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1231
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 02
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1226
+        width: 359
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_22
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1231
+        width: 359
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_23
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1230
+        width: 360
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_24
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1236
+        width: 356
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 09
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 802
+        width: 356
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_26
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 802
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 10
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 802
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_28
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 802
+        width: 360
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 05
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 802
+        width: 359
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_30
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 384
+        width: 358
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 03
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 375
+        width: 358
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_32
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 384
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 07
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 390
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_34
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 403
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 04
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 14
+        width: 358
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 0Back01
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 368
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 0Back02
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 0
+        width: 368
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Memory Kopie_38
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 14
+        width: 360
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

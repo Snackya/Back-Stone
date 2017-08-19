@@ -209,6 +209,8 @@
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPressurePlates.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPuzzle.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\Memory\Memory.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\Memory\MemoryCard.cs" />
     <Compile Include="Assets\Scripts\RevivalFountain.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room06.cs" />
