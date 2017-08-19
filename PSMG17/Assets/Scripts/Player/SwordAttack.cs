@@ -35,6 +35,14 @@ public class SwordAttack : MonoBehaviour {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
             }
         }
+        if (other.gameObject.name == "Beehive")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+        }
+        if (other.gameObject.tag == "Bee")
+        {
+            Destroy(other.gameObject);
+        }
 
         //knock boulders back and re-define them as player weapons
         if (other.gameObject.name.Contains("Boulder"))

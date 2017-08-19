@@ -1,9 +1,30 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 178c8655209185f4780cdf8c2d8a5eab
 timeCreated: 1503119961
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
+=======
+guid: 9407acd78684747408d88676189244ca
+timeCreated: 1503129419
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Beehive
+    21300002: Bee11
+    21300004: Bee12
+    21300006: Bee21
+    21300008: Bee22
+    21300010: Bee31
+    21300012: Bee32
+    21300014: Bee41
+    21300016: Bee42
+    21300018: Beehive_9
+    21300020: Beehive_10
+    21300022: Beehive_11
+    21300024: Beehive_12
+>>>>>>> game-dev
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +55,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 1
+=======
+  spriteMode: 2
+>>>>>>> game-dev
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +83,192 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
   spriteSheet:
     serializedVersion: 2
     sprites: []
+=======
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beehive
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 91
+        width: 263
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee11
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 491
+        width: 71
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee12
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 483
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee21
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 403
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee22
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 390
+        width: 70
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee31
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 315
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee32
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 313
+        width: 77
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee41
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 227
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bee42
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 226
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beehive_9
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 124
+        width: 66
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beehive_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 129
+        width: 67
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beehive_11
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 21
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beehive_12
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 17
+        width: 69
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+>>>>>>> game-dev
     outline: []
   spritePackingTag: 
   userData: 
