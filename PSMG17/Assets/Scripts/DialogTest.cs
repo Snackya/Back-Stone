@@ -8,7 +8,7 @@ public class DialogTest : MonoBehaviour {
     public DialogManager diaCon;
 	void Start () {
         diaCon = FindObjectOfType<DialogManager>();
-        diaCon.StartDialog(text);
+        diaCon.StartDialog(text, "Player 1");
 	}
 	
 	// Update is called once per frame

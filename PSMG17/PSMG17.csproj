@@ -197,6 +197,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyParticleControl.cs" />
     <Compile Include="Assets\Scripts\Enemies\RicochetBoulder.cs" />
+    <Compile Include="Assets\Scripts\Enemies\RiddleGuyAnimationControl.cs" />
     <Compile Include="Assets\Scripts\Enemies\SlingshotController.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />

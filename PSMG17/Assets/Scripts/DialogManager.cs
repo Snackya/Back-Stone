@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour {
     public Text textField;
     public GameObject textBox;
+    public Text speakerName;
     public string[] textLines;
 
     private int indexCurrentLine;
@@ -38,8 +39,9 @@ public class DialogManager : MonoBehaviour {
         }
     }
 
-    public void StartDialog (TextAsset dialog)
+    public void StartDialog (TextAsset dialog, string speaker)
     {
+        speakerName.text = speaker;
         textLines = dialog.text.Split('\n');
         isTyping = true;
         cancelTyping = false;
