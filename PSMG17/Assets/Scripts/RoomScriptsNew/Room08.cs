@@ -14,16 +14,21 @@ public class Room08 : MonoBehaviour {
 
     private bool playersInside = false;
 
-    private Beehive beehive;
+    private Beehive beehiveScript;
+    private Transform beehive;
+    private Transform door;
 
 
     void Start () {
         roomBounds = transform.GetComponent<BoxCollider2D>().bounds;
-        beehive = GetComponentInChildren<Beehive>();
-	}
+        beehiveScript = GetComponentInChildren<Beehive>();
+        beehive = transform.FindChild("Beehive");
+        door = transform.FindChild("Door");
+    }
 	
 	void Update () {
         ActivateBeehive();
+        OpenDoor();
 	}
 
     private void ActivateBeehive()
@@ -33,14 +38,26 @@ public class Room08 : MonoBehaviour {
             if (!playersInside)
             {
                 playersInside = true;
-                beehive.SpawnBees();
+                beehiveScript.SpawnBees();
             }
+        }
+    }
+
+    private void OpenDoor()
+    {
+        if (!beehive.gameObject.activeSelf)
+        {
+            door.GetChild(0).gameObject.SetActive(true);
+            door.GetChild(1).gameObject.SetActive(false);
         }
     }
 
     public void resetRoom()
     {
         playersInside = false;
-        beehive.ResetBeehive();
+        beehiveScript.ResetBeehive();
+
+        door.GetChild(0).gameObject.SetActive(false);
+        door.GetChild(1).gameObject.SetActive(true);
     }
 }

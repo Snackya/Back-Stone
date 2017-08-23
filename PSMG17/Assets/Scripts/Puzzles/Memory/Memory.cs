@@ -13,10 +13,12 @@ public class Memory : MonoBehaviour {
     [HideInInspector]
     public bool secondSetFlipable = true;
 
+    private Room15 room15;
 
 	private void Start ()
     {
         FillCardArrays();
+        room15 = GetComponentInParent<Room15>();
     }
 
     private void FillCardArrays()
@@ -90,7 +92,20 @@ public class Memory : MonoBehaviour {
     {
         if (firstSet.Count == 0 && secondSet.Count == 0)
         {
-            Debug.Log("Memory complete!");
+            room15.memoryComplete = true;
+        }
+    }
+
+    public void ResetPuzzle()
+    {
+        FillCardArrays();
+        for (int i = 0; i < firstSet.Count; i++)
+        {
+            firstSet[i].GetChild(0).gameObject.SetActive(false);
+            firstSetFlipable = true;
+
+            secondSet[i].GetChild(0).gameObject.SetActive(false);
+            secondSetFlipable = true;
         }
     }
 }
