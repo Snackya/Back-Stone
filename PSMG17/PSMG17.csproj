@@ -215,6 +215,7 @@
     <Compile Include="Assets\Scripts\Puzzles\Memory\MemoryCard.cs" />
     <Compile Include="Assets\Scripts\RevivalFountain.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room04.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room06.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room08.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room09.cs" />
