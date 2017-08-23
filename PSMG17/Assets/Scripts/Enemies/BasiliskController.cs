@@ -10,7 +10,7 @@ public class BasiliskController : MonoBehaviour {
     public Transform screamPosition;
 
     private GameObject scream;
-    public Transform target;
+    [HideInInspector] public Transform target;
     private Rigidbody2D enemy;
     private Animator animator;
     private Renderer enemySprite;
