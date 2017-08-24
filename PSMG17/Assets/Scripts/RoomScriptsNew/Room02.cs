@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,54 +9,55 @@ public class Room02 : MonoBehaviour {
     private Transform player1;
     [SerializeField]
     private Transform player2;
+    [SerializeField]
+    private GameObject enemy;
 
     private BoxCollider2D room;
     private Bounds roomBounds;
-
+    private List<Transform> spawnPositions = new List<Transform>();
 
     private bool playersInside = false;
+    private int maxEnemies = 3;
+    private int currentEnemies = 0;
+    private int spawnRate = 5;
 
-    private GameObject enemies;
-    private Vector3[] enemyPositions;
-    private bool enemiesActive = false;
 
-
-    void Start () {
+    void Start()
+    {
         room = GetComponent<BoxCollider2D>();
         roomBounds = room.bounds;
-        enemies = transform.Find("Enemies").gameObject;
-        InitializeEnemyPositions();
+        FillSpawnPositionsList();
     }
 
-
-    private void InitializeEnemyPositions()
+    private void FillSpawnPositionsList()
     {
-        enemyPositions = new Vector3[enemies.transform.childCount];
-        int i = 0;
-        foreach (Transform enemy in enemies.transform)
+        for (int i = 0; i < transform.FindChild("SpawnPositions").childCount; i++)
         {
-            enemyPositions[i] = enemy.transform.position;
-            i++;
+            spawnPositions.Add(transform.FindChild("SpawnPositions").GetChild(i));
         }
     }
 
-
     void Update () {
         ActivateEnemies();
-        CheckIfEnemiesAreDead();
+        if (currentEnemies == maxEnemies)
+        {
+            CheckIfEnemiesAreDead();
+        }
     }
 
 
     private void CheckIfEnemiesAreDead()
     {
-        int deathCounter = 0;
-
-        foreach (Transform child in enemies.transform)
+        int noEnemyCounter = 0;
+        for (int i = 0; i < spawnPositions.Count; i++)
         {
-            if (!child.gameObject.activeSelf) deathCounter++;
+            if (spawnPositions[i].childCount == 0) noEnemyCounter++;
         }
-
-        if (deathCounter == enemies.transform.childCount) enemiesActive = false;
+        Debug.Log(noEnemyCounter);
+        if (noEnemyCounter == spawnPositions.Count)
+        {
+            Debug.Log("OPEN THE DOOR!");
+        }
     }
 
 
@@ -63,27 +65,37 @@ public class Room02 : MonoBehaviour {
     {
         if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position))
         {
-            if (!playersInside) Debug.Log("Both players entered the room.");
-            playersInside = true;
-            enemies.SetActive(true);
-            enemiesActive = true;
+            if (!playersInside)
+            {
+                playersInside = true;
+                InitialSpawn();
+                StartCoroutine(SpawnEnemies());
+            }
         }
     }
 
+    private void InitialSpawn()
+    {
+        GameObject enemy01 = Instantiate(enemy, spawnPositions[7]);
+    }
+
+    private IEnumerator SpawnEnemies()
+    {
+        int spawnPosition = GetRandomInt(0, spawnPositions.Count);
+        yield return new WaitForSeconds(spawnRate);
+        GameObject newEnemy = Instantiate(enemy, spawnPositions[spawnPosition]);
+        currentEnemies++;
+        if (currentEnemies < maxEnemies) StartCoroutine(SpawnEnemies());
+    }
+
+    private int GetRandomInt(int min, int max)
+    {
+        return UnityEngine.Random.Range(min, max);
+    }
 
     public void resetRoom()
     {
-        int i = 0;
-        foreach (Transform enemy in enemies.transform)
-        {
-            enemy.transform.SetPositionAndRotation(enemyPositions[i], new Quaternion());
-            enemy.gameObject.GetComponent<EnemyHealth>().health.CurrentVal =
-                enemy.gameObject.GetComponent<EnemyHealth>().health.MaxVal;
-            enemy.gameObject.SetActive(true);
-            i++;
-        }
-        enemies.SetActive(false);
-        enemiesActive = false;
+        currentEnemies = 0;
         playersInside = false;
     }
 }

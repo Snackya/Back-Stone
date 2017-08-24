@@ -25,7 +25,14 @@ public class EnemyHealth : MonoBehaviour {
     {
         if (health.CurrentVal == 0)
         {
-            this.gameObject.SetActive(false);
+            if (transform.tag == "Enemy")
+            {
+                Destroy(this.gameObject);
+            } 
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }
