@@ -8,8 +8,8 @@ using System;
 [RequireComponent(typeof(Seeker))]
 public class EnemyAI : MonoBehaviour {
 
-    [SerializeField]
-    public Transform[] targets;
+    //[SerializeField]
+    private Transform[] targets = new Transform[2];
     [SerializeField]
     public float speed = 4f;                        // enemy speed
     [SerializeField]
@@ -37,6 +37,8 @@ public class EnemyAI : MonoBehaviour {
     void OnEnable()
     {
         // initializing target as first target at OnEnable()
+        targets[0] = GameObject.Find("Player1").transform;
+        targets[1] = GameObject.Find("Player2").transform;
         target = targets[0];
 
         seeker = GetComponent<Seeker>();
