@@ -14,6 +14,7 @@ public class GameOverManager : MonoBehaviour {
     private Button resumeButton;
     private Text gameOverText;
     private Transform background;
+    private Transform skeleton;
 
     private bool gameOver = false;
 
@@ -51,10 +52,12 @@ public class GameOverManager : MonoBehaviour {
         resumeButton = GetComponentInChildren<Button>();
         gameOverText = GetComponentInChildren<Text>();
         background = transform.FindChild("Background");
+        skeleton = transform.FindChild("Skeleton");
 
         resumeButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
+        skeleton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -70,6 +73,7 @@ public class GameOverManager : MonoBehaviour {
             resumeButton.gameObject.SetActive(true);
             gameOverText.gameObject.SetActive(true);
             background.gameObject.SetActive(true);
+            skeleton.gameObject.SetActive(true);
         }
     }
 
@@ -98,6 +102,7 @@ public class GameOverManager : MonoBehaviour {
         resumeButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
+        skeleton.gameObject.SetActive(false);
 
         reactivatePlayers();
         // ALT

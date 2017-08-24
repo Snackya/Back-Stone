@@ -17,7 +17,7 @@ public class ProjectileController : MonoBehaviour
     public float lifetime;
     private bool archerFacingRight;
 
-    void Awake()
+    void Start()
     {
         lifetime = maxLifetime;
         rb = GetComponent<Rigidbody2D>();
