@@ -31,12 +31,10 @@ public class GlaveScript : MonoBehaviour {
     {
         if (moveHorizontally)
         {
-            //rb.AddForce(new Vector2(movementSpeed, 0));
             rb.velocity = new Vector2(movementSpeed, 0);
         }
         else
         {
-            //rb.AddForce(new Vector2(0, movementSpeed));
             rb.velocity = new Vector2(0, movementSpeed);
         }
     }
@@ -46,6 +44,11 @@ public class GlaveScript : MonoBehaviour {
         if (collision.gameObject.tag == "Wall")
         {
             collider.gameObject.SetActive(true);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            HealthbarController health = collision.transform.GetComponent<HealthbarController>();
+            health.ReceiveDamage(health.maxHealth / 4);
         }
     }
 
