@@ -10,7 +10,7 @@ public class ArcherAI : MonoBehaviour {
     [SerializeField]
     private Transform arrowPos;
 
-    [SerializeField]
+    //[SerializeField]
     private Transform target;
     private Rigidbody2D enemy;
 
@@ -22,6 +22,7 @@ public class ArcherAI : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
         enemy = GetComponent<Rigidbody2D>();
+        target = GetComponent<EnemyAI>().target;
         StartCoroutine(ShootArrows());
 	}
 

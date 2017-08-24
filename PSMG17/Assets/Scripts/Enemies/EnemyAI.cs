@@ -8,7 +8,7 @@ using System;
 [RequireComponent(typeof(Seeker))]
 public class EnemyAI : MonoBehaviour {
 
-    [SerializeField]
+    //[SerializeField]
     private Transform[] targets = new Transform[2];
     [SerializeField]
     public float speed = 4f;                        // enemy speed
