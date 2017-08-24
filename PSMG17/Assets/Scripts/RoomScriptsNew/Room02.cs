@@ -14,6 +14,7 @@ public class Room02 : MonoBehaviour {
 
     private BoxCollider2D room;
     private Bounds roomBounds;
+    private Transform door;
     private List<Transform> spawnPositions = new List<Transform>();
 
     private bool playersInside = false;
@@ -26,6 +27,7 @@ public class Room02 : MonoBehaviour {
     {
         room = GetComponent<BoxCollider2D>();
         roomBounds = room.bounds;
+        door = transform.FindChild("Door");
         FillSpawnPositionsList();
     }
 
@@ -45,7 +47,6 @@ public class Room02 : MonoBehaviour {
         }
     }
 
-
     private void CheckIfEnemiesAreDead()
     {
         int noEnemyCounter = 0;
@@ -53,13 +54,17 @@ public class Room02 : MonoBehaviour {
         {
             if (spawnPositions[i].childCount == 0) noEnemyCounter++;
         }
-        Debug.Log(noEnemyCounter);
         if (noEnemyCounter == spawnPositions.Count)
         {
-            Debug.Log("OPEN THE DOOR!");
+            OpenDoor();
         }
     }
 
+    private void OpenDoor()
+    {
+        door.GetChild(0).gameObject.SetActive(true);
+        door.GetChild(1).gameObject.SetActive(false);
+    }
 
     private void ActivateEnemies()
     {
@@ -97,5 +102,21 @@ public class Room02 : MonoBehaviour {
     {
         currentEnemies = 0;
         playersInside = false;
+
+        DestroyEnemies();
+
+        door.GetChild(0).gameObject.SetActive(false);
+        door.GetChild(1).gameObject.SetActive(true);
+    }
+
+    private void DestroyEnemies()
+    {
+        for (int i = 0; i < spawnPositions.Count; i++)
+        {
+            foreach (Transform enemy in spawnPositions[i])
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
     }
 }
