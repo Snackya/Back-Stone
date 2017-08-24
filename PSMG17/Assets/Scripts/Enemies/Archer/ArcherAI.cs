@@ -14,7 +14,10 @@ public class ArcherAI : MonoBehaviour {
     private Transform target;
     private Rigidbody2D enemy;
 
+    [SerializeField]
     private float attackRange = 5f;
+    [SerializeField]
+    private float attackRate = 1.5f;
 
 	// Use this for initialization
 	void OnEnable () {
@@ -51,7 +54,7 @@ public class ArcherAI : MonoBehaviour {
         {
             GameObject newArrow = Instantiate(arrow, arrowPos);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(attackRate);
         StartCoroutine(ShootArrows());
     }
 }

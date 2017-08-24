@@ -219,6 +219,7 @@
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room03.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room04.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room06.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room07.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room08.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room09.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room10.cs" />

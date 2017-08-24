@@ -14,12 +14,14 @@ public class Room03 : MonoBehaviour {
     private bool playerInside = false;
     private GameObject glaves;
 
-    void Start () {
+    void Start ()
+    {
         roomBounds = transform.GetComponent<BoxCollider2D>().bounds;
         glaves = transform.FindChild("Glaves").gameObject;
     }
 	
-	void Update () {
+	void Update ()
+    {
         ActivateGlaves();
         DeactivateGlaves();
 	}
