@@ -200,6 +200,7 @@
     <Compile Include="Assets\Scripts\Enemies\RiddleGuyAnimationControl.cs" />
     <Compile Include="Assets\Scripts\Enemies\SlingshotController.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\GlaveScript.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\Player\HealthbarController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollisionControl.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Assets\Scripts\Puzzles\Memory\MemoryCard.cs" />
     <Compile Include="Assets\Scripts\RevivalFountain.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room03.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room04.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room06.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room08.cs" />
