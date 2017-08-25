@@ -20,7 +20,7 @@ public class BlackKnightAnimationControl : MonoBehaviour {
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
         armsAnimator = transform.parent.GetChild(1).GetComponent<Animator>();
-        legsAnimator = transform.parent.GetChild(2).GetComponent<Animator>();
+        legsAnimator = transform.parent.GetChild(2).GetChild(0).GetComponent<Animator>();
         arms = transform.parent.GetChild(1);
         legs = transform.parent.GetChild(2);
         world = transform.parent.parent;
