@@ -56,7 +56,6 @@ public class BlackKnighController : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         CalculateMoveDirection();
     }

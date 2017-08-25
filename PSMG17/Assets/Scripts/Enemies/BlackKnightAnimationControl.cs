@@ -9,17 +9,22 @@ public class BlackKnightAnimationControl : MonoBehaviour {
     private bool lostArms;
     private EnemyHealth enemyHealth;
     private Animator animator;
+    private Animator armsAnimator;
     private GameObject blackKnight;
-	// Use this for initialization
-	void Start () {
+    private Transform arms;
+    private Transform world;
+
+    void Start () {
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
+        armsAnimator = transform.parent.GetChild(1).GetComponent<Animator>();
+        arms = transform.parent.GetChild(1);
+        world = transform.parent.parent;
         blackKnight = transform.gameObject;
         onlyTorso = false;
         lostArms = false;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         LoseLimbs();
         UpdateSpeed();
@@ -29,17 +34,21 @@ public class BlackKnightAnimationControl : MonoBehaviour {
     {
         float maxHp = enemyHealth.health.MaxVal;
         float curHp = enemyHealth.health.CurrentVal;
-        float percentHp = maxHp / curHp;
+        float percentHp = curHp / maxHp;
 
-        if (percentHp < 0.3 && !lostArms)
+        if (percentHp < 0.5 && !lostArms)
         {
             lostArms = true;
-            animator.SetTrigger("loseArmTrigger");
-            if (percentHp < 0.15 && !onlyTorso)
-            {
-                onlyTorso = true;
-                animator.SetTrigger("torsoTrigger");
-            }
+            arms.gameObject.SetActive(true);
+            arms.position = transform.position;
+            StartCoroutine(PositionFreeze());
+            animator.SetTrigger("lostArmsTrigger");
+            armsAnimator.SetTrigger("lostArmsTrigger");
+        }
+        if (percentHp < 0.25 && !onlyTorso)
+        {
+            onlyTorso = true;
+            animator.SetTrigger("torsoTrigger");
         }
     }
 
@@ -47,5 +56,12 @@ public class BlackKnightAnimationControl : MonoBehaviour {
     {
         animator.SetFloat("speed", Math.Abs(transform.GetComponent<Rigidbody2D>().velocity.x));
         animator.SetFloat("vSpeed", Math.Abs(transform.GetComponent<Rigidbody2D>().velocity.y));
+    }
+
+    IEnumerator PositionFreeze()
+    {
+        blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        yield return new WaitForSeconds(2f);
+        blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }
