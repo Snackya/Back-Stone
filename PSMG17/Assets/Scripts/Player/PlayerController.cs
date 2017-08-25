@@ -78,10 +78,14 @@ public class PlayerController : MonoBehaviour {
         if (swordEquipped)
         {
             animator.SetBool("swordEquipped", true);
+            sword.SetActive(true);
+            wand.SetActive(false);
         }
         else
         {
             animator.SetBool("swordEquipped", false);
+            sword.SetActive(false);
+            wand.SetActive(true);
         }
     }
 
@@ -173,22 +177,3 @@ public class PlayerController : MonoBehaviour {
         wand.GetComponent<WandAttack>().ShootFireball();
     }
 }
-
-    }
-
-    private void SwitchWeapons()
-    {
-        if (swordEquipped)
-        {
-            animator.SetBool("swordEquipped", true);
-            sword.SetActive(true);
-            wand.SetActive(false);
-        }
-        else
-        {
-            animator.SetBool("swordEquipped", false);
-            sword.SetActive(false);
-            wand.SetActive(true);
-        }
-    }
-
