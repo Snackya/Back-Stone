@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour {
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
         m_movementAxisGamepadX = "GamepadHorizontal" + playerNumber;
         m_movementAxisGamepadY = "GamepadVertical" + playerNumber;
+
+        animator.SetBool("swordEquipped", true);
     }
 
 	void Update()
@@ -60,6 +62,16 @@ public class PlayerController : MonoBehaviour {
         if (swordEquipped)
         {
             SwordAttack();
+        }
+
+        AnimationTest();
+    }
+
+    private void AnimationTest()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animator.SetBool("swordEquipped", false);
         }
     }
 
