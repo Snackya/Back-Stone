@@ -90,16 +90,7 @@ public class PlayerController : MonoBehaviour {
         {
             Flip();
         }
-
-        if (movementInput.y < 0)
-        {
-            animator.SetBool("isWalkingDown", true);
-        }
-        else
-        {
-            animator.SetBool("isWalkingDown", false);
-        }
-
+       
     }
 
     //Dodge-roll with invulnerability
@@ -147,7 +138,6 @@ public class PlayerController : MonoBehaviour {
 
     public void SwipeAttack()
     {
-        Debug.Log("SPIN TO WIN");
         animator.SetTrigger("swipeTrigger");
     }
 }
