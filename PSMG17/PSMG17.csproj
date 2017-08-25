@@ -234,9 +234,11 @@
     <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
+    <Compile Include="Assets\Scripts\SwordStand.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
     <Compile Include="Assets\Scripts\TextboxManagerOld.cs" />
     <Compile Include="Assets\Scripts\Tiling.cs" />
+    <Compile Include="Assets\Scripts\WandStand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />

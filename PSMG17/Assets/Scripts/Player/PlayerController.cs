@@ -59,17 +59,20 @@ public class PlayerController : MonoBehaviour {
         
         Dodge();
 
-        if (swordEquipped)
-        {
-            SwordAttack();
-        }
+        
+        Attack();
 
-        AnimationTest();
+
+        SwitchWeapons();
     }
 
-    private void AnimationTest()
+    private void SwitchWeapons()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (swordEquipped)
+        {
+            animator.SetBool("swordEquipped", true);
+        }
+        else
         {
             animator.SetBool("swordEquipped", false);
         }
@@ -84,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 
     private void FreezePlayer()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "AttackLeft"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "AttackLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "WandAttack"))
         {
             movementVelocity = new Vector3(0, 0, 0);
         }
@@ -139,7 +142,7 @@ public class PlayerController : MonoBehaviour {
         playerSprite.localScale = playerScale;
     }
 
-    private void SwordAttack()
+    private void Attack()
     {
         if (Input.GetButtonDown("Attack" + playerNumber))
         {
