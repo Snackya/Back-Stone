@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RiddleControl : MonoBehaviour {
+    private static string speakerName = "Lord Al Coholic";
+
     public DialogManager diaMan;
     public TextAsset riddle1;
     public TextAsset riddle2;
     public TextAsset riddle3;
 
     private BoxCollider2D dialogTrigger;
+    private Transform answerPlates;
     private PressurePlate answerA;
     private PressurePlate answerB;
     private PressurePlate answerC;
+    private Transform teleporter;
+
     private string correctAnswer;
     private bool riddle1Correct;
     private bool riddle2Correct;
@@ -21,10 +26,12 @@ public class RiddleControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         dialogTrigger = GetComponent<BoxCollider2D>();
+        answerPlates = transform.GetChild(0);
         answerA = transform.GetChild(0).GetChild(0).GetComponent<PressurePlate>();
         answerB = transform.GetChild(0).GetChild(1).GetComponent<PressurePlate>();
         answerC = transform.GetChild(0).GetChild(2).GetComponent<PressurePlate>();
         isKillable = false;
+        teleporter = transform.parent.GetChild(1);
     }
 
     private void Update()
@@ -32,10 +39,17 @@ public class RiddleControl : MonoBehaviour {
         CheckForAnswerInput();
     }
 
+    void OnDisable()
+    {
+        teleporter.gameObject.SetActive(true);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //after the first riddle, make the riddleGuy killable. if killed disable him, but leave plates
         if(collision.gameObject.tag == "PlayerWeapon" && isKillable)
         {
+            answerPlates.SetParent(transform.parent, true);
             transform.gameObject.SetActive(false);
         }
     }
@@ -47,10 +61,9 @@ public class RiddleControl : MonoBehaviour {
         riddle2Correct = false;
         riddle3Correct = false;
 
-        diaMan.StartDialog(riddle1, "Hans");
+        diaMan.StartDialog(riddle1, speakerName);
         correctAnswer = "B";
         StartCoroutine(CheckForAnswerInput());
-
     }
 
     IEnumerator CheckForAnswerInput()
@@ -63,19 +76,20 @@ public class RiddleControl : MonoBehaviour {
                 if (riddle3Correct)
                 {
                     isKillable = true;
+                    yield return new WaitForSeconds(1f);    //debug delay
                     StartRiddles();
                 }
                 else if (riddle2Correct)
                 {
                     correctAnswer = "B";
                     riddle3Correct = true;
-                    diaMan.StartDialog(riddle3, "Hans");
+                    diaMan.StartDialog(riddle3, speakerName);
                 }
                 else if (riddle1Correct)
                 {
                     correctAnswer = "A";
                     riddle2Correct = true;
-                    diaMan.StartDialog(riddle2, "Hans");
+                    diaMan.StartDialog(riddle2, speakerName);
                 }
                 else
                 {
