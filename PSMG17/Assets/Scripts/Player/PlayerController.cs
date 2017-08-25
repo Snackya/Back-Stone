@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public bool swordEquipped = true;
+    private GameObject sword;
+    private GameObject wand;
     
 
     void Start()
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour {
         playerCollider = GetComponent<Collider2D>();
 
         animator = GetComponent<Animator>();
+
+        sword = transform.FindChild("Sword").gameObject;
+        wand = transform.FindChild("Wand").gameObject;
 
         m_movementAxisKeyboardX = "Horizontal" + playerNumber;
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
@@ -71,10 +76,14 @@ public class PlayerController : MonoBehaviour {
         if (swordEquipped)
         {
             animator.SetBool("swordEquipped", true);
+            sword.SetActive(true);
+            wand.SetActive(false);
         }
         else
         {
             animator.SetBool("swordEquipped", false);
+            sword.SetActive(false);
+            wand.SetActive(true);
         }
     }
 
@@ -87,7 +96,9 @@ public class PlayerController : MonoBehaviour {
 
     private void FreezePlayer()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "AttackLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "WandAttack"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "AttackLeft") || 
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "WandAttack") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player" + playerNumber + "WandHeal"))
         {
             movementVelocity = new Vector3(0, 0, 0);
         }

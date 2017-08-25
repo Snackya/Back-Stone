@@ -208,6 +208,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerParticleControl.cs" />
     <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
     <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
+    <Compile Include="Assets\Scripts\Player\WandHeal.cs" />
     <Compile Include="Assets\Scripts\PressurePlate.cs" />
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPressurePlates.cs" />

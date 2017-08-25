@@ -12,6 +12,7 @@ public class SwipeAttack : MonoBehaviour
 
     private int playerNumber;
     private PlayerController player;
+    [HideInInspector]
     public bool swipeActive = false;
 
     void Awake()
