@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 movementVelocity;
     private Animator animator;
     private Transform playerSprite;             // To change the players current direction
-    private bool facingLeft = true;
+    public bool facingLeft = true;
     private CapsuleCollider2D attackCollider;
 
     private float sprintSpeedIncrease = 4f;   // amount of speed increase, when player is sprinting
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
     public bool swordEquipped = true;
     private GameObject sword;
     private GameObject wand;
+    //private Transform fireballSpawn;
     
 
     void Start()
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
         sword = transform.FindChild("Sword").gameObject;
         wand = transform.FindChild("Wand").gameObject;
+        //fireballSpawn = wand.transform.FindChild("FireballSpawn");
 
         m_movementAxisKeyboardX = "Horizontal" + playerNumber;
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
@@ -147,6 +149,9 @@ public class PlayerController : MonoBehaviour {
         facingLeft = !facingLeft;
 
         attackCollider.offset = new Vector2(attackCollider.offset.x * (-1), attackCollider.offset.y);
+        Vector3 wandScale = wand.transform.localScale;
+        wandScale.x *= -1;
+        wand.transform.localScale = wandScale;
 
         Vector3 playerScale = playerSprite.localScale;
         playerScale.x *= -1;
@@ -159,11 +164,16 @@ public class PlayerController : MonoBehaviour {
         {
             animator.SetTrigger("attackTrigger");
         }
-        //Debug.Log(invulnerable);
     }
 
     public void SwipeAttack()
     {
         animator.SetTrigger("swipeTrigger");
+    }
+
+    // stupid workaround :(
+    public void WandAttack()
+    {
+        wand.GetComponent<WandAttack>().ShootFireball();
     }
 }

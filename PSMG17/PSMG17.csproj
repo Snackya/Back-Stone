@@ -202,12 +202,14 @@
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\GlaveScript.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
+    <Compile Include="Assets\Scripts\Player\Fireball.cs" />
     <Compile Include="Assets\Scripts\Player\HealthbarController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollisionControl.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerParticleControl.cs" />
     <Compile Include="Assets\Scripts\Player\SwipeAttack.cs" />
     <Compile Include="Assets\Scripts\Player\SwordAttack.cs" />
+    <Compile Include="Assets\Scripts\Player\WandAttack.cs" />
     <Compile Include="Assets\Scripts\Player\WandHeal.cs" />
     <Compile Include="Assets\Scripts\PressurePlate.cs" />
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
