@@ -35,6 +35,10 @@ public class SwordAttack : MonoBehaviour {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
             }
         }
+        if (other.gameObject.tag == "BlackKnight")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+        }
         if (other.gameObject.name == "Beehive")
         {
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
