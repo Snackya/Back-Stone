@@ -10,15 +10,19 @@ public class BlackKnightAnimationControl : MonoBehaviour {
     private EnemyHealth enemyHealth;
     private Animator animator;
     private Animator armsAnimator;
+    private Animator legsAnimator;
     private GameObject blackKnight;
     private Transform arms;
+    private Transform legs;
     private Transform world;
 
     void Start () {
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
         armsAnimator = transform.parent.GetChild(1).GetComponent<Animator>();
+        legsAnimator = transform.parent.GetChild(2).GetComponent<Animator>();
         arms = transform.parent.GetChild(1);
+        legs = transform.parent.GetChild(2);
         world = transform.parent.parent;
         blackKnight = transform.gameObject;
         onlyTorso = false;
@@ -48,7 +52,12 @@ public class BlackKnightAnimationControl : MonoBehaviour {
         if (percentHp < 0.25 && !onlyTorso)
         {
             onlyTorso = true;
+            legs.gameObject.SetActive(true);
+            legs.position = transform.position;
+            StartCoroutine(PositionFreeze());
             animator.SetTrigger("torsoTrigger");
+            legsAnimator.SetTrigger("torsoTrigger");
+            transform.localPosition = transform.localPosition;
         }
     }
 

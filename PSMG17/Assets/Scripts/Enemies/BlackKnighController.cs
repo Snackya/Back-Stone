@@ -7,6 +7,7 @@ public class BlackKnighController : MonoBehaviour {
 
     [SerializeField] private Transform[] targets;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private GameObject bloodPool;
 
     private Transform target;
     private Rigidbody2D enemy;
@@ -68,5 +69,12 @@ public class BlackKnighController : MonoBehaviour {
     private void CalculateMoveDirection()
     {
         moveDirection = (target.position - enemy.transform.position).normalized;
+    }
+
+    void SpawnBloodPool()
+    {
+        Vector3 poolSpawnPosition = transform.position;
+        Quaternion poolRoation = new Quaternion();  //do not rotate
+        Instantiate(bloodPool, poolSpawnPosition, poolRoation, transform.parent);
     }
 }
