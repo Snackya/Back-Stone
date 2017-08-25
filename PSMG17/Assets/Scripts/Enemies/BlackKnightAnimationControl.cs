@@ -54,11 +54,16 @@ public class BlackKnightAnimationControl : MonoBehaviour {
             onlyTorso = true;
             legs.gameObject.SetActive(true);
             legs.position = transform.position;
-            StartCoroutine(PositionFreeze());
+            FreezePosition();
             animator.SetTrigger("torsoTrigger");
             legsAnimator.SetTrigger("torsoTrigger");
             transform.localPosition = transform.localPosition;
         }
+    }
+
+    private void FreezePosition()
+    {
+        blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     private void UpdateSpeed()
@@ -69,7 +74,7 @@ public class BlackKnightAnimationControl : MonoBehaviour {
 
     IEnumerator PositionFreeze()
     {
-        blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(2f);
         blackKnight.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
