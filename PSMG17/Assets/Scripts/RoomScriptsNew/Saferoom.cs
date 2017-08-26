@@ -18,10 +18,10 @@ public class Saferoom : MonoBehaviour {
     private GameOverManager gameOverManager;
 
 
-    [SerializeField] private int player1X;
-    [SerializeField] private int player1Y;
-    [SerializeField] private int player2X;
-    [SerializeField] private int player2Y;
+    public int player1X;
+    public int player1Y;
+    public int player2X;
+    public int player2Y;
 
     void Start()
     {

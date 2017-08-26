@@ -97,6 +97,9 @@ public class CameraControl : MonoBehaviour {
         Vector3 player1Pos = players[0].position;
         Vector3 player2Pos = players[1].position;
 
+        if (!players[0].gameObject.activeSelf) player1Pos = player2Pos;
+        if (!players[1].gameObject.activeSelf) player2Pos = player1Pos;
+
         for (int k = 0; k < roomsBounds.Count; k++)
         {
             for (int i = 0; i < roomsBounds[k].Count; i++)
@@ -121,44 +124,4 @@ public class CameraControl : MonoBehaviour {
         }
     }
 
-    /* Old function, only viable for if players are located max 1 room from another
-     * 
-    private void SetCameraPosition()
-    {
-        Vector3 player1Pos = players[0].position;
-        Vector3 player2Pos = players[1].position;
-
-        // iterating through the rooms
-        for (int i = 0; i < rooms.Count; i++)
-        {
-            curRoomCollider = rooms[i].GetComponent<BoxCollider2D>();
-            curRoomBounds = curRoomCollider.bounds;
-
-            if (i != rooms.Count - 1) nextRoomBounds = rooms[i + 1].GetComponent<BoxCollider2D>().bounds;
-
-            /* checking if the current room contains both players and smoothly sets the camera position
-             * to the room if true *
-            if (curRoomBounds.Contains(player1Pos) && curRoomBounds.Contains(player2Pos))
-            {
-                transform.position = Vector3.SmoothDamp(transform.position, 
-                    curRoomBounds.center, 
-                    ref moveVelocity, 
-                    dampTime);
-                gameCamera.orthographicSize = Mathf.SmoothDamp(gameCamera.orthographicSize, 
-                    area01CamSizes[i], 
-                    ref zoomSpeed, 
-                    dampTime);
-            }
-            /* if one player is in another room, than the other one, the camera focuses on the center 
-             * of those two rooms *
-            else if (nextRoomBounds.Contains(player1Pos) && curRoomBounds.Contains(player2Pos) || 
-                nextRoomBounds.Contains(player2Pos) && curRoomBounds.Contains(player1Pos))
-            {
-                transform.position = Vector3.SmoothDamp(transform.position,
-                    (curRoomBounds.center + nextRoomBounds.center) / 2,
-                    ref moveVelocity,
-                    dampTime);
-            }
-        }
-    }*/
 }
