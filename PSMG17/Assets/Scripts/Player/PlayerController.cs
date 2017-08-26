@@ -28,9 +28,10 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public bool swordEquipped = true;
+    [HideInInspector]
+    public bool standardAttackReady = true;
     private GameObject sword;
     private GameObject wand;
-    //private Transform fireballSpawn;
     
 
     void Start()
@@ -47,7 +48,6 @@ public class PlayerController : MonoBehaviour {
 
         sword = transform.FindChild("Sword").gameObject;
         wand = transform.FindChild("Wand").gameObject;
-        //fireballSpawn = wand.transform.FindChild("FireballSpawn");
 
         m_movementAxisKeyboardX = "Horizontal" + playerNumber;
         m_movementAxisKeyboardY = "Vertical" + playerNumber;
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Attack()
     {
-        if (Input.GetButtonDown("Attack" + playerNumber))
+        if (Input.GetButtonDown("Attack" + playerNumber) && standardAttackReady)
         {
             animator.SetTrigger("attackTrigger");
         }

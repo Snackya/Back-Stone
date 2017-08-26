@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour {
 
+    private int dmgEnemy = 45;
+    private int dmgBasilisk = 15;
+    private int dmgBlackKnight = 10;
+    private int dmgBeehive = 10;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -14,7 +19,7 @@ public class SwordAttack : MonoBehaviour {
             }
             else if(other.gameObject.name != "Boulder(Clone)")
             {
-                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 45;
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
@@ -31,17 +36,16 @@ public class SwordAttack : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Standard Attack on Basilisk.");
-                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 15;
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBasilisk;
             }
         }
         if (other.gameObject.tag == "BlackKnight")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
         }
         if (other.gameObject.name == "Beehive")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBeehive;
         }
         if (other.gameObject.tag == "Bee")
         {

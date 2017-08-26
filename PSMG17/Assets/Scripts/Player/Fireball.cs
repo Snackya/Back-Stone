@@ -11,6 +11,11 @@ public class Fireball : MonoBehaviour {
     private float fireballDespawnTime = 5f;
     private float speed = 5f;
 
+    private int dmgEnemy = 25;
+    private int dmgBasilisk = 10;
+    private int dmgBlackKnight = 7;
+    private int dmgBeehive = 7;
+
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,9 +52,47 @@ public class Fireball : MonoBehaviour {
             }
             else if (collision.gameObject.name != "Boulder(Clone)")
             {
-                collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 25;
+                collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
                 collision.gameObject.GetComponent<EnemyAI>().Knockback();
             }
+        }
+        if (collision.gameObject.tag == "Basilisk")
+        {
+            if (collision.gameObject.name.Contains("BasiliskScream"))
+            {
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.name == "Headbutt")
+            {
+
+            }
+            else
+            {
+                collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBasilisk;
+            }
+        }
+        if (collision.gameObject.tag == "BlackKnight")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
+        }
+        if (collision.gameObject.name == "Beehive")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBeehive;
+        }
+        if (collision.gameObject.tag == "Bee")
+        {
+            Destroy(collision.gameObject);
+        }
+        //knock boulders back and re-define them as player weapons
+        if (collision.gameObject.name.Contains("Boulder"))
+        {
+            GameObject boulder = collision.gameObject;
+            Transform slingshot = boulder.GetComponentInParent<Transform>().GetComponentInParent<Transform>();
+            ProjectileController projCtrl = collision.gameObject.GetComponent<ProjectileController>();
+
+            projCtrl.direction = -(transform.position - boulder.transform.position).normalized * projCtrl.speed;
+            projCtrl.lifetime = projCtrl.maxLifetime;
+            boulder.tag = "PlayerWeapon";
         }
 
         Destroy(this.gameObject);

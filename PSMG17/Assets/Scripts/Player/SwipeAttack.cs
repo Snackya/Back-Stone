@@ -15,6 +15,11 @@ public class SwipeAttack : MonoBehaviour
     [HideInInspector]
     public bool swipeActive = false;
 
+    private int bonusDmgEnemy = 20;
+    private int bonusDmgBasilisk = 10;
+    private int bonusDmgBlackKnight = 10;
+    private int bonusDmgBeehive = 10;
+
     void Awake()
     {
         cooldown.Initialize();
@@ -59,7 +64,7 @@ public class SwipeAttack : MonoBehaviour
             }
             else if(other.gameObject.name != "Boulder(Clone)")
             {
-                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 20;
+                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgEnemy;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
@@ -75,13 +80,16 @@ public class SwipeAttack : MonoBehaviour
             }
             else
             {
-                Debug.Log("Swipe Attack on Basilisk.");
-                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBasilisk;
             }
         }
         if (other.gameObject.name == "Beehive")
         {
-            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 10;
+            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBeehive;
+        }
+        if (other.gameObject.tag == "BlackKnight")
+        {
+            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBlackKnight;
         }
     }
 }
