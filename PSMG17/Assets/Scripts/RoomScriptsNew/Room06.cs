@@ -50,9 +50,12 @@ public class Room06 : MonoBehaviour {
 
     private void CheckIfEnemiesAreDead()
     {
-        if (!boss.activeSelf)
+        if (bossHealth.health.CurrentVal == 0)
         {
             basiliskHealthBar.gameObject.SetActive(false);
+            bossAlreadyDied = true;
+            backdoor.GetChild(0).gameObject.SetActive(true);
+            backdoor.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -72,7 +75,7 @@ public class Room06 : MonoBehaviour {
 
     private void ActivateEnemies()
     {
-        if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position))
+        if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position) && !bossAlreadyDied)
         {
             if (!playersInside)
             {
@@ -101,6 +104,8 @@ public class Room06 : MonoBehaviour {
         playersInside = false;
         enemy.SetActive(false);
         boss.SetActive(false);
+        backdoor.GetChild(0).gameObject.SetActive(true);
+        backdoor.GetChild(1).gameObject.SetActive(false);
         basiliskHealthBar.gameObject.SetActive(false);
         bossHealth.health.CurrentVal = bossHealth.health.MaxVal;
     }

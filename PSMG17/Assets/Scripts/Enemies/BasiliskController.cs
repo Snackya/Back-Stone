@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class BasiliskController : MonoBehaviour {
 
-    public Transform[] targets;
-    public GameObject[] screams;
-    public Transform screamPosition;
+    [SerializeField]
+    private Transform[] targets;
+    [SerializeField]
+    private GameObject[] screams;
+    [SerializeField]
+    private Transform screamPosition;
 
     private GameObject scream;
     [HideInInspector] public Transform target;
@@ -28,10 +31,6 @@ public class BasiliskController : MonoBehaviour {
         enemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySprite = GetComponent<Renderer>();
-    }
-
-    void Start()
-    {
     }
 
     void OnEnable()
@@ -97,6 +96,7 @@ public class BasiliskController : MonoBehaviour {
     {
         int randomIndex = UnityEngine.Random.Range(0, 2);
         target = targets[randomIndex];
+        if (!target.gameObject.activeSelf) target = targets[1 - randomIndex];
 
         // Select other target, if selected target is in headbutt range
         if (Vector2.Distance(enemy.position, target.position) < headbuttRange)
