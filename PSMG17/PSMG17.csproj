@@ -193,6 +193,7 @@
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\AttackAreaController.cs" />
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnighController.cs" />
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnightAnimationControl.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Deacon\CircleScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />

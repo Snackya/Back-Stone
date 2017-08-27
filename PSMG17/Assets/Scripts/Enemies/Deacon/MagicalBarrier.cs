@@ -8,6 +8,10 @@ public class MagicalBarrier : MonoBehaviour {
     private List<Transform> circles = new List<Transform>();
     private List<Transform> pillars = new List<Transform>();
 
+    private bool circlesReactivating = false;
+    private float pillarReactivationTime = 10f;
+    private float circleReactivationTime = 2f;
+
 	void Start ()
     {
         FillCirclesList();
@@ -33,7 +37,44 @@ public class MagicalBarrier : MonoBehaviour {
     void Update ()
     {
         DeactivateCircles();
+        ReactivateCircles();
 	}
+
+    private void ReactivateCircles()
+    {
+        int inactiveCircleCounter = 0;
+        foreach (Transform circle in circles)
+        {
+            if (!circle.gameObject.activeSelf) inactiveCircleCounter++;
+        }
+        if (inactiveCircleCounter == circles.Count && !circlesReactivating)
+        {
+            circlesReactivating = true;
+            StartCoroutine(ActivateCircles());
+        }
+    }
+
+    private IEnumerator ActivateCircles()
+    {
+        for (int i = 0; i < pillars.Count; i++)
+        {
+            yield return new WaitForSeconds(pillarReactivationTime / pillars.Count);
+            ActivatePillar(i);
+        }
+        for (int i = circles.Count - 1; i >= 0; i--)
+        {
+            yield return new WaitForSeconds(circleReactivationTime / circles.Count);
+            circles[i].gameObject.SetActive(true);
+        }
+    }
+
+    private void ActivatePillar(int index)
+    {
+        pillars[index].GetComponent<EnemyHealth>().health.CurrentVal = 
+            pillars[index].GetComponent<EnemyHealth>().health.MaxVal;
+        pillars[index].GetChild(0).gameObject.SetActive(true);
+        pillars[index].GetChild(1).gameObject.SetActive(false);
+    }
 
     private void DeactivateCircles()
     {
