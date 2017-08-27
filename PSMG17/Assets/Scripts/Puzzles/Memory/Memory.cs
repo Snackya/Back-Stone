@@ -13,12 +13,12 @@ public class Memory : MonoBehaviour {
     [HideInInspector]
     public bool secondSetFlipable = true;
 
-    private Room15 room15;
+    private Room13 room13;
 
 	private void Start ()
     {
         FillCardArrays();
-        room15 = GetComponentInParent<Room15>();
+        room13 = GetComponentInParent<Room13>();
     }
 
     private void FillCardArrays()
@@ -73,6 +73,7 @@ public class Memory : MonoBehaviour {
             }
             if (flippedCards == 2)
             {
+                room13.SpawnEnemies();
                 StartCoroutine(FlipCardsToBack(i));
             }
         }
@@ -92,7 +93,7 @@ public class Memory : MonoBehaviour {
     {
         if (firstSet.Count == 0 && secondSet.Count == 0)
         {
-            room15.memoryComplete = true;
+            room13.memoryComplete = true;
         }
     }
 

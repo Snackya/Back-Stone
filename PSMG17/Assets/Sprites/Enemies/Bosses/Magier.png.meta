@@ -1,9 +1,22 @@
 fileFormatVersion: 2
 guid: f734b7d0c2957ad4f99645d4090497b5
-timeCreated: 1503650509
+timeCreated: 1503755043
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Knock01
+    21300002: Knock02
+    21300004: Knock03
+    21300006: HeadTilt01
+    21300008: HeadTilt02
+    21300010: HeadTilt03
+    21300012: HeadTilt04
+    21300014: HeadTilt05
+    21300016: ArmMove01
+    21300018: ArmMove02
+    21300020: ArmMove03
+    21300022: ArmMove04
+    21300024: ArmMove05
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +71,186 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Knock01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2122
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knock02
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 2120
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knock03
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 2123
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HeadTilt01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1061
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HeadTilt02
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1057
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HeadTilt03
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 1061
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HeadTilt04
+      rect:
+        serializedVersion: 2
+        x: 2478
+        y: 1057
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HeadTilt05
+      rect:
+        serializedVersion: 2
+        x: 3302
+        y: 1058
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArmMove01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArmMove02
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 0
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArmMove03
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 0
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArmMove04
+      rect:
+        serializedVersion: 2
+        x: 2477
+        y: 0
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArmMove05
+      rect:
+        serializedVersion: 2
+        x: 3303
+        y: 0
+        width: 811
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
