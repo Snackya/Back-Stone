@@ -19,6 +19,7 @@ public class SwipeAttack : MonoBehaviour
     private int bonusDmgBasilisk = 10;
     private int bonusDmgBlackKnight = 10;
     private int bonusDmgBeehive = 10;
+    private int bonusDmgPillar = 10;
 
     void Awake()
     {
@@ -68,6 +69,12 @@ public class SwipeAttack : MonoBehaviour
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
+
+        if (other.gameObject.tag == "Pillar")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgPillar;
+        }
+
         if (other.gameObject.tag == "Basilisk")
         {
             if (other.gameObject.name.Contains("BasiliskScream"))

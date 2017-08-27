@@ -15,6 +15,7 @@ public class Fireball : MonoBehaviour {
     private int dmgBasilisk = 10;
     private int dmgBlackKnight = 7;
     private int dmgBeehive = 7;
+    private int dmgPillar = 20;
 
     void Start ()
     {
@@ -56,6 +57,12 @@ public class Fireball : MonoBehaviour {
                 collision.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
+
+        if (collision.gameObject.tag == "Pillar")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgPillar;
+        }
+
         if (collision.gameObject.tag == "Basilisk")
         {
             if (collision.gameObject.name.Contains("BasiliskScream"))

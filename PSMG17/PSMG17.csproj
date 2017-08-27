@@ -186,13 +186,14 @@
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherAnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherArmRotation.cs" />
-    <Compile Include="Assets\Scripts\Enemies\AttackAreaController.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\BeeAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\Beehive.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\LimitBeeCount.cs" />
-    <Compile Include="Assets\Scripts\Enemies\BlackKnighController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\BlackKnightAnimationControl.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BlackKnight\AttackAreaController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnighController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnightAnimationControl.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />

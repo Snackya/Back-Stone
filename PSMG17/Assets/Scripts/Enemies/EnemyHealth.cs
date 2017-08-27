@@ -28,11 +28,21 @@ public class EnemyHealth : MonoBehaviour {
             if (transform.tag == "Enemy")
             {
                 Destroy(this.gameObject);
-            } 
+            }
+            else if (transform.tag == "Pillar")
+            {
+                DeactivatePillar();
+            }
             else
             {
                 this.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void DeactivatePillar()
+    {
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 }

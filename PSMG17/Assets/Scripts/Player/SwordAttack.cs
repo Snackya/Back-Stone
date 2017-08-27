@@ -8,6 +8,7 @@ public class SwordAttack : MonoBehaviour {
     private int dmgBasilisk = 15;
     private int dmgBlackKnight = 10;
     private int dmgBeehive = 10;
+    private int dmgPillar = 25;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,6 +23,11 @@ public class SwordAttack : MonoBehaviour {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
+        }
+
+        if (other.gameObject.tag == "Pillar")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgPillar;
         }
 
         if (other.gameObject.tag == "Basilisk")
