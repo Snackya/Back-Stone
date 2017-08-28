@@ -14,12 +14,15 @@ public class ProjectileController : MonoBehaviour
     [HideInInspector]
     public Vector2 direction;
     [HideInInspector]
+    public Vector3 rotation;
+    [HideInInspector]
     public float lifetime;
     private bool archerFacingRight;
 
     void Start()
     {
         lifetime = maxLifetime;
+        rotation = new Vector3(0, 0, -270 * Time.deltaTime);
         rb = GetComponent<Rigidbody2D>();
         if (enemyType == "Basilisk")
         {
@@ -59,6 +62,12 @@ public class ProjectileController : MonoBehaviour
 
         //move projectile forward according to the current rotation
         else rb.velocity = direction;
+
+        //rotate the transform if the projectile is a boulder
+        if (transform.name.Contains("Boulder"))
+        {
+            transform.Rotate(rotation);
+        }
     }
 
 

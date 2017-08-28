@@ -12,17 +12,15 @@ public class SlingshotController : MonoBehaviour
     private Transform boulderSpawn;
     private Animator animator;
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        StartCoroutine(Attack());
-    }
     void OnEnable()
     {
         target = targets[0];
+        animator = GetComponent<Animator>();
+        StartCoroutine(Attack());
     }
     IEnumerator Attack()
     {
+        Debug.Log("attacking");
         SelectTarget();
         animator.SetTrigger("attack"); 
         yield return new WaitForSeconds(0.2f);  //wait for the correct frame to spawn
