@@ -223,6 +223,7 @@
     <Compile Include="Assets\Scripts\Puzzles\Riddle\RiddleControl.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Riddle\RiddleTrigger.cs" />
     <Compile Include="Assets\Scripts\RevivalFountain.cs" />
+    <Compile Include="Assets\Scripts\RoomDivider.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room02.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room03.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room04.cs" />
