@@ -67,12 +67,8 @@ public class PlayerController : MonoBehaviour {
         //movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
         movementVelocity = movementInput * moveSpeed;
         
-        Dodge();
-
-        
+        Dodge();      
         Attack();
-
-
         SwitchWeapons();
     }
 
@@ -123,6 +119,12 @@ public class PlayerController : MonoBehaviour {
             {
                 Flip();
             }
+        }
+        else
+        {
+            //prevent movement animation during input disable
+            animator.SetFloat("Speed", 0f);
+            animator.SetFloat("vSpeed", 0f);
         }    
     }
 
@@ -155,6 +157,10 @@ public class PlayerController : MonoBehaviour {
         if (canMove)
         {
             playerBody.velocity = movementVelocity;
+        }
+        else
+        {
+            playerBody.velocity = new Vector2(0, 0);    //prevent player from running forward when disabling input during movement
         }
     }
 

@@ -15,7 +15,8 @@ public class RiddleControl : MonoBehaviour {
     private PressurePlate answerA;
     private PressurePlate answerB;
     private PressurePlate answerC;
-    private Transform teleporter;
+
+    private Room19 roomManager;
 
     private string correctAnswer;
     private bool riddle1Correct;
@@ -26,12 +27,18 @@ public class RiddleControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         dialogTrigger = GetComponent<BoxCollider2D>();
+        roomManager = transform.parent.GetComponent<Room19>();
         answerPlates = transform.GetChild(0);
         answerA = transform.GetChild(0).GetChild(0).GetComponent<PressurePlate>();
         answerB = transform.GetChild(0).GetChild(1).GetComponent<PressurePlate>();
         answerC = transform.GetChild(0).GetChild(2).GetComponent<PressurePlate>();
         isKillable = false;
-        teleporter = transform.parent.GetChild(1);
+    }
+
+    void OnDisable()
+    {
+        roomManager.openDoors();
+        roomManager.spawnFountain();
     }
 
     private void Update()
@@ -39,17 +46,11 @@ public class RiddleControl : MonoBehaviour {
         CheckForAnswerInput();
     }
 
-    void OnDisable()
-    {
-        teleporter.gameObject.SetActive(true);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //after the first riddle, make the riddleGuy killable. if killed disable him, but leave plates
         if(collision.gameObject.tag == "PlayerWeapon" && isKillable)
         {
-            answerPlates.SetParent(transform.parent, true);
             transform.gameObject.SetActive(false);
         }
     }
@@ -76,8 +77,8 @@ public class RiddleControl : MonoBehaviour {
                 if (riddle3Correct)
                 {
                     isKillable = true;
-                    yield return new WaitForSeconds(1f);    //debug delay
-                    StartRiddles();
+                    yield return new WaitForSeconds(2f);    //delay for new start
+                    StartRiddles();                         //provoke player to kill Lord Al Coholic by starting anew
                 }
                 else if (riddle2Correct)
                 {
@@ -96,12 +97,6 @@ public class RiddleControl : MonoBehaviour {
                     riddle1Correct = true;
                 }
             }
-            /**
-             * 
-             * 
-             * 
-             * 
-             * **/
             else
             {
                 Debug.Log("wrong answer");
