@@ -97,8 +97,8 @@ public class Room12 : MonoBehaviour
                 boss.SetActive(true);
                 bossHealthBar.gameObject.SetActive(true);
 
-                //InitialSpawn();
-                //StartCoroutine(SpawnEnemies());
+                InitialSpawn();
+                StartCoroutine(SpawnEnemies());
 
             }
             if (boss.activeSelf)
