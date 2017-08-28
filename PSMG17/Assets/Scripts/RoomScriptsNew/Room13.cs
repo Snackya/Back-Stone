@@ -11,6 +11,7 @@ public class Room13 : MonoBehaviour {
 
     private Transform door;
     private Memory memory;
+    private RoomDivider roomDivider;
 
     private List<Transform> spawnPositions = new List<Transform>();
 
@@ -18,6 +19,7 @@ public class Room13 : MonoBehaviour {
     {
         door = transform.FindChild("Door");
         memory = GetComponentInChildren<Memory>();
+        roomDivider = GetComponentInChildren<RoomDivider>();
         FillSpawnPositionsList();
     }
 
@@ -78,5 +80,7 @@ public class Room13 : MonoBehaviour {
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
+
+        roomDivider.ResetRoomDivider();
     }
 }

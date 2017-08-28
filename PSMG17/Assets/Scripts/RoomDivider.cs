@@ -14,6 +14,11 @@ public class RoomDivider : MonoBehaviour {
     private bool roomDivided = false;
     private float roomDividerSpeed = 5f;
 
+    [SerializeField]
+    private bool isRoom08;
+    private Room08 room08;
+    [SerializeField]
+    private bool isRoom13;
     private Room13 room13;
 
 	void Start ()
@@ -22,14 +27,16 @@ public class RoomDivider : MonoBehaviour {
         pressurePlate2 = transform.FindChild("PressurePlates").GetChild(1);
         entrance = transform.FindChild("Entrance");
         entranceRB = entrance.GetComponent<Rigidbody2D>();
-        room13 = GetComponentInParent<Room13>();
         exit = transform.FindChild("Exit");
+
+        if (isRoom08) room08 = GetComponentInParent<Room08>();
+        if (isRoom13) room13 = GetComponentInParent<Room13>();
     }
 	
 	void Update ()
     {
         DivideRoom();
-        if (room13.memoryComplete) OpenExit();
+        if (isRoom13) if (room13.memoryComplete) OpenExit();
 	}
 
     private void OpenExit()
