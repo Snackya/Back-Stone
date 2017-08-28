@@ -193,7 +193,9 @@
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\AttackAreaController.cs" />
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnighController.cs" />
     <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnightAnimationControl.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Deacon\ArrowAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\Deacon\CircleScript.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconArrowController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
@@ -232,6 +234,7 @@
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room08.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room09.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room10.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room12.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room13.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room17.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Saferoom.cs" />
