@@ -33,10 +33,11 @@ public class ProjectileController : MonoBehaviour
             if (archerFacingRight) transform.rotation = Quaternion.Euler(0, 0, -180);
             else transform.rotation = Quaternion.Euler(180, 0, 0);
         }
-        else if(enemyType == "Slingshot")
+        else if (enemyType == "Slingshot")
         {
             target = GetComponentInParent<SlingshotController>().target;
         }
+        
         direction = (transform.position - target.position).normalized;
 
         float angleRad = Mathf.Atan2(transform.position.y - target.position.y, 

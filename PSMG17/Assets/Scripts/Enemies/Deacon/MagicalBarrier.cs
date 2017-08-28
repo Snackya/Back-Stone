@@ -12,6 +12,9 @@ public class MagicalBarrier : MonoBehaviour {
     private float pillarReactivationTime = 10f;
     private float circleReactivationTime = 2f;
 
+    [HideInInspector]
+    public bool barrierActive = true;
+
 	void Start ()
     {
         FillCirclesList();
@@ -50,6 +53,7 @@ public class MagicalBarrier : MonoBehaviour {
         if (inactiveCircleCounter == circles.Count && !circlesReactivating)
         {
             circlesReactivating = true;
+            barrierActive = false;
             StartCoroutine(ActivateCircles());
         }
     }
@@ -66,6 +70,7 @@ public class MagicalBarrier : MonoBehaviour {
             yield return new WaitForSeconds(circleReactivationTime / circles.Count);
             circles[i].gameObject.SetActive(true);
         }
+        barrierActive = true;
     }
 
     private void ActivatePillar(int index)
