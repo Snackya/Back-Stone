@@ -144,6 +144,12 @@ public class PlayerController : MonoBehaviour {
         dodgeOnCooldown = false;
     }
 
+    private IEnumerator AttackCooldownCounter()
+    {
+        yield return new WaitForSeconds(1f);
+        standardAttackReady = true;
+    }
+
     private void Move()
     {
         if (canMove)
@@ -171,6 +177,8 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Attack" + playerNumber) && standardAttackReady && canMove)
         {
             animator.SetTrigger("attackTrigger");
+            standardAttackReady = false;
+            StartCoroutine(AttackCooldownCounter());
         }
     }
 
