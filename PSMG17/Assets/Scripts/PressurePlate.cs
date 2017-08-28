@@ -19,7 +19,7 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // set pressure plate to active state and changes sprite, when a player enter it
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "PlayerLegs")
         {
             activePlate.SetActive(true);
             isActive = true;
@@ -29,7 +29,7 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         // resets plate, when player leaves it
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "PlayerLegs")
         {
             activePlate.SetActive(false);
             isActive = false;
