@@ -9,6 +9,9 @@ public class DialogManager : MonoBehaviour {
     public Text speakerName;
     public string[] textLines;
 
+    public PlayerController player1Control;
+    public PlayerController player2Control;
+
     private int indexCurrentLine;
     private int indexLastLine;
     private bool isTyping;
@@ -26,6 +29,9 @@ public class DialogManager : MonoBehaviour {
                 if(indexCurrentLine >= indexLastLine)
                 {
                     textBox.SetActive(false);
+                    //re-enable movement after text finishes
+                    player1Control.canMove = true;
+                    player2Control.canMove = true;
                 }
                 else
                 {
@@ -41,6 +47,10 @@ public class DialogManager : MonoBehaviour {
 
     public void StartDialog (TextAsset dialog, string speaker)
     {
+        //disable player movement during dialog
+        player1Control.canMove = false;
+        player2Control.canMove = false;
+
         speakerName.text = speaker;
         textLines = dialog.text.Split('\n');
         isTyping = true;
@@ -50,7 +60,7 @@ public class DialogManager : MonoBehaviour {
 
         textBox.SetActive(true);
         StartCoroutine(DisplayText(textLines[indexCurrentLine]));
-	}
+    }
 
     //source: https://github.com/SABentley/Zelda-Dialogue/blob/master/Assets/Scripts/Dialogue.cs
     //shoot text letter by letter until interupted by action key in Update()

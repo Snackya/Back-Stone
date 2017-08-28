@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 5f;                // player movement speed
     public int playerNumber;                    // used to assign players to different controls
-    [HideInInspector] public bool isDodging = false;
+    [HideInInspector]
+    public bool isDodging = false;
+    [HideInInspector]
+    public bool canMove = true;                 //enables objects like the DialogManager to freeze the player
 
     private bool dodgeOnCooldown = false;
 
@@ -108,23 +111,25 @@ public class PlayerController : MonoBehaviour {
 
     private void AnimationController()
     {
-        animator.SetFloat("Speed", Math.Abs(movementVelocity.x));
-        animator.SetFloat("vSpeed", Math.Abs(movementVelocity.y));
-        if (movementVelocity.x > 0 && facingLeft)
+        if (canMove)
         {
-            Flip();
-        }
-        if (movementVelocity.x < 0 && !facingLeft)
-        {
-            Flip();
-        }
-       
+            animator.SetFloat("Speed", Math.Abs(movementVelocity.x));
+            animator.SetFloat("vSpeed", Math.Abs(movementVelocity.y));
+            if (movementVelocity.x > 0 && facingLeft)
+            {
+                Flip();
+            }
+            if (movementVelocity.x < 0 && !facingLeft)
+            {
+                Flip();
+            }
+        }    
     }
 
     //Dodge-roll with invulnerability
     private void Dodge()
     {
-        if (Input.GetButtonDown("Dodge" + playerNumber) && !isDodging && !dodgeOnCooldown)
+        if (Input.GetButtonDown("Dodge" + playerNumber) && !isDodging && !dodgeOnCooldown && canMove)
         {
             animator.SetTrigger("dodgeTrigger");
             dodgeOnCooldown = true;
@@ -141,7 +146,10 @@ public class PlayerController : MonoBehaviour {
 
     private void Move()
     {
-        playerBody.velocity = movementVelocity;
+        if (canMove)
+        {
+            playerBody.velocity = movementVelocity;
+        }
     }
 
     private void Flip()
@@ -160,7 +168,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Attack()
     {
-        if (Input.GetButtonDown("Attack" + playerNumber) && standardAttackReady)
+        if (Input.GetButtonDown("Attack" + playerNumber) && standardAttackReady && canMove)
         {
             animator.SetTrigger("attackTrigger");
         }
@@ -168,12 +176,18 @@ public class PlayerController : MonoBehaviour {
 
     public void SwipeAttack()
     {
-        animator.SetTrigger("swipeTrigger");
+        if (canMove)
+        {
+            animator.SetTrigger("swipeTrigger");
+        }
     }
 
     // stupid workaround :(
     public void WandAttack()
     {
-        wand.GetComponent<WandAttack>().ShootFireball();
+        if (canMove)
+        {
+            wand.GetComponent<WandAttack>().ShootFireball();
+        }
     }
 }
