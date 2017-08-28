@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour {
 
+    public Transform slingshot;
+
     private int dmgEnemy = 45;
     private int dmgBasilisk = 15;
     private int dmgBlackKnight = 10;
@@ -62,11 +64,11 @@ public class SwordAttack : MonoBehaviour {
         if (other.gameObject.name.Contains("Boulder"))
         {
             GameObject boulder = other.gameObject;
-            Transform slingshot = boulder.GetComponentInParent<Transform>().GetComponentInParent<Transform>();
             ProjectileController projCtrl = other.gameObject.GetComponent<ProjectileController>();
 
-            projCtrl.direction = -(transform.position - boulder.transform.position).normalized * projCtrl.speed;
-            projCtrl.lifetime = projCtrl.maxLifetime;
+            projCtrl.direction = (slingshot.position - boulder.transform.position).normalized * projCtrl.speed;
+            projCtrl.rotation *= -1;    //invert rotation
+            projCtrl.lifetime = projCtrl.maxLifetime;   //reset lifetime
             boulder.tag = "PlayerWeapon";
         }
     }
