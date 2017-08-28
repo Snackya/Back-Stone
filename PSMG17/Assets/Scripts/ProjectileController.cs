@@ -30,7 +30,7 @@ public class ProjectileController : MonoBehaviour
             target = GetComponentInParent<EnemyAI>().target;
 
             archerFacingRight = GetComponentInParent<ArcherAnimScript>().facingRight;
-            if (archerFacingRight) transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (archerFacingRight) transform.rotation = Quaternion.Euler(0, 0, -180);
             else transform.rotation = Quaternion.Euler(180, 0, 0);
         }
         else if(enemyType == "Slingshot")
