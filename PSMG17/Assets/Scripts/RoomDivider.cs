@@ -51,6 +51,7 @@ public class RoomDivider : MonoBehaviour {
         if (pressurePlate1.GetChild(1).gameObject.activeSelf && pressurePlate2.GetChild(1).gameObject.activeSelf && !roomDivided)
         {
             roomDivided = true;
+            if (isRoom13) room13.canKillBothPlayers = true;
             StartCoroutine(MoveRoomDivider(-roomDividerSpeed));
         }
     }
