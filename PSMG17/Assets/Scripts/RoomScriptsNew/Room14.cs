@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room18 : MonoBehaviour
+public class Room14 : MonoBehaviour
 {
 
     [SerializeField]
@@ -17,7 +17,7 @@ public class Room18 : MonoBehaviour
     [SerializeField]
     private GameObject archer;
     [SerializeField]
-    private Transform door17To18;
+    private Transform door13To14;
 
     private Bounds roomBounds;
     private List<Transform> spawnPositions = new List<Transform>();
@@ -57,7 +57,7 @@ public class Room18 : MonoBehaviour
     void Update()
     {
         ActivateEnemies();
-        if(currentEnemies == maxEnemies && EnemiesAreDead())
+        if (currentEnemies == maxEnemies && EnemiesAreDead())
         {
             OpenDoor();
         }
@@ -70,8 +70,8 @@ public class Room18 : MonoBehaviour
             door.GetChild(0).gameObject.SetActive(true);
             door.GetChild(1).gameObject.SetActive(false);
 
-            door17To18.GetChild(0).gameObject.SetActive(true);
-            door17To18.GetChild(1).gameObject.SetActive(false);
+            door13To14.GetChild(0).gameObject.SetActive(true);
+            door13To14.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -129,8 +129,8 @@ public class Room18 : MonoBehaviour
 
     private void CloseDoor()
     {
-        door17To18.GetChild(0).gameObject.SetActive(false);
-        door17To18.GetChild(1).gameObject.SetActive(true);
+        door13To14.GetChild(0).gameObject.SetActive(false);
+        door13To14.GetChild(1).gameObject.SetActive(true);
     }
 
     private void SpawnArchers()
