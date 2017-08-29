@@ -35,6 +35,7 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] private Saferoom room11;
     [SerializeField] private Room13 room13;
     [SerializeField] private Room17 room17;
+    [SerializeField] private Room20 room20;
 
 
     void Awake()
@@ -128,6 +129,7 @@ public class GameOverManager : MonoBehaviour {
         room11.resetRoom();
         room13.ResetRoom();
         room17.ResetRoom();
+        room20.ResetRoom();
     }
 
     private void reactivatePlayers()

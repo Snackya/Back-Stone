@@ -20,6 +20,7 @@ public class SwipeAttack : MonoBehaviour
     private int bonusDmgBlackKnight = 10;
     private int bonusDmgBeehive = 10;
     private int bonusDmgPillar = 10;
+    private int bonusDmgDeacon = 7;
 
     void Awake()
     {
@@ -63,6 +64,10 @@ public class SwipeAttack : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
+            if (other.gameObject.name == "HolyArrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
             else if(other.gameObject.name != "Boulder(Clone)")
             {
                 if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgEnemy;
@@ -97,6 +102,10 @@ public class SwipeAttack : MonoBehaviour
         if (other.gameObject.tag == "BlackKnight")
         {
             if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBlackKnight;
+        }
+        if (other.gameObject.tag == "Deacon")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgDeacon;
         }
     }
 }

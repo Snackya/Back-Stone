@@ -16,6 +16,7 @@ public class Fireball : MonoBehaviour {
     private int dmgBlackKnight = 7;
     private int dmgBeehive = 7;
     private int dmgPillar = 20;
+    private int dmgDeacon = 7;
 
     void Start ()
     {
@@ -51,6 +52,10 @@ public class Fireball : MonoBehaviour {
             {
                 Destroy(collision.gameObject);
             }
+            if (collision.gameObject.name == "HolyArrow(Clone)")
+            {
+                Destroy(collision.gameObject);
+            }
             else if (collision.gameObject.name != "Boulder(Clone)")
             {
                 collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
@@ -61,6 +66,10 @@ public class Fireball : MonoBehaviour {
         if (collision.gameObject.tag == "Pillar")
         {
             collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgPillar;
+        }
+        if (collision.gameObject.tag == "Deacon")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgDeacon;
         }
 
         if (collision.gameObject.tag == "Basilisk")

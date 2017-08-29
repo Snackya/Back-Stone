@@ -8,7 +8,7 @@ public class DeaconArrowController : MonoBehaviour {
     private Rigidbody2D rb;
     private Transform tf;
     private float lifetime = 5f;
-    private float speed = 3.5f;
+    private float speed = 4f;
 
 	// Use this for initialization
 	void Start ()

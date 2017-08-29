@@ -8,8 +8,8 @@ public class BoulderAttack : MonoBehaviour {
     private Transform boulder;
     private Transform groundHit;
 
-    private float timeForBoulderSpawn = 3f;
-    private float timeForHitboxActivation = 0.2f;
+    private float timeForBoulderSpawn = 1f;
+    private float lifetime = 1.85f;
 
 	// Use this for initialization
 	void Start ()
@@ -23,11 +23,8 @@ public class BoulderAttack : MonoBehaviour {
     {
         yield return new WaitForSecondsRealtime(timeForBoulderSpawn);
         boulder.gameObject.SetActive(true);
+        yield return new WaitForSeconds(lifetime);
+        Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-		
-	}
 }
