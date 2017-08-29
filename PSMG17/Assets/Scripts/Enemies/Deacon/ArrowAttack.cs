@@ -22,13 +22,19 @@ public class ArrowAttack : MonoBehaviour {
     {
         if (magicalBarrier.barrierActive)
         {
+            int rotationOffset = GetRandomInt(0, 45);
             for (int i = 0; i < 360; i += 45)
             {
                 GameObject newArrow = Instantiate(holyArrow, transform);
-                newArrow.transform.rotation = Quaternion.Euler(0, 0, i);
+                newArrow.transform.rotation = Quaternion.Euler(0, 0, i + rotationOffset);
             }
         }
         yield return new WaitForSeconds(3f);
         StartCoroutine(ShootArrows());
+    }
+
+    private int GetRandomInt(int min, int max)
+    {
+        return UnityEngine.Random.Range(min, max);
     }
 }

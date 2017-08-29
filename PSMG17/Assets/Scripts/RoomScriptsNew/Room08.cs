@@ -21,6 +21,8 @@ public class Room08 : MonoBehaviour {
     public int enemiesSpawned = 0;
     private float spawnRate = 0.6f;
 
+    private bool canKillBothPlayers = false;
+
     private void Start()
     {
         roomDivider = GetComponentInChildren<RoomDivider>();
@@ -37,6 +39,7 @@ public class Room08 : MonoBehaviour {
         {
             GameObject newEnemy = Instantiate(enemy, spawnPositions[spawnPosition]);
             enemiesSpawned++;
+            canKillBothPlayers = true;
         }
         yield return new WaitForSecondsRealtime(spawnRate);
         StartCoroutine(SpawnEnemies());
@@ -59,7 +62,7 @@ public class Room08 : MonoBehaviour {
     {
         CheckIfPlayerIsInPressureplatesBound();
         OpenDoor();
-        KillBothPlayers();
+        if (canKillBothPlayers) KillBothPlayers();
     }
 
     private void KillBothPlayers()
@@ -84,6 +87,7 @@ public class Room08 : MonoBehaviour {
         {
             door.GetChild(0).gameObject.SetActive(true);
             door.GetChild(1).gameObject.SetActive(false);
+            canKillBothPlayers = false;
         }
     }
 

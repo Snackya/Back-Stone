@@ -20,6 +20,8 @@ public class Room13 : MonoBehaviour {
 
     private List<Transform> spawnPositions = new List<Transform>();
 
+    public bool canKillBothPlayers = false;
+
     void Start()
     {
         door = transform.FindChild("Door");
@@ -39,7 +41,7 @@ public class Room13 : MonoBehaviour {
     void Update()
     {
         OpenDoor();
-        KillBothPlayers();
+        if (canKillBothPlayers) KillBothPlayers();
     }
 
     private void KillBothPlayers()
@@ -64,6 +66,7 @@ public class Room13 : MonoBehaviour {
         {
             door.GetChild(0).gameObject.SetActive(true);
             door.GetChild(1).gameObject.SetActive(false);
+            canKillBothPlayers = false;
         }
     }
 

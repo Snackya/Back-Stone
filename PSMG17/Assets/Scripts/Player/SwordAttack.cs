@@ -11,12 +11,17 @@ public class SwordAttack : MonoBehaviour {
     private int dmgBlackKnight = 10;
     private int dmgBeehive = 10;
     private int dmgPillar = 25;
+    private int dmgDeacon = 10;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             if (other.gameObject.name == "Arrow(Clone)")
+            {
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.name == "HolyArrow(Clone)")
             {
                 Destroy(other.gameObject);
             }
@@ -58,6 +63,10 @@ public class SwordAttack : MonoBehaviour {
         if (other.gameObject.tag == "Bee")
         {
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Deacon")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgDeacon;
         }
 
         //knock boulders back and re-define them as player weapons
