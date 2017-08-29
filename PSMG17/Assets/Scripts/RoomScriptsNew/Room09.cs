@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Room09 : MonoBehaviour {
 
@@ -13,8 +14,10 @@ public class Room09 : MonoBehaviour {
     private Beehive[] beehiveScripts;
     [SerializeField]
     private Transform[] beehives;
+    [SerializeField]
+    private List<Slider> beehivesHealth;
     private Bounds roomBounds;
-    private bool playersInside = false;
+    private bool playerInside = false;
     private Transform door;
 
     // Use this for initialization
@@ -27,7 +30,21 @@ public class Room09 : MonoBehaviour {
     void Update () {
         ActivateBeehives();
         OpenDoor();
-	}
+        CheckIfBeehivesDestroyed();
+    }
+
+    private void CheckIfBeehivesDestroyed()
+    {
+        int deathCounter = 0;
+        foreach (Transform beehive in beehives)
+        {
+            if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0) deathCounter++;
+        }
+        if (deathCounter == beehives.Length)
+        {
+            DeactivateHealthBars();
+        }
+    }
 
     private void OpenDoor()
     {
@@ -45,22 +62,39 @@ public class Room09 : MonoBehaviour {
 
     private void ActivateBeehives()
     {
-        if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position))
+        if (roomBounds.Contains(player1.position) || roomBounds.Contains(player2.position))
         {
-            if (!playersInside)
+            if (!playerInside)
             {
-                playersInside = true;
+                playerInside = true;
                 foreach (Beehive beehiveScript in beehiveScripts)
                 {
                     beehiveScript.SpawnBees();
+                    ActivateHealthBars();
                 }
             }
         }
     }
 
+    private void ActivateHealthBars()
+    {
+        foreach (Slider beehiveHealth in beehivesHealth)
+        {
+            beehiveHealth.gameObject.SetActive(true);
+        }
+    }
+
+    private void DeactivateHealthBars()
+    {
+        foreach (Slider beehiveHealth in beehivesHealth)
+        {
+            beehiveHealth.gameObject.SetActive(false);
+        }
+    }
+
     public void ResetRoom()
     {
-        playersInside = false;
+        playerInside = false;
         foreach (Transform beehive in beehives)
         {
             beehive.gameObject.SetActive(true);
@@ -69,6 +103,7 @@ public class Room09 : MonoBehaviour {
         {
             beehiveScript.ResetBeehive();
         }
+        DeactivateHealthBars();
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
     }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Room17 : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class Room17 : MonoBehaviour {
     private GameObject archer;
     private Bounds roomBounds;
     private Beehive beehiveScript;
+    [SerializeField]
+    private Slider beehiveHealth;
     private Transform beehive;
     private List<Transform> spawnPositions = new List<Transform>();
     private List<Transform> archerSpawns = new List<Transform>();
@@ -55,6 +58,7 @@ public class Room17 : MonoBehaviour {
     {
         ActivateEnemies();
         if (!beehive.gameObject.activeSelf) OpenDoor();
+        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0) beehiveHealth.gameObject.SetActive(false);
     }
 
     private void OpenDoor()
@@ -104,6 +108,7 @@ public class Room17 : MonoBehaviour {
                 beehiveScript.SpawnBees();
                 SpawnArchers();
                 StartCoroutine(SpawnEnemies());
+                beehiveHealth.gameObject.SetActive(true);
             }
         }
     }
@@ -120,6 +125,7 @@ public class Room17 : MonoBehaviour {
     {
         playerInside = false;
         beehiveScript.ResetBeehive();
+        beehiveHealth.gameObject.SetActive(false);
         DestroyEnemies();
 
         door.GetChild(0).gameObject.SetActive(false);

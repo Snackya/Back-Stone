@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Room04 : MonoBehaviour {
 
@@ -8,10 +10,12 @@ public class Room04 : MonoBehaviour {
     private Transform player1;
     [SerializeField]
     private Transform player2;
+    [SerializeField]
+    private Slider beehiveHealth;
 
     private Bounds roomBounds;
 
-    private bool playersInside = false;
+    private bool playerInside = false;
 
     private Beehive beehiveScript;
     private Transform beehive;
@@ -30,16 +34,23 @@ public class Room04 : MonoBehaviour {
     {
         ActivateBeehive();
         OpenDoor();
+        CheckIfBeehiveDestroyed();
+    }
+
+    private void CheckIfBeehiveDestroyed()
+    {
+        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0) beehiveHealth.gameObject.SetActive(false);
     }
 
     private void ActivateBeehive()
     {
-        if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position))
+        if (roomBounds.Contains(player1.position) || roomBounds.Contains(player2.position))
         {
-            if (!playersInside)
+            if (!playerInside)
             {
-                playersInside = true;
+                playerInside = true;
                 beehiveScript.SpawnBees();
+                beehiveHealth.gameObject.SetActive(true);
             }
         }
     }
@@ -55,8 +66,10 @@ public class Room04 : MonoBehaviour {
 
     public void ResetRoom()
     {
-        playersInside = false;
+        playerInside = false;
         beehiveScript.ResetBeehive();
+        beehive.gameObject.SetActive(true);
+        beehiveHealth.gameObject.SetActive(false);
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
