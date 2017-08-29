@@ -143,6 +143,7 @@
      <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
      <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
+     <Compile Include="Assets\Scripts\ActiveTrapScript.cs" />
      <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\BloodPoolDespawn.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
@@ -201,6 +202,8 @@
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room10.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room12.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room13.cs" />
+     <Compile Include="Assets\Scripts\RoomScriptsNew\Room14.cs" />
+     <Compile Include="Assets\Scripts\RoomScriptsNew\Room16.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room17.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room18.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room19.cs" />
@@ -210,12 +213,14 @@
      <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
+     <Compile Include="Assets\Scripts\SelectFixedTarget.cs" />
      <Compile Include="Assets\Scripts\SpikePlate.cs" />
      <Compile Include="Assets\Scripts\Stat.cs" />
      <Compile Include="Assets\Scripts\SwordStand.cs" />
      <Compile Include="Assets\Scripts\TeleporterScript.cs" />
      <Compile Include="Assets\Scripts\TextboxManagerOld.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
+     <Compile Include="Assets\Scripts\TrapMechanism.cs" />
      <Compile Include="Assets\Scripts\WandStand.cs" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.shader" />

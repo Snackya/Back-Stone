@@ -64,7 +64,6 @@ public class BlackKnighController : MonoBehaviour {
     void FixedUpdate()
     {
         enemy.AddForce(moveDirection * movementSpeed);
-        Debug.Log(enemy.velocity.x);
     }
 
     private void CalculateMoveDirection()
