@@ -178,6 +178,7 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
+    <Compile Include="Assets\Scripts\ActiveTrapScript.cs" />
     <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\BloodPoolDespawn.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
@@ -251,6 +252,7 @@
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
     <Compile Include="Assets\Scripts\TextboxManagerOld.cs" />
     <Compile Include="Assets\Scripts\Tiling.cs" />
+    <Compile Include="Assets\Scripts\TrapMechanism.cs" />
     <Compile Include="Assets\Scripts\WandStand.cs" />
   </ItemGroup>
   <ItemGroup>
