@@ -160,8 +160,11 @@
      <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnighController.cs" />
      <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnightAnimationControl.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\ArrowAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Deacon\BoulderAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Deacon\BoulderScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\CircleScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconArrowController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Deacon\GroundHitScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
@@ -203,6 +206,7 @@
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room12.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room13.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room14.cs" />
+     <Compile Include="Assets\Scripts\RoomScriptsNew\Room15Sign.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room16.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room17.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room18.cs" />
@@ -233,6 +237,7 @@
      <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\Text\Riddles\riddle1.txt" />
      <None Include="Assets\Text\Riddles\riddle3.txt" />
+     <None Include="Assets\Text\signText.txt" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
      <None Include="Assets\Text\Riddles\riddle2.txt" />
      <None Include="Assets\Text\player1.txt" />

@@ -75,6 +75,7 @@
      <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\Text\Riddles\riddle1.txt" />
      <None Include="Assets\Text\Riddles\riddle3.txt" />
+     <None Include="Assets\Text\signText.txt" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
      <None Include="Assets\Text\Riddles\riddle2.txt" />
      <None Include="Assets\Text\player1.txt" />
