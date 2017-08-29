@@ -33,6 +33,9 @@ public class EnemyAI : MonoBehaviour {
     private int currentWayPoint = 0;                // currently selected waypoint
     private Vector3 waypointDirection;              // direction to next waypoint
 
+    public bool fixedTarget = false;
+    public int fixedPlayerNumber = 0;
+
 
     void OnEnable()
     {
@@ -138,7 +141,17 @@ public class EnemyAI : MonoBehaviour {
             return;
         }
     }
-   
+
+    private void LateUpdate()
+    {
+        if (fixedTarget) SelectFixedTarget(fixedPlayerNumber);
+    }
+
+    private void SelectFixedTarget(int playerNumber)
+    {
+        target = targets[playerNumber];
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
