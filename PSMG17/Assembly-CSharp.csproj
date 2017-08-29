@@ -164,6 +164,7 @@
      <Compile Include="Assets\Scripts\Enemies\Deacon\BoulderScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\CircleScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconArrowController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\GroundHitScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
@@ -211,6 +212,7 @@
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room17.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room18.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Room19.cs" />
+     <Compile Include="Assets\Scripts\RoomScriptsNew\Room20.cs" />
      <Compile Include="Assets\Scripts\RoomScriptsNew\Saferoom.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />

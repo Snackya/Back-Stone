@@ -11,12 +11,14 @@ public class Room19 : MonoBehaviour {
     private Transform fountain;
     private Transform weaponStands;
     private Transform answerPlates;
+    private Saferoom saferoomScript;
 
 	// Use this for initialization
 	void Start () {
         fountain = transform.FindChild("RevivalFountain");
         weaponStands = transform.FindChild("WeaponStands");
         answerPlates = transform.FindChild("AnswerPlates");
+        saferoomScript = GetComponent<Saferoom>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Room19 : MonoBehaviour {
 
     public void spawnFountain()
     {
+        saferoomScript.enabled = true;
         fountain.gameObject.SetActive(true);
         weaponStands.gameObject.SetActive(true);
     }
