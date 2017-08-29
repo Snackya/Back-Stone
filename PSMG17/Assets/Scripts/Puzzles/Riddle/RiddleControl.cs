@@ -16,12 +16,18 @@ public class RiddleControl : MonoBehaviour {
     private PressurePlate answerB;
     private PressurePlate answerC;
 
+    private SpikePlate spikesA;
+    private SpikePlate spikesB;
+    private SpikePlate spikesC;
+
     private Room19 roomManager;
 
     private string correctAnswer;
     private bool riddle1Correct;
     private bool riddle2Correct;
     private bool riddle3Correct;
+    private bool alreadyPunished = false;
+    private bool plateAlreadyPressed = false;
     private bool isKillable;
 
     // Use this for initialization
@@ -29,10 +35,15 @@ public class RiddleControl : MonoBehaviour {
         dialogTrigger = GetComponent<BoxCollider2D>();
         roomManager = transform.parent.GetComponent<Room19>();
         answerPlates = transform.GetChild(0);
+        isKillable = false;
+
         answerA = transform.GetChild(0).GetChild(0).GetComponent<PressurePlate>();
         answerB = transform.GetChild(0).GetChild(1).GetComponent<PressurePlate>();
         answerC = transform.GetChild(0).GetChild(2).GetComponent<PressurePlate>();
-        isKillable = false;
+
+        spikesA = transform.GetChild(2).FindChild("SpikeTrapA").GetComponent<SpikePlate>();
+        spikesB = transform.GetChild(2).FindChild("SpikeTrapB").GetComponent<SpikePlate>();
+        spikesC = transform.GetChild(2).FindChild("SpikeTrapC").GetComponent<SpikePlate>();
     }
 
     void OnDisable()
@@ -43,7 +54,7 @@ public class RiddleControl : MonoBehaviour {
 
     private void Update()
     {
-        CheckForAnswerInput();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +84,8 @@ public class RiddleControl : MonoBehaviour {
         {
             if (AnswerIsCorrect())
             {
+                //prevent false negative answers
+                
                 //check for current position in riddle queue
                 if (riddle3Correct)
                 {
@@ -97,11 +110,19 @@ public class RiddleControl : MonoBehaviour {
                     riddle1Correct = true;
                 }
             }
-            else
+            else if(!AnswerIsCorrect() && !plateAlreadyPressed)
             {
-                Debug.Log("wrong answer");
+                //use bool to only call Punish once in the coroutine         
+                StartCoroutine(PunishWrongAnswer());
+                alreadyPunished = true;
             }
-
+            plateAlreadyPressed = true;
+        }
+        //reset Punish bool
+        else
+        {
+            alreadyPunished = false;
+            plateAlreadyPressed = false;
         }
         yield return new WaitForSeconds(0.1f);
         StartCoroutine(CheckForAnswerInput());
@@ -110,12 +131,39 @@ public class RiddleControl : MonoBehaviour {
     //bool equals correctness of answer
     bool AnswerIsCorrect()
     {
-        if (answerA.isActive && correctAnswer != "A"
-            || answerB.isActive && correctAnswer != "B"
-            || answerC.isActive && correctAnswer != "C")
+        if (answerA.isActive && correctAnswer != "A" || answerB.isActive && correctAnswer != "B" || answerC.isActive && correctAnswer != "C" && !plateAlreadyPressed)
         {
             return false;
-        }
+        }     
         else return true;
+    }
+
+    IEnumerator PunishWrongAnswer()
+    {
+        if (!alreadyPunished)
+        {
+            if (answerA.isActive)
+            {
+                spikesA.ActivateSpikes();
+            }
+            else if (answerB.isActive)
+            {
+                spikesB.ActivateSpikes();
+            }
+            else if (answerC.isActive)
+            {
+                spikesC.ActivateSpikes();
+            }                
+        }
+
+        yield return new WaitForSeconds(2f);
+        ResetSpikes();
+    }
+
+    void ResetSpikes()
+    {
+        spikesA.DeactivateSpikes();
+        spikesB.DeactivateSpikes();
+        spikesC.DeactivateSpikes();
     }
 }

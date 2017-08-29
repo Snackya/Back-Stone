@@ -38,7 +38,8 @@ public class PlayerCollisionControl : MonoBehaviour {
         bool changeLayer = false;
         if (!invulnerable && !playerScript.isDodging)
         {
-            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk" || collision.gameObject.tag == "Bee" || collision.gameObject.tag == "BlackKnight")
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk" || collision.gameObject.tag == "Bee"
+                || collision.gameObject.tag == "BlackKnight" || collision.gameObject.tag == "Trap")
             {
                 HealthbarController hpControl = GetComponent<HealthbarController>();
 
