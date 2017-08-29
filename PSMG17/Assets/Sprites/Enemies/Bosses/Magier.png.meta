@@ -1,35 +1,22 @@
 fileFormatVersion: 2
 guid: f734b7d0c2957ad4f99645d4090497b5
-timeCreated: 1503921113
+timeCreated: 1503961432
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Knock01
-    21300002: Knock02
-    21300004: Knock03
-    21300006: HeadTilt01
-    21300008: HeadTilt02
-    21300010: HeadTilt03
-    21300012: HeadTilt04
-    21300014: HeadTilt05
-    21300016: ArmMove01
-    21300018: ArmMove02
-    21300020: ArmMove03
-    21300022: ArmMove04
-    21300024: ArmMove05
-    21300026: Magier_0
-    21300028: Magier_1
-    21300030: Magier_2
-    21300032: Magier_3
-    21300034: Magier_4
-    21300036: Magier_5
-    21300038: Magier_6
-    21300040: Magier_7
-    21300042: Magier_8
-    21300044: Magier_9
-    21300046: Magier_10
-    21300048: Magier_11
-    21300050: Magier_12
+    21300000: Magier_0
+    21300002: Magier_1
+    21300004: Magier_2
+    21300006: Magier_3
+    21300008: Magier_4
+    21300010: Magier_5
+    21300012: Magier_6
+    21300014: Magier_7
+    21300016: Magier_8
+    21300018: Magier_9
+    21300020: Magier_10
+    21300022: Magier_11
+    21300024: Magier_12
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -62,7 +49,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
