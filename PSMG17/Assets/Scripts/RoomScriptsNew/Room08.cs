@@ -13,16 +13,18 @@ public class Room08 : MonoBehaviour {
     private GameObject enemy;
 
     private RoomDivider roomDivider;
+    private Transform door;
     private List<Transform> spawnPositions = new List<Transform>();
     private Bounds pressurePlateBounds;
     private bool playerNearPressurePlates = false;
-    private int maxEnemies = 30;
-    private int enemiesSpawned = 0;
+    public int maxEnemies = 30;
+    public int enemiesSpawned = 0;
     private float spawnRate = 0.6f;
 
     private void Start()
     {
         roomDivider = GetComponentInChildren<RoomDivider>();
+        door = transform.FindChild("Door");
         pressurePlateBounds = transform.FindChild("TrapMechanism").FindChild("PressurePlates").GetComponent<BoxCollider2D>().bounds;
         FillSpawnPositionsList();
         StartCoroutine(SpawnEnemies());
@@ -56,6 +58,28 @@ public class Room08 : MonoBehaviour {
     private void Update()
     {
         CheckIfPlayerIsInPressureplatesBound();
+        OpenDoor();
+    }
+
+    private void OpenDoor()
+    {
+        if (enemiesSpawned == maxEnemies && AllEnemiesDead())
+        {
+            door.GetChild(0).gameObject.SetActive(true);
+            door.GetChild(1).gameObject.SetActive(false);
+        }
+    }
+
+    public bool AllEnemiesDead()
+    {
+        int noEnemyCounter = 0;
+
+        foreach (Transform spawnPosition in spawnPositions)
+        {
+            if (spawnPosition.childCount == 0) noEnemyCounter++;
+        }
+        if (noEnemyCounter == spawnPositions.Count) return true;
+        else return false;
     }
 
     private void CheckIfPlayerIsInPressureplatesBound()
@@ -68,9 +92,12 @@ public class Room08 : MonoBehaviour {
 
     public void ResetRoom()
     {
+
         roomDivider.ResetRoomDivider();
         enemiesSpawned = 0;
         playerNearPressurePlates = false;
+        door.GetChild(0).gameObject.SetActive(false);
+        door.GetChild(1).gameObject.SetActive(true);
     }
     
 }

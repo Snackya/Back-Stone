@@ -37,6 +37,7 @@ public class RoomDivider : MonoBehaviour {
     {
         DivideRoom();
         if (isRoom13) if (room13.memoryComplete) OpenExit();
+        if (isRoom08) if (room08.enemiesSpawned == room08.maxEnemies && room08.AllEnemiesDead()) OpenExit();
 	}
 
     private void OpenExit()
