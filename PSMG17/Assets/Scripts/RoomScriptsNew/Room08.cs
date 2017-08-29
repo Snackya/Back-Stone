@@ -59,6 +59,23 @@ public class Room08 : MonoBehaviour {
     {
         CheckIfPlayerIsInPressureplatesBound();
         OpenDoor();
+        KillBothPlayers();
+    }
+
+    private void KillBothPlayers()
+    {
+        if (player1.GetComponent<HealthbarController>().currentHealth <= 0)
+        {
+            player2.GetComponent<HealthbarController>().currentHealth -=
+                player2.GetComponent<HealthbarController>().maxHealth;
+            player2.gameObject.SetActive(false);
+        }
+        if (player2.GetComponent<HealthbarController>().currentHealth <= 0)
+        {
+            player1.GetComponent<HealthbarController>().currentHealth -=
+                player1.GetComponent<HealthbarController>().maxHealth;
+            player1.gameObject.SetActive(false);
+        }
     }
 
     private void OpenDoor()
@@ -92,12 +109,22 @@ public class Room08 : MonoBehaviour {
 
     public void ResetRoom()
     {
-
+        KillAllEnemies();
         roomDivider.ResetRoomDivider();
         enemiesSpawned = 0;
         playerNearPressurePlates = false;
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
     }
-    
+
+    private void KillAllEnemies()
+    {
+        foreach (Transform spawnPosition in spawnPositions)
+        {
+            foreach (Transform enemy in spawnPosition)
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
+    }
 }

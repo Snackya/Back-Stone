@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Room13 : MonoBehaviour {
 
+    [SerializeField]
+    private Transform player1;
+    [SerializeField]
+    private Transform player2;
     [HideInInspector]
     public bool memoryComplete = false;
     [SerializeField]
@@ -34,6 +39,23 @@ public class Room13 : MonoBehaviour {
     void Update()
     {
         OpenDoor();
+        KillBothPlayers();
+    }
+
+    private void KillBothPlayers()
+    {
+        if (player1.GetComponent<HealthbarController>().currentHealth <= 0)
+        {
+            player2.GetComponent<HealthbarController>().currentHealth -=
+                player2.GetComponent<HealthbarController>().maxHealth;
+            player2.gameObject.SetActive(false);
+        }
+        if (player2.GetComponent<HealthbarController>().currentHealth <= 0)
+        {
+            player1.GetComponent<HealthbarController>().currentHealth -=
+                player1.GetComponent<HealthbarController>().maxHealth;
+            player1.gameObject.SetActive(false);
+        }
     }
 
     private void OpenDoor()
@@ -75,6 +97,7 @@ public class Room13 : MonoBehaviour {
 
     public void ResetRoom()
     {
+        KillAllEnemies();
         memory.ResetPuzzle();
         memoryComplete = false;
 
@@ -82,5 +105,16 @@ public class Room13 : MonoBehaviour {
         door.GetChild(1).gameObject.SetActive(true);
 
         roomDivider.ResetRoomDivider();
+    }
+
+    private void KillAllEnemies()
+    {
+        foreach (Transform spawnPosition in spawnPositions)
+        {
+            foreach (Transform enemy in spawnPosition)
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
     }
 }
