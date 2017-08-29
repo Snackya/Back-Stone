@@ -13,7 +13,7 @@ public class SelectFixedTarget : MonoBehaviour {
     private int playerNumber = 0;
 	// Use this for initialization
 	void Start () {
-        trapRoomBounds = GetComponentInParent<BoxCollider2D>().bounds;
+        trapRoomBounds = GetComponent<BoxCollider2D>().bounds;
 	}
 	
 	// Update is called once per frame
