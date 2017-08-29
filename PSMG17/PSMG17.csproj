@@ -237,12 +237,15 @@
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room12.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room13.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Room17.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room18.cs" />
+    <Compile Include="Assets\Scripts\RoomScriptsNew\Room19.cs" />
     <Compile Include="Assets\Scripts\RoomScriptsNew\Saferoom.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room03Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room1Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room2Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
+    <Compile Include="Assets\Scripts\SpikePlate.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
     <Compile Include="Assets\Scripts\SwordStand.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
