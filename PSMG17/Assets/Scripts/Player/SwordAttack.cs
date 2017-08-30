@@ -5,6 +5,8 @@ using UnityEngine;
 public class SwordAttack : MonoBehaviour {
 
     public Transform slingshot;
+    [SerializeField]
+    private AudioSource swordHit;
 
     private int dmgEnemy = 45;
     private int dmgBasilisk = 15;
@@ -17,6 +19,7 @@ public class SwordAttack : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
+            swordHit.Play();
             if (other.gameObject.name == "Arrow(Clone)")
             {
                 Destroy(other.gameObject);
@@ -34,11 +37,13 @@ public class SwordAttack : MonoBehaviour {
 
         if (other.gameObject.tag == "Pillar")
         {
+            swordHit.Play();
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgPillar;
         }
 
         if (other.gameObject.tag == "Basilisk")
         {
+            swordHit.Play();
             if (other.gameObject.name.Contains("BasiliskScream"))
             {
                 Destroy(other.gameObject);
@@ -54,6 +59,7 @@ public class SwordAttack : MonoBehaviour {
         }
         if (other.gameObject.tag == "BlackKnight")
         {
+            swordHit.Play();
             if (other.gameObject.name == "BlackKnight")
             {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
@@ -61,20 +67,24 @@ public class SwordAttack : MonoBehaviour {
         }
         if (other.gameObject.name == "Beehive")
         {
+            swordHit.Play();
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBeehive;
         }
         if (other.gameObject.tag == "Bee")
         {
+            swordHit.Play();
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Deacon")
         {
+            swordHit.Play();
             other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgDeacon;
         }
 
         //knock boulders back and re-define them as player weapons
         if (other.gameObject.name.Contains("Boulder"))
         {
+            swordHit.Play();
             GameObject boulder = other.gameObject;
             ProjectileController projCtrl = other.gameObject.GetComponent<ProjectileController>();
 
