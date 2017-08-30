@@ -278,6 +278,9 @@
     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\AstarPathfindingProject\link.xml" />
+    <None Include="Assets\Text\BlackKnight\loseArmsText.txt" />
+    <None Include="Assets\Text\BlackKnight\loseLegsText.txt" />
+    <None Include="Assets\Text\BlackKnight\preFight.txt" />
     <None Include="Assets\Text\Riddles\riddle1.txt" />
     <None Include="Assets\Text\Riddles\riddle2.txt" />
     <None Include="Assets\Text\Riddles\riddle3.txt" />
