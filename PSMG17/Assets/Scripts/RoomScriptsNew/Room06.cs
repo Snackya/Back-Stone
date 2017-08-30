@@ -12,6 +12,8 @@ public class Room06 : MonoBehaviour {
     private Transform player2;
     [SerializeField]
     private Slider basiliskHealthBar;
+    [SerializeField]
+    private MusicManager musicManager;
     private Transform door;
     private Transform backdoor;
 
@@ -50,8 +52,13 @@ public class Room06 : MonoBehaviour {
 
     private void CheckIfEnemiesAreDead()
     {
-        if (bossHealth.health.CurrentVal == 0)
+        if (bossHealth.health.CurrentVal <= 0)
         {
+            if (!bossAlreadyDied)
+            {
+                musicManager.StopBossMusic1();
+                musicManager.PlayBackgroundMusic();
+            }
             basiliskHealthBar.gameObject.SetActive(false);
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
@@ -83,7 +90,8 @@ public class Room06 : MonoBehaviour {
                 enemy.SetActive(true);
                 boss.SetActive(true);
                 basiliskHealthBar.gameObject.SetActive(true);
-                
+                musicManager.StopBackGroundMusic();
+                musicManager.PlayBossMusic1();
             }
             if (boss.activeSelf)
             {
@@ -108,5 +116,7 @@ public class Room06 : MonoBehaviour {
         backdoor.GetChild(1).gameObject.SetActive(false);
         basiliskHealthBar.gameObject.SetActive(false);
         bossHealth.health.CurrentVal = bossHealth.health.MaxVal;
+        musicManager.StopBossMusic1();
+        musicManager.PlayBackgroundMusic();
     }
 }
