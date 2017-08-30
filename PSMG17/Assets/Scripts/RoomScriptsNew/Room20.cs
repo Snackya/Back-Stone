@@ -10,6 +10,8 @@ public class Room20 : MonoBehaviour {
     private Transform player1;
     [SerializeField]
     private Transform player2;
+    [SerializeField]
+    private MusicManager musicManager;
     private Bounds bossbattleTrigger;
     private Transform backdoor;
     [SerializeField]
@@ -44,6 +46,8 @@ public class Room20 : MonoBehaviour {
                 playersInside = true;
                 CloseDoor();
                 ActivateBoss();
+                musicManager.StopBackGroundMusic();
+                musicManager.PlayBossMusic2();
             }
         }
     }
@@ -83,6 +87,7 @@ public class Room20 : MonoBehaviour {
         playersInside = false;
         OpenDoor();
         DeactivateBoss();
-
+        musicManager.StopBossMusic2();
+        musicManager.PlayBackgroundMusic();
     }
 }

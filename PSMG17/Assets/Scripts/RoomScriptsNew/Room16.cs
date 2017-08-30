@@ -15,6 +15,8 @@ public class Room16 : MonoBehaviour
     private Slider blackKnightHealthBar;
     [SerializeField]
     private Transform backdoor;
+    [SerializeField]
+    private MusicManager musicManager;
 
     private Transform door;
 
@@ -52,8 +54,13 @@ public class Room16 : MonoBehaviour
 
     private void CheckIfEnemiesAreDead()
     {
-        if (bossHealth.health.CurrentVal == 0)
+        if (bossHealth.health.CurrentVal <= 0)
         {
+            if (!bossAlreadyDied)
+            {
+                musicManager.StopBossMusic1();
+                musicManager.PlayBackgroundMusic();
+            }
             blackKnightHealthBar.gameObject.SetActive(false);
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
@@ -85,7 +92,8 @@ public class Room16 : MonoBehaviour
                 enemy.SetActive(true);
                 boss.SetActive(true);
                 blackKnightHealthBar.gameObject.SetActive(true);
-
+                musicManager.StopBackGroundMusic();
+                musicManager.PlayBossMusic1();
             }
             if (boss.activeSelf)
             {
@@ -110,5 +118,7 @@ public class Room16 : MonoBehaviour
         backdoor.GetChild(1).gameObject.SetActive(false);
         blackKnightHealthBar.gameObject.SetActive(false);
         bossHealth.health.CurrentVal = bossHealth.health.MaxVal;
+        musicManager.StopBossMusic1();
+        musicManager.PlayBackgroundMusic();
     }
 }

@@ -15,6 +15,8 @@ public class Room12 : MonoBehaviour
     private Slider bossHealthBar;
     [SerializeField]
     private GameObject trashmob;
+    [SerializeField]
+    private MusicManager musicManager;
 
     private Transform door;
     private Transform backdoor;
@@ -60,8 +62,13 @@ public class Room12 : MonoBehaviour
 
     private void CheckIfEnemiesAreDead()
     {
-        if (bossHealth.health.CurrentVal == 0)
+        if (bossHealth.health.CurrentVal <= 0)
         {
+            if (!bossAlreadyDied)
+            {
+                musicManager.StopBossMusic3();
+                musicManager.PlayBackgroundMusic();
+            }
             bossHealthBar.gameObject.SetActive(false);
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
@@ -96,7 +103,8 @@ public class Room12 : MonoBehaviour
                 enemy.SetActive(true);
                 boss.SetActive(true);
                 bossHealthBar.gameObject.SetActive(true);
-
+                musicManager.StopBackGroundMusic();
+                musicManager.PlayBossMusic3();
                 InitialSpawn();
                 StartCoroutine(SpawnEnemies());
 
@@ -126,6 +134,8 @@ public class Room12 : MonoBehaviour
 
         currentEnemies = 0;
         DestroyEnemies();
+        musicManager.StopBossMusic3();
+        musicManager.PlayBackgroundMusic();
     }
 
     //start of Room02 Copy
