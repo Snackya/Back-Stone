@@ -9,7 +9,7 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField]
     private Transform[] enemies;
 
-    private Vector3[] playerRespawnPositions = new Vector3[2] { new Vector3(-3, -2, 0), new Vector3(3, -2, 0)};
+    private Vector3[] playerRespawnPositions = new Vector3[2] { new Vector3(-178, 68, 0), new Vector3(-178, 61, 0)};
 
     private Button resumeButton;
     private Button quitButton;
@@ -18,12 +18,6 @@ public class GameOverManager : MonoBehaviour {
     private Transform skeleton;
 
     private bool gameOver = false;
-
-    // ALT
-    [SerializeField]
-    private Room03Script room3;
-    [SerializeField]
-    private Room2Script room2;
 
     // NEU
     [SerializeField] private Saferoom room01;
@@ -114,10 +108,6 @@ public class GameOverManager : MonoBehaviour {
         skeleton.gameObject.SetActive(false);
 
         reactivatePlayers();
-        // ALT
-        room2.resetRoom();
-        room3.resetRoom();
-
         // NEU
         resetRooms();
 

@@ -24,10 +24,6 @@ public class CameraControl : MonoBehaviour {
     private float dampTime = 0.5f;
     private Vector3 moveVelocity;
     private float[][] areaCamSizes = new float[][] {
-        // Area 1
-        new float[] { 5.5f, 7f, 6.5f, 8f },
-        // Test Area
-        new float[] { 5.5f, 8f, 10.5f},
         // Final Area 01
         new float[] { 8f, 11.3f, 14.5f, 8f, 5f, 9f, 16.5f, 11.5f, 17f, 7f, 7f, 14f, 14f, 11f, 10f, 8.5f, 13.5f, 11.5f, 9f, 12f, 23f, 9f}
     };
@@ -85,11 +81,11 @@ public class CameraControl : MonoBehaviour {
     private void SetCameraToFirstRoom()
     {
         // initially places the camera on the first room
-        curRoomCollider = rooms[2][0].GetComponent<BoxCollider2D>();
+        curRoomCollider = rooms[0][0].GetComponent<BoxCollider2D>();
         curRoomBounds = curRoomCollider.bounds;
 
         transform.position = curRoomBounds.center;
-        gameCamera.orthographicSize = areaCamSizes[2][0];
+        gameCamera.orthographicSize = areaCamSizes[0][0];
     }
 
     private void SetCameraPosition()
