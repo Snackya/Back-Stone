@@ -35,6 +35,7 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] private Saferoom room11;
     [SerializeField] private Room13 room13;
     [SerializeField] private Room17 room17;
+    [SerializeField] private Saferoom room19;
     [SerializeField] private Room20 room20;
 
 
@@ -129,6 +130,7 @@ public class GameOverManager : MonoBehaviour {
         room11.resetRoom();
         room13.ResetRoom();
         room17.ResetRoom();
+        room19.resetRoom();
         room20.ResetRoom();
     }
 
