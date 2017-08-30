@@ -124,6 +124,7 @@ public class Room17 : MonoBehaviour {
     public void ResetRoom()
     {
         playerInside = false;
+        StopAllCoroutines();
         beehiveScript.ResetBeehive();
         beehiveHealth.gameObject.SetActive(false);
         DestroyEnemies();
