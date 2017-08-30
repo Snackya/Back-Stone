@@ -8,6 +8,8 @@ public class DeaconController : MonoBehaviour
 
     [SerializeField]
     private GameObject boulder;
+    [SerializeField]
+    private AudioSource explosionSound;
     private List<Transform> boulderSpawnPositions = new List<Transform>();
     private float attackRate = 1.2f;
     private Animator animator;
@@ -47,6 +49,13 @@ public class DeaconController : MonoBehaviour
         {
             GameObject newBoulder = Instantiate(boulder, spawnPosition);
         }
+        StartCoroutine(PlayExplosionSound());
+    }
+
+    private IEnumerator PlayExplosionSound()
+    {
+        yield return new WaitForSeconds(1.4f);
+        explosionSound.Play();
     }
 
     private int GetRandomInt(int min, int max)

@@ -11,6 +11,10 @@ public class BasiliskController : MonoBehaviour {
     private GameObject[] screams;
     [SerializeField]
     private Transform screamPosition;
+    [SerializeField]
+    private AudioSource frogCroak;
+    [SerializeField]
+    private AudioSource roosterScream;
 
     private GameObject scream;
     [HideInInspector] public Transform target;
@@ -109,8 +113,9 @@ public class BasiliskController : MonoBehaviour {
     {
         int random = UnityEngine.Random.Range(0, 2);
         scream = screams[random];
+        if (random == 0) roosterScream.Play();
+        else frogCroak.Play();
 
-        //rotation missing
         GameObject newScream = Instantiate(scream, screamPosition);      
     }
 }

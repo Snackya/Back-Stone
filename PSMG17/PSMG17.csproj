@@ -187,7 +187,7 @@
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherAnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherArmRotation.cs" />
-    <Compile Include="Assets\Scripts\Enemies\BasiliskController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Basilisk\BasiliskController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\BeeAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\Beehive.cs" />
     <Compile Include="Assets\Scripts\Enemies\Beehive\LimitBeeCount.cs" />
