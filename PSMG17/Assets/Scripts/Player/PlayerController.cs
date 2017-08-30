@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour {
     public bool standardAttackReady = true;
     private GameObject sword;
     private GameObject wand;
+
+    //Sounds
+    [SerializeField] private AudioSource swordAttackSound;
+    [SerializeField] private AudioSource fireballSound;
+    [SerializeField] private AudioSource healSound;
     
 
     void Start()
@@ -70,6 +75,8 @@ public class PlayerController : MonoBehaviour {
         Dodge();      
         Attack();
         SwitchWeapons();
+
+        if (Input.GetKeyDown(KeyCode.K)) PlaySwordAttackSound();
     }
 
     private void SwitchWeapons()
@@ -203,5 +210,20 @@ public class PlayerController : MonoBehaviour {
         {
             wand.GetComponent<WandAttack>().ShootFireball();
         }
+    }
+
+    public void PlaySwordAttackSound()
+    {
+        swordAttackSound.Play();
+    }
+
+    public void PlayFireballSound()
+    {
+        fireballSound.Play();
+    }
+
+    public void PlayHealSound()
+    {
+        healSound.Play();
     }
 }
