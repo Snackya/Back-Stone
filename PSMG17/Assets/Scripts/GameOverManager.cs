@@ -12,6 +12,7 @@ public class GameOverManager : MonoBehaviour {
     private Vector3[] playerRespawnPositions = new Vector3[2] { new Vector3(-3, -2, 0), new Vector3(3, -2, 0)};
 
     private Button resumeButton;
+    private Button quitButton;
     private Text gameOverText;
     private Transform background;
     private Transform skeleton;
@@ -54,11 +55,13 @@ public class GameOverManager : MonoBehaviour {
     private void initGameOverScreen()
     {
         resumeButton = transform.FindChild("ResumeButton").GetComponent<Button>();
+        quitButton = transform.FindChild("QuitButton").GetComponent<Button>();
         gameOverText = GetComponentInChildren<Text>();
         background = transform.FindChild("Background");
         skeleton = transform.FindChild("Skeleton");
 
         resumeButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
         skeleton.gameObject.SetActive(false);
@@ -75,6 +78,7 @@ public class GameOverManager : MonoBehaviour {
         if (gameOver)
         {
             resumeButton.gameObject.SetActive(true);
+            quitButton.gameObject.SetActive(true);
             gameOverText.gameObject.SetActive(true);
             background.gameObject.SetActive(true);
             skeleton.gameObject.SetActive(true);
@@ -104,6 +108,7 @@ public class GameOverManager : MonoBehaviour {
     {
         gameOver = false;
         resumeButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
         skeleton.gameObject.SetActive(false);
@@ -116,6 +121,11 @@ public class GameOverManager : MonoBehaviour {
         // NEU
         resetRooms();
 
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void resetRooms()
