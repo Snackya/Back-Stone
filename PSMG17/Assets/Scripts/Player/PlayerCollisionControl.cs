@@ -63,10 +63,15 @@ public class PlayerCollisionControl : MonoBehaviour {
                 } 
                 else if (collision.gameObject.tag == "Bee")
                 {
-                    Debug.Log("Biene");
                     dmg = 5f;
                     knockback = false;
                     changeLayer = true;
+                }
+                else if (collision.gameObject.tag == "BlackKnight")
+                {
+                    dmg = 12f;
+                    knockback = true;
+                    changeLayer = false;
                 }
                 hpControl.ReceiveDamage(dmg);
 

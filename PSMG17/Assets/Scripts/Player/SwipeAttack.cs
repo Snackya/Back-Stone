@@ -101,7 +101,10 @@ public class SwipeAttack : MonoBehaviour
         }
         if (other.gameObject.tag == "BlackKnight")
         {
-            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBlackKnight;
+            if (other.gameObject.name == "BlackKnight")
+            {
+                if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgBlackKnight;
+            }
         }
         if (other.gameObject.tag == "Deacon")
         {

@@ -89,7 +89,7 @@ public class Fireball : MonoBehaviour {
         }
         if (collision.gameObject.tag == "BlackKnight")
         {
-            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
+            if (collision.gameObject.name == "BlackKnight") collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
         }
         if (collision.gameObject.name == "Beehive")
         {

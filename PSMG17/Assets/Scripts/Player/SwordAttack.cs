@@ -54,7 +54,10 @@ public class SwordAttack : MonoBehaviour {
         }
         if (other.gameObject.tag == "BlackKnight")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
+            if (other.gameObject.name == "BlackKnight")
+            {
+                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgBlackKnight;
+            }
         }
         if (other.gameObject.name == "Beehive")
         {

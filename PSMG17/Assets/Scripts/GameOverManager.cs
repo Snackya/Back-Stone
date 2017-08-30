@@ -57,7 +57,7 @@ public class GameOverManager : MonoBehaviour {
         background = transform.FindChild("Background");
         skeleton = transform.FindChild("Skeleton");
 
-        resumeButton.gameObject.SetActive(false);
+        //resumeButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         background.gameObject.SetActive(false);
         skeleton.gameObject.SetActive(false);
