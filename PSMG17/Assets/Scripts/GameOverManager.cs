@@ -53,7 +53,7 @@ public class GameOverManager : MonoBehaviour {
 
     private void initGameOverScreen()
     {
-        resumeButton = GetComponentInChildren<Button>();
+        resumeButton = transform.FindChild("ResumeButton").GetComponent<Button>();
         gameOverText = GetComponentInChildren<Text>();
         background = transform.FindChild("Background");
         skeleton = transform.FindChild("Skeleton");
