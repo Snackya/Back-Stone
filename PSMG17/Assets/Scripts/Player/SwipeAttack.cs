@@ -64,7 +64,7 @@ public class SwipeAttack : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            if (other.gameObject.name == "HolyArrow(Clone)")
+            else if (other.gameObject.name == "HolyArrow(Clone)")
             {
                 Destroy(other.gameObject);
             }

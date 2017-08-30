@@ -52,7 +52,7 @@ public class Fireball : MonoBehaviour {
             {
                 Destroy(collision.gameObject);
             }
-            if (collision.gameObject.name == "HolyArrow(Clone)")
+            else if (collision.gameObject.name == "HolyArrow(Clone)")
             {
                 Destroy(collision.gameObject);
             }
