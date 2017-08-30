@@ -133,6 +133,7 @@ public class Room12 : MonoBehaviour
         bossHealth.health.CurrentVal = bossHealth.health.MaxVal;
 
         currentEnemies = 0;
+        StopAllCoroutines();
         DestroyEnemies();
         musicManager.StopBossMusic3();
         musicManager.PlayBackgroundMusic();
