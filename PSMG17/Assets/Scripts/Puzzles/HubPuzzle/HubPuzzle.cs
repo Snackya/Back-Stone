@@ -9,7 +9,7 @@ public class HubPuzzle : MonoBehaviour {
 
     private int totalHubs;
 
-    private float[] rotationTolerance = new float[] { 0.71f, 0.7f };
+    private float[] rotationTolerance = new float[] { 0.71f, -0.7f };
 
 	void Awake ()
     {
@@ -28,13 +28,12 @@ public class HubPuzzle : MonoBehaviour {
 
         foreach (Transform hub in hubs)
         {
-            if (hub.rotation.z < rotationTolerance[0] && hub.rotation.z > rotationTolerance[1]) counter++;
+            if (hub.localEulerAngles.z < rotationTolerance[0] && hub.localEulerAngles.z > rotationTolerance[1]) counter++;
         }
 
         if (counter == totalHubs)
         {
             puzzleCompleted = true;
-            Debug.Log("Puzzle completed. Open gate, etc.");
         }
     }
 }
