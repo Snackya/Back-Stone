@@ -17,6 +17,8 @@ public class GameOverManager : MonoBehaviour {
     private Transform background;
     private Transform skeleton;
 
+    private bool resumeSelected = false;
+    private bool quitSelected = false;
     private bool gameOver = false;
 
     // NEU
@@ -34,7 +36,6 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] private Room17 room17;
     [SerializeField] private Saferoom room19;
     [SerializeField] private Room20 room20;
-
 
     void Awake()
     {
@@ -67,6 +68,7 @@ public class GameOverManager : MonoBehaviour {
     {
         checkIfPlayersAreDead();
         showGameOverScreen();
+        NavigateWithKeys();
     }
 
     private void showGameOverScreen()
@@ -78,6 +80,79 @@ public class GameOverManager : MonoBehaviour {
             gameOverText.gameObject.SetActive(true);
             background.gameObject.SetActive(true);
             skeleton.gameObject.SetActive(true);
+        }
+    }
+
+    private void NavigateWithKeys()
+    {
+        Navigate();
+        HighlightButtons();
+        CheckForButtonSelect();
+    }
+
+    private void Navigate()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal1");
+        if (horizontalInput == 1)
+        {
+            if (!quitSelected && !resumeSelected)
+            {
+                resumeSelected = true;
+            }
+            if (quitSelected && !resumeSelected)
+            {
+                quitSelected = false;
+                resumeSelected = true;
+            }
+        }
+        if(horizontalInput == -1)
+        {
+            if (!quitSelected && !resumeSelected)
+            {
+                quitSelected = true;
+            }
+            if(!quitSelected && resumeSelected)
+            {
+                resumeSelected = false;
+                quitSelected = true;
+            }
+        }
+    }
+
+    private void HighlightButtons()
+    {
+        if (quitSelected)
+        {
+            quitButton.GetComponent<Image>().color = quitButton.GetComponent<Button>().colors.highlightedColor;
+        }
+        else
+        {
+            quitButton.GetComponent<Image>().color = quitButton.GetComponent<Button>().colors.normalColor;
+
+        }
+
+        if (resumeSelected)
+        {
+            resumeButton.GetComponent<Image>().color = resumeButton.GetComponent<Button>().colors.highlightedColor;
+        }
+        else
+        {
+            resumeButton.GetComponent<Image>().color = resumeButton.GetComponent<Button>().colors.normalColor;
+        }
+    }
+
+    private void CheckForButtonSelect()
+    {
+        if (Input.GetButtonDown("Action1"))
+        {
+            if(resumeSelected && !quitSelected)
+            {
+                Resume();
+            }
+            else if(!resumeSelected && quitSelected)
+            {
+                QuitGame();
+            }
         }
     }
 
