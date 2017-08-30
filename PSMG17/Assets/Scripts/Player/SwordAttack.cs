@@ -31,6 +31,7 @@ public class SwordAttack : MonoBehaviour {
             else if(other.gameObject.name != "Boulder(Clone)")
             {
                 other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
+                other.gameObject.GetComponentInChildren<ParticleSystem>().Play();
                 other.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }

@@ -204,6 +204,7 @@
     <Compile Include="Assets\Scripts\Enemies\Deacon\MagicalBarrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy01AnimScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyParticleControl.cs" />
     <Compile Include="Assets\Scripts\Enemies\RicochetBoulder.cs" />

@@ -59,6 +59,7 @@ public class Fireball : MonoBehaviour {
             else if (collision.gameObject.name != "Boulder(Clone)")
             {
                 collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
+                collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
                 collision.gameObject.GetComponent<EnemyAI>().Knockback();
             }
         }
