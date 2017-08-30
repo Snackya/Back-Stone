@@ -10,6 +10,8 @@ public class ArrowAttack : MonoBehaviour {
     [SerializeField]
     private GameObject holyArrow;
     private MagicalBarrier magicalBarrier;
+    [SerializeField]
+    private AudioSource arrowsShooting;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +24,7 @@ public class ArrowAttack : MonoBehaviour {
     {
         if (magicalBarrier.barrierActive)
         {
+            arrowsShooting.Play();
             int rotationOffset = GetRandomInt(0, 45);
             for (int i = 0; i < 360; i += 45)
             {
