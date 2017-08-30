@@ -17,7 +17,6 @@ public class WandAttack : MonoBehaviour {
 
     public void ShootFireball()
     {
-        Debug.Log("FEUER!!!");
         GameObject newFireball = Instantiate(projectile, fireballSpawn);
     }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackKnightAnimationControl : MonoBehaviour {
-
+    [SerializeField] private DialogManager diaMan;
     private bool onlyTorso;
     private bool lostArms;
     private EnemyHealth enemyHealth;
@@ -54,10 +54,9 @@ public class BlackKnightAnimationControl : MonoBehaviour {
             onlyTorso = true;
             legs.gameObject.SetActive(true);
             legs.position = transform.position;
-            FreezePosition();
+            StartCoroutine(PositionFreeze());
             animator.SetTrigger("torsoTrigger");
             legsAnimator.SetTrigger("torsoTrigger");
-            transform.localPosition = transform.localPosition;
         }
     }
 

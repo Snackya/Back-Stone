@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackAreaController : MonoBehaviour {
+    [SerializeField] private DialogManager diaMan;
     private GameObject parent;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -17,50 +18,46 @@ public class AttackAreaController : MonoBehaviour {
         downwardAttackRange = spriteRenderer.bounds.extents.y - 0.5f;
         animator = parent.GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        float cooldownRemaining;
         Vector3 playerPos = other.gameObject.transform.position;
         Vector3 selfPos = parent.transform.position;
-
-        if(other.gameObject.tag == "Player" && !isAttacking)
+        if (!diaMan.isRunning)
         {
-            isAttacking = true;
+            if (other.gameObject.tag == "Player" && !isAttacking)
+            {
+                isAttacking = true;
 
-            //sword attack if BK has arms; kick otherwise
-            if (playerPos.y > selfPos.y - downwardAttackRange)
-            {
-                if (playerPos.x <= selfPos.x)
+                //sword attack if BK has arms; kick otherwise
+                if (playerPos.y > selfPos.y - downwardAttackRange)
                 {
-                    animator.SetTrigger("attackLeftTrigger");
-                    animator.SetTrigger("kickLeftTrigger");
-                }
-                else if (playerPos.x > selfPos.x)
-                {
-                    animator.SetTrigger("attackRightTrigger");
-                    animator.SetTrigger("kickRightTrigger");
-                }
-            }
-            else
-            {
-                int random = Random.Range(0, 2);
-                Debug.Log(random);
-                if(random == 0)
-                {
-                    animator.SetTrigger("attackFrontLeftTrigger");
+                    if (playerPos.x <= selfPos.x)
+                    {
+                        animator.SetTrigger("attackLeftTrigger");
+                        animator.SetTrigger("kickLeftTrigger");
+                    }
+                    else if (playerPos.x > selfPos.x)
+                    {
+                        animator.SetTrigger("attackRightTrigger");
+                        animator.SetTrigger("kickRightTrigger");
+                    }
                 }
                 else
                 {
-                    animator.SetTrigger("attackFrontRightTrigger");
+                    int random = Random.Range(0, 2);
+                    Debug.Log(random);
+                    if (random == 0)
+                    {
+                        animator.SetTrigger("attackFrontLeftTrigger");
+                    }
+                    else
+                    {
+                        animator.SetTrigger("attackFrontRightTrigger");
+                    }
                 }
+                StartCoroutine(Cooldown());
             }
-            StartCoroutine(Cooldown());
         }
     }
 

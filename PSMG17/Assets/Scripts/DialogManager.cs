@@ -8,6 +8,7 @@ public class DialogManager : MonoBehaviour {
     public GameObject textBox;
     public Text speakerName;
     public string[] textLines;
+    public bool isRunning = false;
 
     public PlayerController player1Control;
     public PlayerController player2Control;
@@ -32,6 +33,7 @@ public class DialogManager : MonoBehaviour {
                     //re-enable movement after text finishes
                     player1Control.canMove = true;
                     player2Control.canMove = true;
+                    isRunning = false;
                 }
                 else
                 {
@@ -48,6 +50,7 @@ public class DialogManager : MonoBehaviour {
     public void StartDialog (TextAsset dialog, string speaker)
     {
         //disable player movement during dialog
+        isRunning = true;
         player1Control.canMove = false;
         player2Control.canMove = false;
 

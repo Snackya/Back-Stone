@@ -8,6 +8,14 @@ public class BlackKnighController : MonoBehaviour {
     [SerializeField] private Transform[] targets;
     [SerializeField] private float movementSpeed;
     [SerializeField] private GameObject bloodPool;
+    [SerializeField] private DialogManager diaMan;
+
+    [SerializeField]
+    private TextAsset preFightText;
+    [SerializeField]
+    private TextAsset loseArmsText;
+    [SerializeField]
+    private TextAsset loseLegsText;
 
     private Transform target;
     private Rigidbody2D enemy;
@@ -15,6 +23,7 @@ public class BlackKnighController : MonoBehaviour {
 
     private float aggroTime = 4f;
     private Vector2 moveDirection;
+    private bool alreadyFought = false;
 
     void Awake()
     {
@@ -63,7 +72,10 @@ public class BlackKnighController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        enemy.AddForce(moveDirection * movementSpeed);
+        if (!diaMan.isRunning)
+        {
+            enemy.AddForce(moveDirection * movementSpeed);
+        }
     }
 
     private void CalculateMoveDirection()
@@ -76,5 +88,20 @@ public class BlackKnighController : MonoBehaviour {
         Vector3 poolSpawnPosition = transform.position;
         Quaternion poolRoation = new Quaternion();  //do not rotate
         Instantiate(bloodPool, poolSpawnPosition, poolRoation, transform.parent);
+    }
+
+    public void StartPrefightDialog()
+    {
+        diaMan.StartDialog(preFightText, "The Black Knight");
+    }
+
+    void StartLosingArmsDialog()
+    {
+        diaMan.StartDialog(loseArmsText, "The Black Knight");
+    }
+
+    void StartLosingLegsDialog()
+    {
+        diaMan.StartDialog(loseLegsText, "The Black Knight");
     }
 }

@@ -25,10 +25,12 @@ public class Room16 : MonoBehaviour
 
     private bool playersInside = false;
     private bool bossAlreadyDied = false;
+    private bool alreadyEnteredOnce = false;
 
     private GameObject enemy;
     private GameObject boss;
     private EnemyHealth bossHealth;
+    private Vector3 spawnPosition;
 
     void Start()
     {
@@ -38,6 +40,7 @@ public class Room16 : MonoBehaviour
 
         enemy = transform.FindChild("Enemies").gameObject;
         boss = enemy.transform.FindChild("BlackKnight").gameObject;
+        spawnPosition = boss.transform.position;
 
         enemy.SetActive(false);
         boss.SetActive(false);
@@ -99,6 +102,11 @@ public class Room16 : MonoBehaviour
             {
                 backdoor.GetChild(0).gameObject.SetActive(false);
                 backdoor.GetChild(1).gameObject.SetActive(true);
+                if (!alreadyEnteredOnce)
+                {
+                    boss.GetComponent<BlackKnighController>().StartPrefightDialog();
+                    alreadyEnteredOnce = true;
+                }
             }
             else
             {
@@ -111,6 +119,7 @@ public class Room16 : MonoBehaviour
 
     public void resetRoom()
     {
+        boss.transform.position = spawnPosition;
         playersInside = false;
         enemy.SetActive(false);
         boss.SetActive(false);
