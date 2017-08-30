@@ -90,6 +90,7 @@ public class Room06 : MonoBehaviour {
                 enemy.SetActive(true);
                 boss.SetActive(true);
                 basiliskHealthBar.gameObject.SetActive(true);
+                basiliskHealthBar.GetComponentInChildren<Text>().text = "The Basilisk";
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic1();
             }

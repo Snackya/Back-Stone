@@ -94,6 +94,7 @@ public class Room16 : MonoBehaviour
                 playersInside = true;
                 enemy.SetActive(true);
                 boss.SetActive(true);
+                blackKnightHealthBar.GetComponentInChildren<Text>().text = "The Black Knight";
                 blackKnightHealthBar.gameObject.SetActive(true);
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic1();

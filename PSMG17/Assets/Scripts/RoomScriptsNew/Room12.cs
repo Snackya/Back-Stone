@@ -102,6 +102,7 @@ public class Room12 : MonoBehaviour
                 playersInside = true;
                 enemy.SetActive(true);
                 boss.SetActive(true);
+                bossHealthBar.GetComponentInChildren<Text>().text = "The Catapult";
                 bossHealthBar.gameObject.SetActive(true);
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic3();
