@@ -57,6 +57,7 @@ public class Room20 : MonoBehaviour {
         deacon.gameObject.SetActive(true);
         arrowAttack.gameObject.SetActive(true);
         pillars.gameObject.SetActive(true);
+        deaconHealth.GetComponentInChildren<Text>().text = "The Deacon";
         deaconHealth.gameObject.SetActive(true);
     }
 
