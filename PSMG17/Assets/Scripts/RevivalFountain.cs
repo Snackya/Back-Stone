@@ -8,6 +8,7 @@ public class RevivalFountain : MonoBehaviour {
     private GameObject player1;
     private GameObject player2;
     private Saferoom saferoom;
+    [SerializeField] private AudioSource healSound;
 
     private void Start()
     {
@@ -23,6 +24,8 @@ public class RevivalFountain : MonoBehaviour {
         {
             hp = collision.gameObject.GetComponent<HealthbarController>();
             hp.currentHealth = hp.maxHealth;
+
+            healSound.Play();
 
             if (!player1.activeSelf)
             {

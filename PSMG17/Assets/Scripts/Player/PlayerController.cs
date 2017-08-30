@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private AudioSource swordAttackSound;
     [SerializeField] private AudioSource fireballSound;
     [SerializeField] private AudioSource healSound;
+    [SerializeField] private AudioSource swipeAttackSound;
     
 
     void Start()
@@ -225,5 +226,10 @@ public class PlayerController : MonoBehaviour {
     public void PlayHealSound()
     {
         healSound.Play();
+    }
+
+    public void PlaySwipeAttackSound()
+    {
+        swipeAttackSound.Play();
     }
 }
