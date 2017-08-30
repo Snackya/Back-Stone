@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: d4da04de7162044439cfa3052955f22e
-timeCreated: 1503036680
+timeCreated: 1504123996
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lebensbalken_Boss_Rahmen
-    21300002: Lebensbalken_Boss_Full
-    21300004: Lebensbalken_Boss_Hit
+    21300000: Lebensbalken_Boss_0
+    21300002: Lebensbalken_Boss_1
+    21300004: Lebensbalken_Boss_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -73,7 +73,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lebensbalken_Boss_Rahmen
+      name: Lebensbalken_Boss_0
       rect:
         serializedVersion: 2
         x: 28
@@ -81,12 +81,12 @@ TextureImporter:
         width: 1003
         height: 187
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Lebensbalken_Boss_Full
+      name: Lebensbalken_Boss_1
       rect:
         serializedVersion: 2
         x: 69
@@ -94,12 +94,12 @@ TextureImporter:
         width: 924
         height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Lebensbalken_Boss_Hit
+      name: Lebensbalken_Boss_2
       rect:
         serializedVersion: 2
         x: 69
@@ -107,7 +107,7 @@ TextureImporter:
         width: 924
         height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
