@@ -31,7 +31,7 @@ public class MemoryCard : MonoBehaviour {
         }
     }
 
-    public void resetCard()
+    public void ResetCard()
     {
         front.SetActive(false);
     }
