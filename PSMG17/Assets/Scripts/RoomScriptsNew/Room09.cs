@@ -20,6 +20,9 @@ public class Room09 : MonoBehaviour {
     private bool playerInside = false;
     private Transform door;
 
+    [SerializeField]
+    private AudioSource beesSound;
+
     // Use this for initialization
     void Start () {
         roomBounds = transform.GetComponent<BoxCollider2D>().bounds;
@@ -51,10 +54,11 @@ public class Room09 : MonoBehaviour {
         int count = 0;
         foreach (Transform beehive in beehives)
         {
-            if (beehive.gameObject.activeSelf) count++;
+            if (!beehive.gameObject.activeSelf) count++;
         }
         if (count == beehives.Length)
         {
+            beesSound.Stop();
             door.GetChild(0).gameObject.SetActive(true);
             door.GetChild(1).gameObject.SetActive(false);
         }
@@ -66,6 +70,7 @@ public class Room09 : MonoBehaviour {
         {
             if (!playerInside)
             {
+                beesSound.Play();
                 playerInside = true;
                 foreach (Beehive beehiveScript in beehiveScripts)
                 {
@@ -104,6 +109,7 @@ public class Room09 : MonoBehaviour {
             beehiveScript.ResetBeehive();
         }
         DeactivateHealthBars();
+        beesSound.Stop();
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
     }

@@ -21,6 +21,8 @@ public class Room04 : MonoBehaviour {
     private Transform beehive;
     private Transform door;
 
+    [SerializeField]
+    private AudioSource beesSound;
 
     void Start()
     {
@@ -39,7 +41,11 @@ public class Room04 : MonoBehaviour {
 
     private void CheckIfBeehiveDestroyed()
     {
-        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0) beehiveHealth.gameObject.SetActive(false);
+        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0)
+        {
+            beesSound.Stop();
+            beehiveHealth.gameObject.SetActive(false);
+        }
     }
 
     private void ActivateBeehive()
@@ -48,6 +54,7 @@ public class Room04 : MonoBehaviour {
         {
             if (!playerInside)
             {
+                beesSound.Play();
                 playerInside = true;
                 beehiveScript.SpawnBees();
                 beehiveHealth.gameObject.SetActive(true);
@@ -70,6 +77,7 @@ public class Room04 : MonoBehaviour {
         beehiveScript.ResetBeehive();
         beehive.gameObject.SetActive(true);
         beehiveHealth.gameObject.SetActive(false);
+        beesSound.Stop();
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);

@@ -182,6 +182,7 @@
     <Compile Include="Assets\Scripts\Bar.cs" />
     <Compile Include="Assets\Scripts\BloodPoolDespawn.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
+    <Compile Include="Assets\Scripts\CreditsScript.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
     <Compile Include="Assets\Scripts\DialogTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Archer\ArcherAI.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Assets\Scripts\Player\WandAttack.cs" />
     <Compile Include="Assets\Scripts\Player\WandHeal.cs" />
     <Compile Include="Assets\Scripts\PressurePlate.cs" />
+    <Compile Include="Assets\Scripts\PrincessScript.cs" />
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPressurePlates.cs" />
     <Compile Include="Assets\Scripts\Puzzles\HubPuzzle\HubPuzzle.cs" />
@@ -287,6 +289,7 @@
     <None Include="Assets\Text\Riddles\riddle2.txt" />
     <None Include="Assets\Text\Riddles\riddle3.txt" />
     <None Include="Assets\Text\intro.txt" />
+    <None Include="Assets\Text\princess.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
