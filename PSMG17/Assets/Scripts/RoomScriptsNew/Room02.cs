@@ -15,6 +15,7 @@ public class Room02 : MonoBehaviour {
     private BoxCollider2D room;
     private Bounds roomBounds;
     private Transform door;
+    private Transform backdoor;
     private List<Transform> spawnPositions = new List<Transform>();
 
     private bool playersInside = false;
@@ -28,6 +29,7 @@ public class Room02 : MonoBehaviour {
         room = GetComponent<BoxCollider2D>();
         roomBounds = room.bounds;
         door = transform.FindChild("Door");
+        backdoor = transform.FindChild("Backdoor");
         FillSpawnPositionsList();
     }
 
@@ -64,6 +66,8 @@ public class Room02 : MonoBehaviour {
     {
         door.GetChild(0).gameObject.SetActive(true);
         door.GetChild(1).gameObject.SetActive(false);
+        backdoor.GetChild(0).gameObject.SetActive(true);
+        backdoor.GetChild(1).gameObject.SetActive(false);
     }
 
     private void ActivateEnemies()
@@ -72,6 +76,8 @@ public class Room02 : MonoBehaviour {
         {
             if (!playersInside)
             {
+                backdoor.GetChild(0).gameObject.SetActive(false);
+                backdoor.GetChild(1).gameObject.SetActive(true);
                 playersInside = true;
                 InitialSpawn();
                 StartCoroutine(SpawnEnemies());
