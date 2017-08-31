@@ -22,12 +22,4 @@ public class CircleScript : MonoBehaviour {
         yield return new WaitForSeconds(rotationSpeed);
         StartCoroutine(RotateCircles());
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<HealthbarController>().currentHealth -= dmg;
-        }
-    }
 }

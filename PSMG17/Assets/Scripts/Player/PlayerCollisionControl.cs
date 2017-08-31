@@ -16,6 +16,16 @@ public class PlayerCollisionControl : MonoBehaviour {
     private float maxInvTime = 1.6f;
     private float currentInvTime;
 
+    private float dmgBasiliskHeadbutt = 50f;
+    private float dmgBasiliskScream = 35f;
+    private float dmgEnemy = 13f;
+    private float dmgArcherArrow = 10f;
+    private float dmgDeaconArrow = 12f;
+    private float dmgBee = 6.5f;
+    private float dmgBlackKnight = 12f;
+    private float dmgCircle = 5f;
+    private float dmgBoulder = 18f;
+
     void Start () {
         playerBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -39,37 +49,65 @@ public class PlayerCollisionControl : MonoBehaviour {
         if (!invulnerable && !playerScript.isDodging)
         {
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Basilisk" || collision.gameObject.tag == "Bee"
-                || collision.gameObject.tag == "BlackKnight" || collision.gameObject.tag == "Trap")
+                || collision.gameObject.tag == "BlackKnight" || collision.gameObject.tag == "Trap" || collision.gameObject.tag == "Circle"
+                || collision.gameObject.tag == "Boulder")
             {
                 HealthbarController hpControl = GetComponent<HealthbarController>();
 
                 if (collision.gameObject.name == "Headbutt")
                 {
-                    dmg = 45f;
+                    dmg = dmgBasiliskHeadbutt;
+                    knockback = true;
+                    changeLayer = false;
+                }
+                else if (collision.gameObject.tag == "Circle")
+                {
+                    dmg = dmgCircle;
+                    knockback = false;
+                    changeLayer = false;
+                }
+                else if (collision.gameObject.tag == "Boulder")
+                {
+                    dmg = dmgBoulder;
                     knockback = true;
                     changeLayer = false;
                 }
                 else if (collision.gameObject.name.Contains("BasiliskScream"))
                 {
-                    dmg = 30f;
+                    dmg = dmgBasiliskScream;
                     knockback = true;
                     changeLayer = false;
                 }
                 else if (collision.gameObject.tag == "Enemy")
                 {
-                    dmg = 15f;
-                    knockback = true;
-                    changeLayer = true;
+                    if (collision.gameObject.name.Contains("Holy"))
+                    {
+                        dmg = dmgDeaconArrow;
+                        knockback = true;
+                        changeLayer = false;
+                    }
+                    else if (collision.gameObject.name.Contains("Arrow"))
+                    {
+                        dmg = dmgArcherArrow;
+                        knockback = true;
+                        changeLayer = true;
+                    }
+                    else
+                    {
+                        dmg = dmgEnemy;
+                        knockback = true;
+                        changeLayer = true;
+                    }
                 } 
                 else if (collision.gameObject.tag == "Bee")
                 {
-                    dmg = 5f;
+                    dmg = dmgBee;
                     knockback = false;
                     changeLayer = true;
                 }
                 else if (collision.gameObject.tag == "BlackKnight")
                 {
-                    dmg = 12f;
+                    dmg = dmgBlackKnight;
                     knockback = true;
                     changeLayer = false;
                 }
