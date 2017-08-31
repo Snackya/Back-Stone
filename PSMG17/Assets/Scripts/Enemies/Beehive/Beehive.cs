@@ -24,7 +24,6 @@ public class Beehive : MonoBehaviour {
         health.health.CurrentVal = health.health.MaxVal;
         StopAllCoroutines();
         grandChildCount = transform.GetChild(0).childCount;
-        Debug.Log(grandChildCount);
         for (int i = 0; i < grandChildCount; i++)
         {
             Destroy(transform.GetChild(0).GetChild(i).gameObject);

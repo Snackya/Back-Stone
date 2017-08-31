@@ -256,6 +256,7 @@
     <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
     <Compile Include="Assets\Scripts\SelectFixedTarget.cs" />
+    <Compile Include="Assets\Scripts\ShowFPS.cs" />
     <Compile Include="Assets\Scripts\SpikePlate.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
     <Compile Include="Assets\Scripts\SwordStand.cs" />

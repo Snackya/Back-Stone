@@ -20,6 +20,7 @@ public class Room20 : MonoBehaviour {
     private Transform arrowAttack;
     private Transform pillars;
     private bool playersInside = false;
+    private Transform circles;
 
     // Use this for initialization
     void Start ()
@@ -29,6 +30,7 @@ public class Room20 : MonoBehaviour {
         deacon = transform.FindChild("Deacon");
         arrowAttack = transform.FindChild("ArrowAttack");
         pillars = transform.FindChild("MagicalBarrier").FindChild("Pillars");
+        circles = transform.FindChild("MagicalBarrier").FindChild("Circles");
 	}
 	
 	// Update is called once per frame
@@ -52,8 +54,25 @@ public class Room20 : MonoBehaviour {
         }
     }
 
+    private void RotateCircles()
+    {
+        foreach (Transform circle in circles)
+        {
+            circle.GetComponent<CircleScript>().RotateCircles();
+        }
+    }
+
+    private void StopCircleRotation()
+    {
+        foreach (Transform circle in circles)
+        {
+            circle.GetComponent<CircleScript>().StopAllCoroutines();
+        }
+    }
+
     private void ActivateBoss()
     {
+        RotateCircles();
         deacon.gameObject.SetActive(true);
         arrowAttack.gameObject.SetActive(true);
         pillars.gameObject.SetActive(true);
@@ -63,6 +82,7 @@ public class Room20 : MonoBehaviour {
 
     private void DeactivateBoss()
     {
+        StopCircleRotation();
         deacon.GetComponent<EnemyHealth>().health.CurrentVal = 
             deacon.GetComponent<EnemyHealth>().health.MaxVal;
         deacon.gameObject.SetActive(false);

@@ -10,16 +10,16 @@ public class CircleScript : MonoBehaviour {
     private float rotationSpeed = 0.025f;
     private int dmg = 5;
 
-    private void OnEnable()
+    public void RotateCircles()
     {
-        StartCoroutine(RotateCircles());
+        StartCoroutine(RotateCircle());
     }
 
-    private IEnumerator RotateCircles()
+    private IEnumerator RotateCircle()
     {
         if (turnRight) transform.Rotate(new Vector3(0, 0, 1));
         else transform.Rotate(new Vector3(0, 0, -1));
         yield return new WaitForSeconds(rotationSpeed);
-        StartCoroutine(RotateCircles());
+        StartCoroutine(RotateCircle());
     }
 }
