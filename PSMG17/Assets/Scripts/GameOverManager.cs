@@ -93,7 +93,8 @@ public class GameOverManager : MonoBehaviour {
     private void Navigate()
     {
         float horizontalInput = Input.GetAxis("Horizontal1");
-        if (horizontalInput == 1)
+        float gamepadHorizontalInput = Input.GetAxis("GamepadHorizontal1");
+        if (horizontalInput == 1 || gamepadHorizontalInput == 1)
         {
             if (!quitSelected && !resumeSelected)
             {
@@ -105,7 +106,7 @@ public class GameOverManager : MonoBehaviour {
                 resumeSelected = true;
             }
         }
-        if(horizontalInput == -1)
+        if(horizontalInput == -1 || gamepadHorizontalInput == -1)
         {
             if (!quitSelected && !resumeSelected)
             {

@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour {
     private string m_movementAxisKeyboardY;
     private string m_movementAxisGamepadX;
     private string m_movementAxisGamepadY;
+    public bool usingGamepad = false;
 
     [HideInInspector]
     public bool swordEquipped = true;
@@ -68,16 +69,27 @@ public class PlayerController : MonoBehaviour {
 
 	void Update()
     {
-        // storing the user movement input in a variable
-        movementInput = new Vector3(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY), 0f);  //keyboard control
-        //movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
-        movementVelocity = movementInput * moveSpeed;
-        
+        SetMovementVelocity();
         Dodge();      
         Attack();
         SwitchWeapons();
 
         if (Input.GetKeyDown(KeyCode.K)) PlaySwordAttackSound();
+    }
+
+    private void SetMovementVelocity()
+    {
+        // storing the user movement input in a variable
+        if (usingGamepad)
+        {
+            movementInput = new Vector3(Input.GetAxis(m_movementAxisGamepadX), Input.GetAxis(m_movementAxisGamepadY), 0f);  //gamepad control
+
+        }
+        else
+        {
+            movementInput = new Vector3(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY), 0f);  //keyboard control
+        }
+        movementVelocity = movementInput * moveSpeed;
     }
 
     private void SwitchWeapons()
