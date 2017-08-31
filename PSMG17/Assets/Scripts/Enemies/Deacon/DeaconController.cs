@@ -10,6 +10,8 @@ public class DeaconController : MonoBehaviour
     private GameObject boulder;
     [SerializeField]
     private AudioSource explosionSound;
+    [SerializeField]
+    private DialogManager diaMan;
     private List<Transform> boulderSpawnPositions = new List<Transform>();
     private float attackRate = 1.2f;
     private Animator animator;
@@ -25,7 +27,7 @@ public class DeaconController : MonoBehaviour
     {
         yield return new WaitForSeconds(attackRate);
         int diceRoll = GetRandomInt(1, 6);
-        if (diceRoll <= 3) animator.SetTrigger("Attack");
+        if (diceRoll <= 3 && !diaMan.isRunning) animator.SetTrigger("Attack");
         StartCoroutine(AttackAnimation());
     }
 

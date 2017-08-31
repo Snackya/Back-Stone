@@ -12,6 +12,8 @@ public class ArrowAttack : MonoBehaviour {
     private MagicalBarrier magicalBarrier;
     [SerializeField]
     private AudioSource arrowsShooting;
+    [SerializeField]
+    private DialogManager diaMan;
 
 	// Use this for initialization
 	void Start ()
@@ -22,7 +24,7 @@ public class ArrowAttack : MonoBehaviour {
 
     private IEnumerator ShootArrows()
     {
-        if (magicalBarrier.barrierActive)
+        if (magicalBarrier.barrierActive && !diaMan.isRunning)
         {
             arrowsShooting.Play();
             int rotationOffset = GetRandomInt(0, 45);

@@ -161,7 +161,6 @@
      <Compile Include="Assets\Scripts\Enemies\BlackKnight\BlackKnightAnimationControl.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\ArrowAttack.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\BoulderAttack.cs" />
-     <Compile Include="Assets\Scripts\Enemies\Deacon\BoulderScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\CircleScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconArrowController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Deacon\DeaconController.cs" />
@@ -222,6 +221,7 @@
      <Compile Include="Assets\Scripts\Rooms\Room4Script.cs" />
      <Compile Include="Assets\Scripts\Rooms\RoomOpener.cs" />
      <Compile Include="Assets\Scripts\SelectFixedTarget.cs" />
+     <Compile Include="Assets\Scripts\ShowFPS.cs" />
      <Compile Include="Assets\Scripts\SpikePlate.cs" />
      <Compile Include="Assets\Scripts\Stat.cs" />
      <Compile Include="Assets\Scripts\SwordStand.cs" />
@@ -240,14 +240,14 @@
      <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\Text\intro.txt" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
      <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\Text\Riddles\riddle1.txt" />
      <None Include="Assets\Text\Riddles\riddle3.txt" />
-     <None Include="Assets\Text\signText.txt" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
      <None Include="Assets\Text\Riddles\riddle2.txt" />
-     <None Include="Assets\Text\player1.txt" />
+     <None Include="Assets\Text\Deacon\deacon.txt" />
      <None Include="Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

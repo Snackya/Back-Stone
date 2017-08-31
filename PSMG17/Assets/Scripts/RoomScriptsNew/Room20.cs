@@ -12,6 +12,10 @@ public class Room20 : MonoBehaviour {
     private Transform player2;
     [SerializeField]
     private MusicManager musicManager;
+    [SerializeField]
+    private DialogManager diaMan;
+    [SerializeField]
+    private TextAsset deaconText;
     private Bounds bossbattleTrigger;
     private Transform backdoor;
     [SerializeField]
@@ -47,6 +51,7 @@ public class Room20 : MonoBehaviour {
             {
                 playersInside = true;
                 CloseDoor();
+                diaMan.StartDialog(deaconText, "The Deacon");
                 ActivateBoss();
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic2();

@@ -18,7 +18,7 @@ public class DialogManager : MonoBehaviour {
     private bool isTyping;
     private bool isEndOfDialog;
     private bool cancelTyping;
-    private float secondsBetweenCharacters = 0.05f;
+    private float secondsBetweenCharacters = 0.03f;
 
     void Update()
     {
