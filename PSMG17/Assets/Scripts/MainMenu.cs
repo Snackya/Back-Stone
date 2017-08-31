@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour {
         startGameButton = transform.GetChild(1).gameObject;
         controlsButton = transform.GetChild(2).gameObject;
         quitGameButton = transform.GetChild(3).gameObject;
-        controlScreen = transform.FindChild("ControlPage").GetComponent<Image>();
+        controlScreen = transform.FindChild("ControlsPage").GetComponent<Image>();
 
         startSelected = true;
         controlsSelected = false;
