@@ -102,7 +102,7 @@ public class Room02 : MonoBehaviour {
     {
         currentEnemies = 0;
         playersInside = false;
-
+        StopAllCoroutines();
         DestroyEnemies();
 
         door.GetChild(0).gameObject.SetActive(false);
