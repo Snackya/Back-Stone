@@ -67,8 +67,11 @@ public class GameOverManager : MonoBehaviour {
     void Update()
     {
         checkIfPlayersAreDead();
-        showGameOverScreen();
-        NavigateWithKeys();
+        if (gameOver)
+        {
+            showGameOverScreen();
+            NavigateWithKeys();
+        }
     }
 
     private void showGameOverScreen()

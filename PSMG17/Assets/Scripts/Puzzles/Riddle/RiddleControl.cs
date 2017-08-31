@@ -74,6 +74,7 @@ public class RiddleControl : MonoBehaviour {
         riddle3Correct = false;
 
         diaMan.StartDialog(riddle1, speakerName);
+        answerPlates.gameObject.SetActive(true);
         correctAnswer = "B";
         StartCoroutine(CheckForAnswerInput());
     }
