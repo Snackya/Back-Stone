@@ -1,4 +1,3 @@
-# Back Stone 
-(Working Title)
+# Illumi
 
-Check our [Wiki](https://github.com/Snackya/Back-Stone/wiki)
+A simple top-down dungeon crawler, created for the Media Design Project Seminar.
