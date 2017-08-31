@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour {
         m_movementAxisGamepadY = "GamepadVertical" + playerNumber;
 
         animator.SetBool("swordEquipped", true);
+
+        StartCoroutine(ChangeControls());
     }
 
 	void Update()
@@ -89,6 +91,20 @@ public class PlayerController : MonoBehaviour {
             movementInput = new Vector3(Input.GetAxis(m_movementAxisKeyboardX), Input.GetAxis(m_movementAxisKeyboardY), 0f);  //keyboard control
         }
         movementVelocity = movementInput * moveSpeed;
+    }
+
+    private IEnumerator ChangeControls()
+    {
+        if (Input.GetButtonDown("ControlChange") && usingGamepad)
+        {
+            usingGamepad = false;
+        }
+        else if (Input.GetButtonDown("ControlChange") && !usingGamepad)
+        {
+            usingGamepad = true;
+        }
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(ChangeControls());
     }
 
     private void SwitchWeapons()
