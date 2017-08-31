@@ -51,31 +51,34 @@ public class Room12 : MonoBehaviour
         bossHealthBar.gameObject.SetActive(false);
         bossHealth = boss.GetComponent<EnemyHealth>();
         FillSpawnPositionsList();
+
+        StartCoroutine(CheckIfEnemiesAreDead());
     }
 
     void Update()
     {
         ActivateEnemies();
-        CheckIfEnemiesAreDead();
         OpenDoor();
     }
 
-    private void CheckIfEnemiesAreDead()
+    private IEnumerator CheckIfEnemiesAreDead()
     {
         if (bossHealth.health.CurrentVal <= 0)
         {
             if (!bossAlreadyDied)
             {
-                musicManager.StopBossMusic3();
+                musicManager.StopBossMusic1();
                 musicManager.PlayBackgroundMusic();
             }
             bossHealthBar.gameObject.SetActive(false);
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
             backdoor.GetChild(1).gameObject.SetActive(false);
-
-            StopCoroutine(SpawnEnemies());
-            DestroyEnemies();
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(CheckIfEnemiesAreDead());
         }
     }
 

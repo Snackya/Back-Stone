@@ -46,16 +46,17 @@ public class Room16 : MonoBehaviour
         boss.SetActive(false);
         blackKnightHealthBar.gameObject.SetActive(false);
         bossHealth = boss.GetComponent<EnemyHealth>();
+
+        StartCoroutine(CheckIfEnemiesAreDead());
     }
 
     void Update()
     {
         ActivateEnemies();
-        CheckIfEnemiesAreDead();
-        //OpenDoor();
+        OpenDoor();
     }
 
-    private void CheckIfEnemiesAreDead()
+    private IEnumerator CheckIfEnemiesAreDead()
     {
         if (bossHealth.health.CurrentVal <= 0)
         {
@@ -68,6 +69,11 @@ public class Room16 : MonoBehaviour
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
             backdoor.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(CheckIfEnemiesAreDead());
         }
     }
 

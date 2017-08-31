@@ -41,16 +41,17 @@ public class Room06 : MonoBehaviour {
         boss.SetActive(false);
         basiliskHealthBar.gameObject.SetActive(false);
         bossHealth = boss.GetComponent<EnemyHealth>();
+
+        StartCoroutine(CheckIfEnemiesAreDead());
     }
 
     void Update()
     {
         ActivateEnemies();
-        CheckIfEnemiesAreDead();
         OpenDoor();
     }
 
-    private void CheckIfEnemiesAreDead()
+    private IEnumerator CheckIfEnemiesAreDead()
     {
         if (bossHealth.health.CurrentVal <= 0)
         {
@@ -63,6 +64,11 @@ public class Room06 : MonoBehaviour {
             bossAlreadyDied = true;
             backdoor.GetChild(0).gameObject.SetActive(true);
             backdoor.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(CheckIfEnemiesAreDead());
         }
     }
 
