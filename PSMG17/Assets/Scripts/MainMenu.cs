@@ -12,31 +12,45 @@ public class MainMenu : MonoBehaviour {
     private Font unselectedFont;
     [SerializeField]
     private Font selectedFont;
+    [SerializeField]
+    private DialogManager diaMan;
+    [SerializeField]
+    private TextAsset introText;
+    [SerializeField]
+    private Transform player1;
+    [SerializeField]
+    private Transform player2;
 
     private bool startSelected;
     private bool controlsSelected;
     private bool quitSelected;
     private bool navigationRunning = false;
-    // Use this for initialization
+
     void Start () {
-        startGameButton = transform.GetChild(0).gameObject;
-        controlsButton = transform.GetChild(1).gameObject;
-        quitGameButton = transform.GetChild(2).gameObject;
+        startGameButton = transform.GetChild(2).gameObject;
+        controlsButton = transform.GetChild(3).gameObject;
+        quitGameButton = transform.GetChild(4).gameObject;
 
         startSelected = true;
         controlsSelected = false;
         quitSelected = false;
+
+    }
+
+    void OnEnable()
+    {
+        player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         StartCoroutine(Navigate());
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update () {
         NavigateWithKeys();
 	}
 
     private void NavigateWithKeys()
     {
-        //StartCoroutine(Navigate());
         HighlightButtons();
         CheckForButtonSelect();
     }
@@ -73,7 +87,7 @@ public class MainMenu : MonoBehaviour {
                 startSelected = false;
             }
         }
-        yield return new WaitForSeconds(0.05f);     //instant skip workaround
+        yield return new WaitForSeconds(0.08f);     //instant skip workaround
         StartCoroutine(Navigate());
     }
 
@@ -113,7 +127,7 @@ public class MainMenu : MonoBehaviour {
         {
             if (startSelected && !quitSelected && !quitSelected)
             {
-                //StartGame();
+                StartGame();
             }
             else if (!startSelected && controlsSelected && !quitSelected)
             {
@@ -124,5 +138,14 @@ public class MainMenu : MonoBehaviour {
                 Application.Quit();
             }
         }
+    }
+
+    private void StartGame()
+    {
+        player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        diaMan.StartDialog(introText, "A voice from somewhere");
+        transform.gameObject.SetActive(false);
     }
 }
