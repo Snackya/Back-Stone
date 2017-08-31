@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour {
     [SerializeField] private AudioSource bossMusic1;
     [SerializeField] private AudioSource bossMusic2;
     [SerializeField] private AudioSource bossMusic3;
+    [SerializeField] private AudioSource endingMusic;
 
 
     // Use this for initialization
@@ -60,5 +61,15 @@ public class MusicManager : MonoBehaviour {
     public void StopBossMusic3()
     {
         bossMusic3.Stop();
+    }
+
+    public void PlayEndingMusic()
+    {
+        endingMusic.Play();
+    }
+
+    public void StopEndingMusic()
+    {
+        endingMusic.Stop();
     }
 }
