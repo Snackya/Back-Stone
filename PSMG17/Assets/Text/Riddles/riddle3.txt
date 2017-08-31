@@ -1,4 +1,4 @@
-?
-A: ?
-B: !
-C: o.o
+What travels around the world, but stays in one spot?
+A: The Sun
+B: A stamp
+C: A letter
