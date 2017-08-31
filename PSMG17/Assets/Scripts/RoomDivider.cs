@@ -12,7 +12,7 @@ public class RoomDivider : MonoBehaviour {
     private Transform exit;
 
     private bool roomDivided = false;
-    private float roomDividerSpeed = 5f;
+    private float roomDividerSpeed = 12f;
 
     [SerializeField]
     private bool isRoom08;
@@ -61,7 +61,7 @@ public class RoomDivider : MonoBehaviour {
         entrance.GetChild(1).gameObject.SetActive(true);
         entrance.GetChild(0).gameObject.SetActive(false);
         entranceRB.velocity = new Vector2(speed, 0);
-        yield return new WaitForSecondsRealtime(0.7f);
+        yield return new WaitForSecondsRealtime(0.3f);
         entranceRB.velocity = new Vector2(0, 0);
         entrance.GetChild(0).gameObject.SetActive(true);
         entrance.GetChild(1).gameObject.SetActive(false);
