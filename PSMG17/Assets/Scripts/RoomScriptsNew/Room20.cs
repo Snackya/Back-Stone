@@ -26,6 +26,7 @@ public class Room20 : MonoBehaviour {
     private bool playersInside = false;
     private bool alreadyEnteredOnce = false;
     private Transform circles;
+    private Transform princess;
 
     // Use this for initialization
     void Start ()
@@ -36,6 +37,7 @@ public class Room20 : MonoBehaviour {
         arrowAttack = transform.FindChild("ArrowAttack");
         pillars = transform.FindChild("MagicalBarrier").FindChild("Pillars");
         circles = transform.FindChild("MagicalBarrier").FindChild("Circles");
+        princess = transform.FindChild("Princess");
 	}
 	
 	// Update is called once per frame
@@ -59,7 +61,21 @@ public class Room20 : MonoBehaviour {
                 ActivateBoss();
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic2();
+                StartCoroutine(CheckForDeadEnemy());
             }
+        }
+    }
+    
+    private IEnumerator CheckForDeadEnemy()
+    {
+        if (playersInside && deacon.GetComponent<EnemyHealth>().health.CurrentVal == 0)
+        {
+            princess.gameObject.SetActive(true);
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(CheckForDeadEnemy());
         }
     }
 
