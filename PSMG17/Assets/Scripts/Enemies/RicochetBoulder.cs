@@ -9,7 +9,7 @@ public class RicochetBoulder : MonoBehaviour {
         //prevent slingshot damage on initial fire
         if(tag == "PlayerWeapon" && collision.gameObject.name == "Slingshot")
         {
-            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 50;
+            collision.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= 25;
             Destroy(gameObject);
         }       
     }
