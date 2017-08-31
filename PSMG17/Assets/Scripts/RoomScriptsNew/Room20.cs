@@ -27,6 +27,7 @@ public class Room20 : MonoBehaviour {
     private bool alreadyEnteredOnce = false;
     private Transform circles;
     private Transform princess;
+    private bool bossAlreadyDied = false;
 
     // Use this for initialization
     void Start ()
@@ -71,6 +72,13 @@ public class Room20 : MonoBehaviour {
         if (playersInside && deacon.GetComponent<EnemyHealth>().health.CurrentVal == 0)
         {
             princess.gameObject.SetActive(true);
+            if (!bossAlreadyDied)
+            {
+                musicManager.StopBossMusic2();
+                musicManager.StopBackGroundMusic();
+                musicManager.PlayEndingMusic();
+            }
+            bossAlreadyDied = true;
         }
         else
         {
