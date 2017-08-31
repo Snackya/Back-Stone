@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour {
     private GameObject startGameButton;
     private GameObject controlsButton;
     private GameObject quitGameButton;
+    private Image controlScreen;
 
     [SerializeField]
     private Font unselectedFont;
@@ -24,16 +25,19 @@ public class MainMenu : MonoBehaviour {
     private bool startSelected;
     private bool controlsSelected;
     private bool quitSelected;
-    private bool navigationRunning = false;
+    private bool controlPageOpened = false;
 
     void Start () {
-        startGameButton = transform.GetChild(2).gameObject;
-        controlsButton = transform.GetChild(3).gameObject;
-        quitGameButton = transform.GetChild(4).gameObject;
+        startGameButton = transform.GetChild(1).gameObject;
+        controlsButton = transform.GetChild(2).gameObject;
+        quitGameButton = transform.GetChild(3).gameObject;
+        controlScreen = transform.FindChild("ControlPage").GetComponent<Image>();
 
         startSelected = true;
         controlsSelected = false;
         quitSelected = false;
+
+        controlScreen.enabled = false;
 
     }
 
@@ -47,6 +51,12 @@ public class MainMenu : MonoBehaviour {
 
     void Update () {
         NavigateWithKeys();
+
+        if(controlPageOpened && Input.GetButtonDown("Cancel") || controlPageOpened && Input.GetButtonDown("Dodge1"))
+        {
+            controlScreen.enabled = false;
+            controlPageOpened = false;
+        }
 	}
 
     private void NavigateWithKeys()
@@ -59,34 +69,35 @@ public class MainMenu : MonoBehaviour {
     {
         float verticalInput = Input.GetAxis("Vertical1");
         float gamepadVerticalInput = Input.GetAxis("GamepadVertical1");
-        if (verticalInput == 1 || gamepadVerticalInput == 1)
+        if (!controlPageOpened)
         {
-            navigationRunning = true;
-            if (!quitSelected && controlsSelected && !startSelected)
+            if (verticalInput == 1 || gamepadVerticalInput == 1)
             {
-                controlsSelected = false;
-                startSelected = true;
+                if (!quitSelected && controlsSelected && !startSelected)
+                {
+                    controlsSelected = false;
+                    startSelected = true;
+                }
+                if (quitSelected && !controlsSelected && !startSelected)
+                {
+                    controlsSelected = true;
+                    quitSelected = false;
+                }
             }
-            if (quitSelected && !controlsSelected && !startSelected)
+            if (verticalInput == -1 || gamepadVerticalInput == -1)
             {
-                controlsSelected = true;
-                quitSelected = false;
+                if (!quitSelected && controlsSelected && !startSelected)
+                {
+                    controlsSelected = false;
+                    quitSelected = true;
+                }
+                if (!quitSelected && !controlsSelected && startSelected)
+                {
+                    controlsSelected = true;
+                    startSelected = false;
+                }
             }
-        }
-        if (verticalInput == -1 || gamepadVerticalInput == -1)
-        {
-            navigationRunning = true;
-            if (!quitSelected && controlsSelected && !startSelected)
-            {
-                controlsSelected = false;
-                quitSelected = true;
-            }
-            if (!quitSelected && !controlsSelected && startSelected)
-            {
-                controlsSelected = true;
-                startSelected = false;
-            }
-        }
+        }     
         yield return new WaitForSeconds(0.08f);     //instant skip workaround
         StartCoroutine(Navigate());
     }
@@ -131,13 +142,19 @@ public class MainMenu : MonoBehaviour {
             }
             else if (!startSelected && controlsSelected && !quitSelected)
             {
-                //ShowControls();
+                ShowControls();
             }
             else if(!startSelected && !controlsSelected && quitSelected)
             {
                 Application.Quit();
             }
         }
+    }
+
+    private void ShowControls()
+    {
+        controlScreen.enabled = true;
+        controlPageOpened = true;
     }
 
     private void StartGame()
