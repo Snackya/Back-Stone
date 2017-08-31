@@ -25,7 +25,7 @@ public class CameraControl : MonoBehaviour {
     private Vector3 moveVelocity;
     private float[][] areaCamSizes = new float[][] {
         // Final Area 01
-        new float[] { 8f, 11.3f, 14.5f, 8f, 5f, 9f, 16.5f, 11.5f, 17f, 7f, 7f, 14f, 14f, 11f, 10f, 8.5f, 13.5f, 11.5f, 9f, 12f, 23f, 9f}
+        new float[] { 9.5f, 12.7f, 14.8f, 10f, 7f, 11f, 20f, 13.5f, 20f, 8.5f, 8.5f, 14f, 14f, 12.5f, 11.5f, 10f, 16f, 13.5f, 10.5f, 14f, 25f, 9f}
     };
 
 
