@@ -24,6 +24,7 @@ public class Room20 : MonoBehaviour {
     private Transform arrowAttack;
     private Transform pillars;
     private bool playersInside = false;
+    private bool alreadyEnteredOnce = false;
     private Transform circles;
 
     // Use this for initialization
@@ -49,9 +50,12 @@ public class Room20 : MonoBehaviour {
         {
             if (!playersInside)
             {
+                if (!alreadyEnteredOnce)
+                {
+                    diaMan.StartDialog(deaconText, "The Deacon");
+                }
                 playersInside = true;
                 CloseDoor();
-                diaMan.StartDialog(deaconText, "The Deacon");
                 ActivateBoss();
                 musicManager.StopBackGroundMusic();
                 musicManager.PlayBossMusic2();
