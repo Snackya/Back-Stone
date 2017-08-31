@@ -37,13 +37,13 @@ public class RiddleControl : MonoBehaviour {
         answerPlates = transform.GetChild(0);
         isKillable = false;
 
-        answerA = transform.GetChild(0).GetChild(0).GetComponent<PressurePlate>();
-        answerB = transform.GetChild(0).GetChild(1).GetComponent<PressurePlate>();
-        answerC = transform.GetChild(0).GetChild(2).GetComponent<PressurePlate>();
+        answerA = transform.FindChild("AnswerPlates").GetChild(0).GetComponent<PressurePlate>();
+        answerB = transform.FindChild("AnswerPlates").GetChild(1).GetComponent<PressurePlate>();
+        answerC = transform.FindChild("AnswerPlates").GetChild(2).GetComponent<PressurePlate>();
 
-        spikesA = transform.GetChild(2).FindChild("SpikeTrapA").GetComponent<SpikePlate>();
-        spikesB = transform.GetChild(2).FindChild("SpikeTrapB").GetComponent<SpikePlate>();
-        spikesC = transform.GetChild(2).FindChild("SpikeTrapC").GetComponent<SpikePlate>();
+        spikesA = transform.FindChild("Spikes").FindChild("SpikeTrapA").GetComponent<SpikePlate>();
+        spikesB = transform.FindChild("Spikes").FindChild("SpikeTrapB").GetComponent<SpikePlate>();
+        spikesC = transform.FindChild("Spikes").FindChild("SpikeTrapC").GetComponent<SpikePlate>();
     }
 
     void OnDisable()

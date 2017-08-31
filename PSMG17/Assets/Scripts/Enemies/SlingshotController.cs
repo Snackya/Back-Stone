@@ -20,7 +20,6 @@ public class SlingshotController : MonoBehaviour
     }
     IEnumerator Attack()
     {
-        Debug.Log("attacking");
         SelectTarget();
         animator.SetTrigger("attack"); 
         yield return new WaitForSeconds(0.2f);  //wait for the correct frame to spawn
