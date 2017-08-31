@@ -12,6 +12,9 @@ public class SlingshotController : MonoBehaviour
     private Transform boulderSpawn;
     private Animator animator;
 
+    [SerializeField]
+    private AudioSource shoot;
+
     void OnEnable()
     {
         target = targets[0];
@@ -20,11 +23,13 @@ public class SlingshotController : MonoBehaviour
     }
     IEnumerator Attack()
     {
+        shoot.Play();
+        yield return new WaitForSeconds(0.3f);
         SelectTarget();
-        animator.SetTrigger("attack"); 
+        animator.SetTrigger("attack");
         yield return new WaitForSeconds(0.2f);  //wait for the correct frame to spawn
         SpawnBoulder();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4.7f);
         StartCoroutine(Attack());
     }
 
