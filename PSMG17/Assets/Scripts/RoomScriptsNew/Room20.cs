@@ -25,6 +25,7 @@ public class Room20 : MonoBehaviour {
     private Transform pillars;
     private bool playersInside = false;
     private bool alreadyEnteredOnce = false;
+    private Transform magicalBarrier;
     private Transform circles;
     private Transform princess;
     private bool bossAlreadyDied = false;
@@ -36,8 +37,9 @@ public class Room20 : MonoBehaviour {
         backdoor = transform.FindChild("Backdoor");
         deacon = transform.FindChild("Deacon");
         arrowAttack = transform.FindChild("ArrowAttack");
-        pillars = transform.FindChild("MagicalBarrier").FindChild("Pillars");
-        circles = transform.FindChild("MagicalBarrier").FindChild("Circles");
+        magicalBarrier = transform.FindChild("MagicalBarrier");
+        pillars = magicalBarrier.FindChild("Pillars");
+        circles = magicalBarrier.FindChild("Circles");
         princess = transform.FindChild("Princess");
 	}
 	
@@ -72,6 +74,8 @@ public class Room20 : MonoBehaviour {
         if (playersInside && deacon.GetComponent<EnemyHealth>().health.CurrentVal == 0)
         {
             princess.gameObject.SetActive(true);
+            DeactivateBoss();
+            magicalBarrier.gameObject.SetActive(false);
             if (!bossAlreadyDied)
             {
                 musicManager.StopBossMusic2();
