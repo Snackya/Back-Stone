@@ -67,7 +67,7 @@ public class Room12 : MonoBehaviour
         {
             if (!bossAlreadyDied)
             {
-                musicManager.StopBossMusic1();
+                musicManager.StopBossMusic3();
                 musicManager.PlayBackgroundMusic();
             }
             bossHealthBar.gameObject.SetActive(false);
