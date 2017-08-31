@@ -9,7 +9,10 @@ public class HubPressurePlates : MonoBehaviour {
     private HubPuzzle hubPuzzle;
 
     private int rotationAngle = 90;
-    private float rotationSpeed = 0.01f;
+    private float rotationSpeed = 0.02f;
+
+    [SerializeField]
+    private AudioSource rotatingStone;
 
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +35,7 @@ public class HubPressurePlates : MonoBehaviour {
 
     private IEnumerator RotateHubs(bool turnRight, Transform hub)
     {
+        rotatingStone.Play();
         for (int i = 0; i < rotationAngle; i++)
         {
             if (turnRight)

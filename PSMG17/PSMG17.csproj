@@ -211,6 +211,7 @@
     <Compile Include="Assets\Scripts\Enemies\SlingshotController.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\GlaveScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\Player\Fireball.cs" />
@@ -281,11 +282,11 @@
     <None Include="Assets\Text\BlackKnight\loseArmsText.txt" />
     <None Include="Assets\Text\BlackKnight\loseLegsText.txt" />
     <None Include="Assets\Text\BlackKnight\preFight.txt" />
+    <None Include="Assets\Text\Deacon\deacon.txt" />
     <None Include="Assets\Text\Riddles\riddle1.txt" />
     <None Include="Assets\Text\Riddles\riddle2.txt" />
     <None Include="Assets\Text\Riddles\riddle3.txt" />
-    <None Include="Assets\Text\player1.txt" />
-    <None Include="Assets\Text\signText.txt" />
+    <None Include="Assets\Text\intro.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
