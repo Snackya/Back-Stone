@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # =============== #
 # Unity generated #
 # =============== #
@@ -32,3 +33,59 @@ ExportedObj/
 Icon?
 ehthumbs.db
 Thumbs.db
+=======
+# =============== #
+# Unity generated #
+# =============== #
+PSMG17/Temp/
+PSMG17/Obj/
+PSMG17/UnityGenerated/
+PSMG17/Library/
+PSMG17/Assets/AssetStoreTools*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+PSMG17/ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+PSMG17/Library/CurrentLayout\.dwlt
+
+PSMG17/Library/
+
+PSMG17/Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333
+PSMG17/Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333
+PSMG17/Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333
+PSMG17/Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333
+PSMG17/Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333
+PSMG17/.DS_Store
+
+PSMG17/Assets/Sprites/Player/.DS_Store
+
+.DS_Store
+
+PSMG17/Library/ScriptAssemblies/Assembly-CSharp.dll
+PSMG17/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+PSMG17/Assets/Sprites/Player/Player2/Wand/player2_wand_turn.png.meta
+PSMG17/.vs/PSMG17/v15/.suo
+>>>>>>> game-dev

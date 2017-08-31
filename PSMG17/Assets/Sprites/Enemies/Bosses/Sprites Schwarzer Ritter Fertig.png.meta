@@ -1,0 +1,1000 @@
+fileFormatVersion: 2
+guid: cf6306710a0d20c479298afa149307a3
+timeCreated: 1503662839
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprites Schwarzer Ritter Fertig_0
+    21300002: Sprites Schwarzer Ritter Fertig_1
+    21300004: Sprites Schwarzer Ritter Fertig_2
+    21300006: Sprites Schwarzer Ritter Fertig_3
+    21300008: Sprites Schwarzer Ritter Fertig_4
+    21300010: Sprites Schwarzer Ritter Fertig_5
+    21300012: Sprites Schwarzer Ritter Fertig_6
+    21300014: Sprites Schwarzer Ritter Fertig_7
+    21300016: Sprites Schwarzer Ritter Fertig_8
+    21300018: Sprites Schwarzer Ritter Fertig_9
+    21300020: Sprites Schwarzer Ritter Fertig_10
+    21300022: Sprites Schwarzer Ritter Fertig_11
+    21300024: Sprites Schwarzer Ritter Fertig_12
+    21300026: Sprites Schwarzer Ritter Fertig_13
+    21300028: Sprites Schwarzer Ritter Fertig_14
+    21300030: Sprites Schwarzer Ritter Fertig_15
+    21300032: Sprites Schwarzer Ritter Fertig_16
+    21300034: Sprites Schwarzer Ritter Fertig_17
+    21300036: Sprites Schwarzer Ritter Fertig_18
+    21300038: Sprites Schwarzer Ritter Fertig_19
+    21300040: Sprites Schwarzer Ritter Fertig_20
+    21300042: Sprites Schwarzer Ritter Fertig_21
+    21300044: Sprites Schwarzer Ritter Fertig_22
+    21300046: Sprites Schwarzer Ritter Fertig_23
+    21300048: Sprites Schwarzer Ritter Fertig_24
+    21300050: Sprites Schwarzer Ritter Fertig_25
+    21300052: Sprites Schwarzer Ritter Fertig_26
+    21300054: Sprites Schwarzer Ritter Fertig_27
+    21300056: Sprites Schwarzer Ritter Fertig_28
+    21300058: Sprites Schwarzer Ritter Fertig_29
+    21300060: Sprites Schwarzer Ritter Fertig_30
+    21300062: Sprites Schwarzer Ritter Fertig_31
+    21300064: Sprites Schwarzer Ritter Fertig_32
+    21300066: Sprites Schwarzer Ritter Fertig_33
+    21300068: Sprites Schwarzer Ritter Fertig_34
+    21300070: Sprites Schwarzer Ritter Fertig_35
+    21300072: Sprites Schwarzer Ritter Fertig_36
+    21300074: Sprites Schwarzer Ritter Fertig_37
+    21300076: Sprites Schwarzer Ritter Fertig_38
+    21300078: Sprites Schwarzer Ritter Fertig_39
+    21300080: Sprites Schwarzer Ritter Fertig_40
+    21300082: Sprites Schwarzer Ritter Fertig_41
+    21300084: Sprites Schwarzer Ritter Fertig_42
+    21300086: Sprites Schwarzer Ritter Fertig_43
+    21300088: Sprites Schwarzer Ritter Fertig_44
+    21300090: Sprites Schwarzer Ritter Fertig_45
+    21300092: Sprites Schwarzer Ritter Fertig_46
+    21300094: Sprites Schwarzer Ritter Fertig_47
+    21300096: Sprites Schwarzer Ritter Fertig_48
+    21300098: Sprites Schwarzer Ritter Fertig_49
+    21300100: Sprites Schwarzer Ritter Fertig_50
+    21300102: Sprites Schwarzer Ritter Fertig_51
+    21300104: Sprites Schwarzer Ritter Fertig_52
+    21300106: Sprites Schwarzer Ritter Fertig_53
+    21300108: Sprites Schwarzer Ritter Fertig_54
+    21300110: Sprites Schwarzer Ritter Fertig_55
+    21300112: Sprites Schwarzer Ritter Fertig_56
+    21300114: Sprites Schwarzer Ritter Fertig_57
+    21300116: Sprites Schwarzer Ritter Fertig_58
+    21300118: Sprites Schwarzer Ritter Fertig_59
+    21300120: Sprites Schwarzer Ritter Fertig_60
+    21300122: Sprites Schwarzer Ritter Fertig_61
+    21300124: Sprites Schwarzer Ritter Fertig_62
+    21300126: Sprites Schwarzer Ritter Fertig_63
+    21300128: Sprites Schwarzer Ritter Fertig_64
+    21300130: Sprites Schwarzer Ritter Fertig_65
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_1
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_2
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_3
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_4
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_5
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1889.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_7
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_8
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_9
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_10
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_11
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_12
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_13
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 1653.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_15
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_16
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_17
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_18
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_19
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_20
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_21
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 1417.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_23
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_24
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_25
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_26
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_27
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_28
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1181.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_30
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_31
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_32
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_33
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_34
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_35
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_36
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 945.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_38
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_39
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_40
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_41
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_42
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_43
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 709.7778
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_45
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_46
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_47
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_48
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_49
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_50
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 473.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_52
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_53
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_54
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_55
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_56
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_57
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_58
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 237.77777
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_60
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_61
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_62
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_63
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_64
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprites Schwarzer Ritter Fertig_65
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1.777771
+        width: 472.5
+        height: 236.22223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d5d7886b18ba9b6468ad97615229bf4b
+timeCreated: 1503953192
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: EmbossedGermanica
+  fontNames:
+  - EmbossedGermanica
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

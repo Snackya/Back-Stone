@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2f8241c770d43fe4d8a25f00fcb68564
+timeCreated: 1503953192
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ShadowedGermanica
+  fontNames:
+  - ShadowedGermanica
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
