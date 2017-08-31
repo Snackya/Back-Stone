@@ -26,7 +26,8 @@ public class Room17 : MonoBehaviour {
     private bool playerInside = false;
     private int spawnRate = 6;
 
-    
+    [SerializeField]
+    private AudioSource beesSound;
 
     void Start ()
     {
@@ -58,7 +59,11 @@ public class Room17 : MonoBehaviour {
     {
         ActivateEnemies();
         if (!beehive.gameObject.activeSelf) OpenDoor();
-        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0) beehiveHealth.gameObject.SetActive(false);
+        if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0)
+        {
+            beesSound.Stop();
+            beehiveHealth.gameObject.SetActive(false);
+        }
     }
 
     private void OpenDoor()
@@ -104,6 +109,7 @@ public class Room17 : MonoBehaviour {
         {
             if (!playerInside)
             {
+                beesSound.Play();
                 playerInside = true;
                 beehiveScript.SpawnBees();
                 SpawnArchers();
@@ -128,6 +134,7 @@ public class Room17 : MonoBehaviour {
         beehiveScript.ResetBeehive();
         beehiveHealth.gameObject.SetActive(false);
         DestroyEnemies();
+        beesSound.Stop();
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
