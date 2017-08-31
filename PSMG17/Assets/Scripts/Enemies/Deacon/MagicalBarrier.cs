@@ -83,12 +83,17 @@ public class MagicalBarrier : MonoBehaviour {
 
     private void DeactivateCircles()
     {
+        int counter = 0;
         for (int i = 0; i < pillars.Count; i++)
         {
             if (pillars[i].GetChild(1).gameObject.activeSelf)
             {
-                circles[i].gameObject.SetActive(false);
+                counter++;
             }
         }
+        if (counter == 1) circles[0].gameObject.SetActive(false);
+        if (counter == 2) circles[1].gameObject.SetActive(false);
+        if (counter == 3) circles[2].gameObject.SetActive(false);
+        if (counter == 4) circles[3].gameObject.SetActive(false);
     }
 }
