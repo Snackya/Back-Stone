@@ -15,12 +15,12 @@ public class SwipeAttack : MonoBehaviour
     [HideInInspector]
     public bool swipeActive = false;
 
-    private int bonusDmgEnemy = 20;
-    private int bonusDmgBasilisk = 10;
-    private int bonusDmgBlackKnight = 10;
-    private int bonusDmgBeehive = 10;
-    private int bonusDmgPillar = 10;
-    private int bonusDmgDeacon = 7;
+    private int bonusDmgEnemy = 25;
+    private int bonusDmgBasilisk = 5;
+    private int bonusDmgBlackKnight = 5;
+    private int bonusDmgBeehive = 3;
+    private int bonusDmgPillar = 20;
+    private int bonusDmgDeacon = 3;
 
     void Awake()
     {
@@ -77,7 +77,7 @@ public class SwipeAttack : MonoBehaviour
 
         if (other.gameObject.tag == "Pillar")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgPillar;
+            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgPillar;
         }
 
         if (other.gameObject.tag == "Basilisk")
@@ -108,7 +108,7 @@ public class SwipeAttack : MonoBehaviour
         }
         if (other.gameObject.tag == "Deacon")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgDeacon;
+            if (swipeActive) other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= bonusDmgDeacon;
         }
     }
 }

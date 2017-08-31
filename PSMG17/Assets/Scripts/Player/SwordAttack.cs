@@ -9,11 +9,11 @@ public class SwordAttack : MonoBehaviour {
     private AudioSource swordHit;
 
     private int dmgEnemy = 45;
-    private int dmgBasilisk = 15;
+    private int dmgBasilisk = 10;
     private int dmgBlackKnight = 10;
-    private int dmgBeehive = 10;
-    private int dmgPillar = 25;
-    private int dmgDeacon = 10;
+    private int dmgBeehive = 7;
+    private int dmgPillar = 40;
+    private int dmgDeacon = 5;
 
     void OnTriggerEnter2D(Collider2D other)
     {

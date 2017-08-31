@@ -11,11 +11,11 @@ public class Fireball : MonoBehaviour {
     private float fireballDespawnTime = 5f;
     private float speed = 5f;
 
-    private int dmgEnemy = 25;
-    private int dmgBasilisk = 10;
+    private int dmgEnemy = 35;
+    private int dmgBasilisk = 8;
     private int dmgBlackKnight = 7;
-    private int dmgBeehive = 7;
-    private int dmgPillar = 20;
+    private int dmgBeehive = 15;
+    private int dmgPillar = 25;
     private int dmgDeacon = 7;
 
     void Start ()
