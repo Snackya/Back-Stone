@@ -15,12 +15,11 @@ public class Room04 : MonoBehaviour {
 
     private Bounds roomBounds;
 
-    private bool playersInside = false;
+    private bool playerInside = false;
 
     private Beehive beehiveScript;
     private Transform beehive;
     private Transform door;
-    private Transform backdoor;
 
     [SerializeField]
     private AudioSource beesSound;
@@ -28,10 +27,9 @@ public class Room04 : MonoBehaviour {
     void Start()
     {
         roomBounds = transform.GetComponent<BoxCollider2D>().bounds;
+        beehiveScript = GetComponentInChildren<Beehive>();
         beehive = transform.FindChild("Beehive");
-        beehiveScript = beehive.GetComponent<Beehive>();
         door = transform.FindChild("Door");
-        backdoor = transform.FindChild("Backdoor");
     }
 
     void Update()
@@ -45,8 +43,6 @@ public class Room04 : MonoBehaviour {
     {
         if (beehive.GetComponent<EnemyHealth>().health.CurrentVal == 0)
         {
-            backdoor.GetChild(0).gameObject.SetActive(true);
-            backdoor.GetChild(1).gameObject.SetActive(false);
             beesSound.Stop();
             beehiveHealth.gameObject.SetActive(false);
         }
@@ -54,15 +50,12 @@ public class Room04 : MonoBehaviour {
 
     private void ActivateBeehive()
     {
-        if (roomBounds.Contains(player1.position) && roomBounds.Contains(player2.position))
+        if (roomBounds.Contains(player1.position) || roomBounds.Contains(player2.position))
         {
-            if (!playersInside)
+            if (!playerInside)
             {
-                backdoor.GetChild(0).gameObject.SetActive(false);
-                backdoor.GetChild(1).gameObject.SetActive(true);
                 beesSound.Play();
-                beehive.gameObject.SetActive(true);
-                playersInside = true;
+                playerInside = true;
                 beehiveScript.SpawnBees();
                 beehiveHealth.gameObject.SetActive(true);
             }
@@ -80,15 +73,13 @@ public class Room04 : MonoBehaviour {
 
     public void ResetRoom()
     {
-        playersInside = false;
-        beehive.gameObject.SetActive(false);
+        playerInside = false;
         beehiveScript.ResetBeehive();
+        beehive.gameObject.SetActive(true);
         beehiveHealth.gameObject.SetActive(false);
         beesSound.Stop();
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
-        backdoor.GetChild(0).gameObject.SetActive(true);
-        backdoor.GetChild(1).gameObject.SetActive(false);
     }
 }
