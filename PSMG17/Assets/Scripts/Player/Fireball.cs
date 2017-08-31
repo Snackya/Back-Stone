@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour {
     private bool playerFacingLeft;
 
     private float fireballDespawnTime = 5f;
-    private float speed = 5f;
+    private float speed = 7.5f;
 
     private int dmgEnemy = 35;
     private int dmgBasilisk = 8;
