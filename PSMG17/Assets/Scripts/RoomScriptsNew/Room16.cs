@@ -52,7 +52,7 @@ public class Room16 : MonoBehaviour
     {
         ActivateEnemies();
         CheckIfEnemiesAreDead();
-        //OpenDoor();
+        OpenDoor();
     }
 
     private void CheckIfEnemiesAreDead()
