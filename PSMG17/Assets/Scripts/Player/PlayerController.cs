@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour {
         Attack();
         SwitchWeapons();
 
-        if (Input.GetKeyDown(KeyCode.K)) PlaySwordAttackSound();
     }
 
     private void SetMovementVelocity()
