@@ -15,6 +15,9 @@ public class Room07 : MonoBehaviour {
     private GameObject glaves;
     private GameObject enemies;
 
+    [SerializeField]
+    private AudioSource glaivesSound;
+
     void Start ()
     {
         roomBounds = transform.GetComponent<BoxCollider2D>().bounds;
@@ -35,6 +38,7 @@ public class Room07 : MonoBehaviour {
         {
             if (!playerInside)
             {
+                glaivesSound.Play();
                 playerInside = true;
                 glaves.SetActive(true);
                 enemies.SetActive(true);
@@ -48,6 +52,7 @@ public class Room07 : MonoBehaviour {
         {
             if (playerInside)
             {
+                glaivesSound.Stop();
                 playerInside = false;
                 glaves.SetActive(false);
                 enemies.SetActive(false);

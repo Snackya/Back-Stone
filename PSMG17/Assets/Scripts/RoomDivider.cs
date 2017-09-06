@@ -21,6 +21,9 @@ public class RoomDivider : MonoBehaviour {
     private bool isRoom13;
     private Room13 room13;
 
+    [SerializeField]
+    private AudioSource roomDividerSound;
+
 	void Start ()
     {
         pressurePlate1 = transform.FindChild("PressurePlates").GetChild(0);
@@ -58,6 +61,8 @@ public class RoomDivider : MonoBehaviour {
 
     private IEnumerator MoveRoomDivider(float speed)
     {
+        roomDividerSound.Play();
+
         entrance.GetChild(1).gameObject.SetActive(true);
         entrance.GetChild(0).gameObject.SetActive(false);
         entranceRB.velocity = new Vector2(speed, 0);

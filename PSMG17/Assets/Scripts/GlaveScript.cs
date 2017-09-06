@@ -10,6 +10,8 @@ public class GlaveScript : MonoBehaviour {
     [SerializeField] private bool moveHorizontally = true;
     private Rigidbody2D rb;
     private Transform collider;
+    [SerializeField]
+    private AudioSource getHitSound;
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +49,7 @@ public class GlaveScript : MonoBehaviour {
         }
         if (collision.gameObject.tag == "Player")
         {
+            getHitSound.Play();
             HealthbarController health = collision.transform.GetComponent<HealthbarController>();
             health.ReceiveDamage(health.maxHealth / 4);
         }

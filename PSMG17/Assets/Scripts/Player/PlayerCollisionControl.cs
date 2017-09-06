@@ -26,6 +26,9 @@ public class PlayerCollisionControl : MonoBehaviour {
     private float dmgCircle = 5f;
     private float dmgBoulder = 18f;
 
+    [SerializeField]
+    private AudioSource getHitSound;
+
     void Start () {
         playerBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -112,7 +115,7 @@ public class PlayerCollisionControl : MonoBehaviour {
                     changeLayer = false;
                 }
                 hpControl.ReceiveDamage(dmg);
-
+                getHitSound.Play();
                 //knock both characters back
                 if (knockback)
                 {

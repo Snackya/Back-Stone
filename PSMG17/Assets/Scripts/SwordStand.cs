@@ -12,11 +12,15 @@ public class SwordStand : MonoBehaviour {
     private Sprite player1Icon;
     [SerializeField]
     private Sprite player2Icon;
+    [SerializeField]
+    private AudioSource weaponSwitchSound;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            weaponSwitchSound.Play();
+
             int playerNumber = collision.gameObject.GetComponent<PlayerController>().playerNumber;
             collision.gameObject.GetComponent<PlayerController>().swordEquipped = true;
             collision.gameObject.GetComponent<HealthbarController>().maxHealth = newMaxHealth;

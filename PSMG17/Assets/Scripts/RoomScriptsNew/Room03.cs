@@ -9,6 +9,9 @@ public class Room03 : MonoBehaviour {
     private Transform player1;
     [SerializeField]
     private Transform player2;
+    [SerializeField]
+    private AudioSource glaivesSound;
+
     private Bounds roomBounds;
 
     private bool playerInside = false;
@@ -32,6 +35,7 @@ public class Room03 : MonoBehaviour {
         {
             if (playerInside)
             {
+                glaivesSound.Stop();
                 playerInside = false;
                 glaves.SetActive(false);
             }
@@ -44,6 +48,7 @@ public class Room03 : MonoBehaviour {
         {
             if (!playerInside)
             {
+                glaivesSound.Play();
                 playerInside = true;
                 glaves.SetActive(true);
             }
