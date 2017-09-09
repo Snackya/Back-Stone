@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HubPressurePlates : MonoBehaviour {
@@ -14,7 +16,9 @@ public class HubPressurePlates : MonoBehaviour {
     [SerializeField]
     private AudioSource rotatingStone;
 
-    
+    private float[] rotationTolerance = new float[] { 0.71f, -0.7f };
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!hubPuzzle.puzzleCompleted)
@@ -48,5 +52,14 @@ public class HubPressurePlates : MonoBehaviour {
             }
             yield return new WaitForSeconds(rotationSpeed);
         }
+        FixRotation(hub);
+    }
+
+    private void FixRotation(Transform hub)
+    {
+        if (hub.localEulerAngles.z < 90 + rotationTolerance[0] && hub.localEulerAngles.z > 90 + rotationTolerance[1]) hub.Rotate(new Vector3(0, 0, 90));
+        if (hub.localEulerAngles.z < 270 + rotationTolerance[0] && hub.localEulerAngles.z > 270 + rotationTolerance[1]) hub.Rotate(new Vector3(0, 0, 90));
+        if (hub.localEulerAngles.z > -90 + rotationTolerance[1] && hub.localEulerAngles.z < -90 + rotationTolerance[0]) hub.Rotate(new Vector3(0, 0, -90));
+        if (hub.localEulerAngles.z > -270 + rotationTolerance[1] && hub.localEulerAngles.z < -270 + rotationTolerance[0]) hub.Rotate(new Vector3(0, 0, -90));
     }
 }
