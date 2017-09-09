@@ -14,14 +14,22 @@ public class SwordStand : MonoBehaviour {
     private Sprite player2Icon;
     [SerializeField]
     private AudioSource weaponSwitchSound;
+    [SerializeField]
+    private WandHeal wandHealPlayer1;
+    [SerializeField]
+    private WandHeal wandHealPlayer2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            int playerNumber = collision.gameObject.GetComponent<PlayerController>().playerNumber;
+
+            if (playerNumber == 1) wandHealPlayer1.cooldown.CurrentVal = wandHealPlayer1.cooldown.MaxVal;
+            else wandHealPlayer2.cooldown.CurrentVal = wandHealPlayer2.cooldown.MaxVal;
+            
             weaponSwitchSound.Play();
 
-            int playerNumber = collision.gameObject.GetComponent<PlayerController>().playerNumber;
             collision.gameObject.GetComponent<PlayerController>().swordEquipped = true;
             collision.gameObject.GetComponent<HealthbarController>().maxHealth = newMaxHealth;
             collision.gameObject.GetComponent<HealthbarController>().currentHealth =

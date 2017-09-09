@@ -14,14 +14,35 @@ public class WandStand : MonoBehaviour {
     private Sprite player2Icon;
     [SerializeField]
     private AudioSource weaponSwitchSound;
+    [SerializeField]
+    private SwipeAttack swipeAttackPlayer1;
+    [SerializeField]
+    private SwipeAttack swipeAttackPlayer2;
+    [SerializeField]
+    private Animator animatorPlayer1;
+    [SerializeField]
+    private Animator animatorPlayer2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            int playerNumber = collision.gameObject.GetComponent<PlayerController>().playerNumber;
+            Animator animator = GetComponentInParent<Animator>();
+
+            if (playerNumber == 1)
+            {
+                animatorPlayer1.ResetTrigger("swipeTrigger");
+                swipeAttackPlayer1.cooldown.CurrentVal = swipeAttackPlayer1.cooldown.MaxVal;
+            }
+            else
+            {
+                animatorPlayer2.ResetTrigger("swipeTrigger");
+                swipeAttackPlayer2.cooldown.CurrentVal = swipeAttackPlayer2.cooldown.MaxVal;
+            }
+
             weaponSwitchSound.Play();
 
-            int playerNumber = collision.gameObject.GetComponent<PlayerController>().playerNumber;
             collision.gameObject.GetComponent<PlayerController>().swordEquipped = false;
             collision.gameObject.GetComponent<HealthbarController>().maxHealth = newMaxHealth;
             collision.gameObject.GetComponent<HealthbarController>().currentHealth =

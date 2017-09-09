@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class SwipeAttack : MonoBehaviour
 {
-    [SerializeField]
-    private Stat cooldown;
+    public Stat cooldown;
     [SerializeField]
     private float cooldownTime;
 
