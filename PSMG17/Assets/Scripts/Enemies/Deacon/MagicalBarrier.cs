@@ -98,9 +98,9 @@ public class MagicalBarrier : MonoBehaviour {
                 counter++;
             }
         }
-        if (counter == 1) circles[0].gameObject.SetActive(false);
-        if (counter == 2) circles[1].gameObject.SetActive(false);
-        if (counter == 3) circles[2].gameObject.SetActive(false);
+        if (counter >= 1) circles[0].gameObject.SetActive(false);
+        if (counter >= 2) circles[1].gameObject.SetActive(false);
+        if (counter >= 3) circles[2].gameObject.SetActive(false);
         if (counter == 4) circles[3].gameObject.SetActive(false);
     }
 }
