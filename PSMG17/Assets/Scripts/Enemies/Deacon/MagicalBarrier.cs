@@ -70,6 +70,7 @@ public class MagicalBarrier : MonoBehaviour {
             yield return new WaitForSeconds(circleReactivationTime / circles.Count);
             circles[i].gameObject.SetActive(true);
         }
+        circlesReactivating = false;
         barrierActive = true;
     }
 
