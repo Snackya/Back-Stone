@@ -14,11 +14,13 @@ public class MagicalBarrier : MonoBehaviour {
 
     [HideInInspector]
     public bool barrierActive = true;
+    private bool playersInside;
 
 	void Start ()
     {
         FillCirclesList();
         FillPillarsList();
+        playersInside = GetComponentInParent<Room20>().playersInside;
 	}
 
     private void FillCirclesList()
@@ -39,8 +41,12 @@ public class MagicalBarrier : MonoBehaviour {
 
     void Update ()
     {
-        DeactivateCircles();
-        ReactivateCircles();
+        playersInside = GetComponentInParent<Room20>().playersInside;
+        if (playersInside)
+        {
+            DeactivateCircles();
+            ReactivateCircles();
+        }
 	}
 
     private void ReactivateCircles()

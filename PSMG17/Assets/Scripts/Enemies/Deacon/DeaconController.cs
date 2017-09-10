@@ -16,7 +16,7 @@ public class DeaconController : MonoBehaviour
     private float attackRate = 1.2f;
     private Animator animator;
 
-    void Start()
+    void OnEnable()
     {
         animator = GetComponent<Animator>();
         FillBoulderSpawnPositionsList();

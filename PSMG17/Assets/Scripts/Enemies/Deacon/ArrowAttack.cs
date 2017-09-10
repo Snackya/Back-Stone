@@ -16,7 +16,7 @@ public class ArrowAttack : MonoBehaviour {
     private DialogManager diaMan;
 
 	// Use this for initialization
-	void Start ()
+	void OnEnable ()
     {
         magicalBarrier = room20.GetComponentInChildren<MagicalBarrier>();
         StartCoroutine(ShootArrows());
