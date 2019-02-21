@@ -4,4 +4,4 @@ A top-down dungeon crawler using the middle aged illuminated manuscript art styl
 
 
 ### Screenshots:
-![screenshots](https://github.com/Snackya/Illumi/tree/master/PSMG17/Screens/Screenshots.jpg)
+![screenshots](https://raw.githubusercontent.com/Snackya/Illumi/master/PSMG17/Screens/Screenshots.jpg)
