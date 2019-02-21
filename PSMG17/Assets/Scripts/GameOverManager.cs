@@ -200,7 +200,7 @@ public class GameOverManager : MonoBehaviour {
     private void resetRooms()
     {
         room01.resetRoom();
-        room02.resetRoom();
+        room02.ResetRoom();
         room04.ResetRoom();
         room05.resetRoom();
         room06.resetRoom();

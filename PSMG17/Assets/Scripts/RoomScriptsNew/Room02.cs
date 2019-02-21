@@ -104,7 +104,7 @@ public class Room02 : MonoBehaviour {
         return UnityEngine.Random.Range(min, max);
     }
 
-    public void resetRoom()
+    public void ResetRoom()
     {
         currentEnemies = 0;
         playersInside = false;
@@ -113,6 +113,9 @@ public class Room02 : MonoBehaviour {
 
         door.GetChild(0).gameObject.SetActive(false);
         door.GetChild(1).gameObject.SetActive(true);
+
+        backdoor.GetChild(0).gameObject.SetActive(true);
+        backdoor.GetChild(1).gameObject.SetActive(false);
     }
 
     private void DestroyEnemies()
