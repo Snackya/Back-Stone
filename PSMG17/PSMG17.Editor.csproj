@@ -121,6 +121,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PSMG17.csproj">
+      <Project>{26AFD31F-63AA-2E46-998E-96D3D891DA2C}</Project>
+      <Name>PSMG17</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\AstarPathfindingProject\Editor\AIBaseEditor.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Editor\AstarPathEditor.cs" />

@@ -21,6 +21,7 @@ public class SwipeAttack : MonoBehaviour
     private int bonusDmgPillar = 20;
     private int bonusDmgDeacon = 3;
 
+
     void Awake()
     {
         cooldown.Initialize();
@@ -36,6 +37,13 @@ public class SwipeAttack : MonoBehaviour
             cooldown.CurrentVal = 0f;
         }
         ResetCooldown();
+        
+    }
+
+    private void OnDisable()
+    {
+        cooldown.CurrentVal = cooldown.MaxVal;
+        swipeActive = false;
     }
 
     private void ResetCooldown()

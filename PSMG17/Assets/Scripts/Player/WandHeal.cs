@@ -14,6 +14,7 @@ public class WandHeal : MonoBehaviour {
     [HideInInspector]
     public bool healActive = false;
 
+
     private void Awake()
     {
         cooldown.Initialize();
@@ -30,6 +31,12 @@ public class WandHeal : MonoBehaviour {
             cooldown.CurrentVal = 0f;
         }
         ResetCooldown();
+    }
+
+    private void OnDisable()
+    {
+        cooldown.CurrentVal = cooldown.MaxVal;
+        healActive = false;
     }
 
     private void HealSelf()
