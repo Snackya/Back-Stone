@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,11 +30,18 @@ public class SwordAttack : MonoBehaviour {
                 Destroy(other.gameObject);
             }
             else if(other.gameObject.name != "Boulder(Clone)")
-            {
-                other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
-                other.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                other.gameObject.GetComponentInChildren<ParticleSystem>().Play();
-                other.gameObject.GetComponent<EnemyAI>().Knockback();
+            {  
+                try
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().health.CurrentVal -= dmgEnemy;
+                    other.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                    other.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                    other.gameObject.GetComponent<EnemyAI>().Knockback();
+                }
+                catch(NullReferenceException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
         }
 

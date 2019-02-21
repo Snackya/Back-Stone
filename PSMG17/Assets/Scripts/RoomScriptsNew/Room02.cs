@@ -19,7 +19,7 @@ public class Room02 : MonoBehaviour {
     private List<Transform> spawnPositions = new List<Transform>();
 
     private bool playersInside = false;
-    private int maxEnemies = 5;
+    private int maxEnemies = 4;
     private int currentEnemies = 0;
     private int spawnRate = 5;
 
