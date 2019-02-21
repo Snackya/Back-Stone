@@ -75,6 +75,7 @@ public class MagicalBarrier : MonoBehaviour {
         {
             yield return new WaitForSeconds(circleReactivationTime / circles.Count);
             circles[i].gameObject.SetActive(true);
+            circles[i].GetComponent<CircleScript>().RotateCircles();
         }
         circlesReactivating = false;
         barrierActive = true;
